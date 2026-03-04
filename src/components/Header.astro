@@ -1,0 +1,116 @@
+---
+const navLinks = [
+  { href: "/#features", label: "Давуу тал" },
+  { href: "/#modules", label: "Модулиуд" },
+  { href: "/pricing", label: "Үнэ" },
+  { href: "/about", label: "Бидний тухай" },
+  { href: "/contact", label: "Холбоо барих" },
+];
+---
+
+<header
+  class="fixed top-0 z-50 w-full border-b border-white/10 bg-surface-950/80 backdrop-blur-xl"
+>
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <div
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500"
+      >
+        <span class="text-sm font-bold text-white">O</span>
+      </div>
+      <span class="text-lg font-bold">orinux</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden items-center gap-8 md:flex">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-surface-200 transition-colors hover:text-white"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- CTA -->
+    <div class="hidden items-center gap-4 md:flex">
+      <a
+        href="https://app.orinux.space"
+        class="text-sm text-surface-200 transition-colors hover:text-white"
+      >
+        Нэвтрэх
+      </a>
+      <a
+        href="/contact"
+        class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-500"
+      >
+        Демо авах
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="flex h-10 w-10 items-center justify-center rounded-lg text-surface-200 hover:bg-white/10 md:hidden"
+      aria-label="Цэс нээх"
+    >
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-white/10 bg-surface-950/95 backdrop-blur-xl md:hidden"
+  >
+    <div class="space-y-1 px-6 py-4">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block rounded-lg px-3 py-2 text-surface-200 transition-colors hover:bg-white/10 hover:text-white"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <div class="mt-4 flex flex-col gap-2 border-t border-white/10 pt-4">
+        <a
+          href="https://app.orinux.space"
+          class="rounded-lg px-3 py-2 text-center text-surface-200 transition-colors hover:bg-white/10"
+        >
+          Нэвтрэх
+        </a>
+        <a
+          href="/contact"
+          class="rounded-lg bg-primary-600 px-3 py-2 text-center font-medium transition-colors hover:bg-primary-500"
+        >
+          Демо авах
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

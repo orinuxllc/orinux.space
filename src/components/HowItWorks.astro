@@ -1,0 +1,63 @@
+---
+const steps = [
+  {
+    num: "01",
+    title: "Бүртгүүлээд эхэл",
+    desc: "Байгууллагаа бүртгүүлж, тусдаа орчин ав. 2 минутын дотор бэлэн.",
+    icon: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75",
+  },
+  {
+    num: "02",
+    title: "Модуль сонго",
+    desc: "40+ модулиас хэрэгтэйгээ идэвхжүүл. Хэзээ ч нэмж, хасч болно.",
+    icon: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+  },
+  {
+    num: "03",
+    title: "AI Agent ажиллана",
+    desc: "Модуль бүрийн AI Agent бизнес процессыг автоматжуулж эхэлнэ. Та зөвхөн батална.",
+    icon: "M12 8V4H8M12 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM4 12a8 8 0 0 0 16 0M9 17v1m6-1v1",
+  },
+];
+---
+
+<section class="py-24 bg-white/[0.02]">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold md:text-4xl">Хэрхэн ажилладаг вэ?</h2>
+      <p class="mt-4 text-lg text-surface-200">3 энгийн алхамаар бизнесээ автоматжуулна.</p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-3">
+      {
+        steps.map((step, i) => (
+          <div class="relative">
+            {/* Connector Line */}
+            {i < steps.length - 1 && (
+              <div class="absolute right-0 top-12 hidden h-px w-full translate-x-1/2 bg-gradient-to-r from-primary-500/50 to-transparent md:block" />
+            )}
+
+            <div class="text-center">
+              <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-2xl border border-primary-500/20 bg-primary-500/10">
+                <svg
+                  class="h-10 w-10 text-primary-400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <path d={step.icon} />
+                </svg>
+              </div>
+              <div class="mt-2 text-xs font-bold text-primary-400">{step.num}</div>
+              <h3 class="mt-2 text-xl font-semibold">{step.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-surface-200">{step.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,131 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const techStack = [
+  { name: "Go", desc: "Backend микросервисүүд" },
+  { name: "SvelteKit", desc: "Frontend application" },
+  { name: "Flutter", desc: "Mobile application" },
+  { name: "PostgreSQL", desc: "Primary database" },
+  { name: "MongoDB", desc: "CQRS read model" },
+  { name: "Redis", desc: "Cache & sessions" },
+  { name: "RabbitMQ", desc: "Message queue" },
+  { name: "Docker", desc: "Containerization" },
+  { name: "Traefik", desc: "API Gateway" },
+  { name: "gRPC", desc: "Inter-service communication" },
+  { name: "OpenTelemetry", desc: "Distributed tracing" },
+  { name: "Consul", desc: "Service discovery" },
+];
+
+const values = [
+  {
+    title: "AI-First",
+    desc: "Бүх модуль AI Agent-тай. Автоматжуулалт нь нэмэлт биш, суурь функционал.",
+  },
+  {
+    title: "Модульчлагдсан",
+    desc: "Монолит биш. Хэрэгтэй модулиа л идэвхжүүл, шаардлагагүйг унтраа.",
+  },
+  {
+    title: "Монголд зориулсан",
+    desc: "e-Barimt, QPay, банкны API, Монгол хэл — бүгд суурилуулсан.",
+  },
+  {
+    title: "Аюулгүй",
+    desc: "Байгууллага бүр тусдаа орчинтой. Өгөгдөл Монголын серверт.",
+  },
+];
+---
+
+<BaseLayout title="Бидний тухай — orinux ARP">
+  <section class="pt-32 pb-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <!-- Header -->
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold md:text-5xl">Бидний тухай</h1>
+        <p class="mt-4 text-lg text-surface-200">
+          Orinux LLC — Монголын бизнесүүдэд зориулсан дараа үеийн ARP платформ бүтээгч.
+        </p>
+      </div>
+
+      <!-- Mission -->
+      <div class="mx-auto mt-16 max-w-3xl">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
+          <h2 class="text-2xl font-bold">Эрхэм зорилго</h2>
+          <p class="mt-4 text-lg leading-relaxed text-surface-200">
+            Монголын аж ахуйн нэгж бүрт хүртээмжтэй, AI-д суурилсан бизнес удирдлагын платформ
+            бүтээх. ERP-ийн хуучин загварыг ARP-ээр солих — хүнийг давтагдах ажлаас чөлөөлж,
+            стратегийн шийдвэрт анхаарлаа хандуулах боломж олгох.
+          </p>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="mt-16">
+        <h2 class="text-center text-2xl font-bold">Үнэт зүйлс</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          {
+            values.map((v) => (
+              <div class="rounded-xl border border-white/10 bg-white/[0.03] p-6">
+                <h3 class="text-lg font-semibold">{v.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-surface-200">{v.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mt-20">
+        <h2 class="text-center text-2xl font-bold">Технологийн стек</h2>
+        <p class="mt-2 text-center text-surface-200">
+          Орчин үеийн, батлагдсан технологиуд дээр суурилсан.
+        </p>
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {
+            techStack.map((tech) => (
+              <div class="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500/10 text-xs font-bold text-primary-400">
+                  {tech.name.slice(0, 2)}
+                </div>
+                <div>
+                  <div class="text-sm font-medium">{tech.name}</div>
+                  <div class="text-xs text-surface-200">{tech.desc}</div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Numbers -->
+      <div class="mt-20 grid gap-8 rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:grid-cols-2 md:grid-cols-4">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-primary-400">40+</div>
+          <div class="mt-1 text-sm text-surface-200">Модуль</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-primary-400">21</div>
+          <div class="mt-1 text-sm text-surface-200">Tool/Сервис</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-primary-400">12+</div>
+          <div class="mt-1 text-sm text-surface-200">Салбар</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-primary-400">2026</div>
+          <div class="mt-1 text-sm text-surface-200">Байгуулагдсан</div>
+        </div>
+      </div>
+
+      <!-- Contact CTA -->
+      <div class="mt-16 text-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-8 py-3 font-medium transition-colors hover:bg-primary-500"
+        >
+          Бидэнтэй холбогдох
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

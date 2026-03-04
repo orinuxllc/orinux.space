@@ -1,0 +1,74 @@
+---
+const comparisons = [
+  {
+    erp: "Хүн бүх зүйлийг гараар оруулна",
+    arp: "AI Agent автомат оруулна, хүн батлана",
+  },
+  {
+    erp: "Тогтмол workflow дүрэм",
+    arp: "AI шийдвэр + Event-driven автоматжуулалт",
+  },
+  {
+    erp: "Нэг том suite худалдаж авах",
+    arp: "Хэрэгтэй модулиа л сонгоно",
+  },
+  {
+    erp: "Нэг байгууллагад суулгац",
+    arp: "Multi-tenant SaaS — хаанаас ч хандана",
+  },
+  {
+    erp: "Хүнд, удаан тохиргоо",
+    arp: "AI тохируулна, минутын дотор эхэлнэ",
+  },
+];
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Section Header -->
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold md:text-4xl">
+        ERP хуучирсан.
+        <span
+          class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+        >
+          ARP
+        </span> шинэ стандарт.
+      </h2>
+      <p class="mt-4 text-lg text-surface-200">
+        Уламжлалт ERP системүүд хүнээс хамааралтай. ARP нь AI Agent-ууд ажлыг гүйцэтгэж, хүн
+        зөвхөн стратеги, шийдвэрт анхаарна.
+      </p>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-white/10">
+      <!-- Header -->
+      <div class="grid grid-cols-2 bg-white/5">
+        <div class="border-r border-white/10 px-6 py-4">
+          <span class="text-sm font-medium text-surface-200">Хуучин ERP</span>
+        </div>
+        <div class="px-6 py-4">
+          <span class="text-sm font-medium text-primary-400">ARP (orinux)</span>
+        </div>
+      </div>
+
+      <!-- Rows -->
+      {
+        comparisons.map((row, i) => (
+          <div
+            class:list={[
+              "grid grid-cols-2",
+              i < comparisons.length - 1 && "border-b border-white/5",
+            ]}
+          >
+            <div class="border-r border-white/10 px-6 py-4 text-sm text-surface-200">
+              {row.erp}
+            </div>
+            <div class="px-6 py-4 text-sm text-white">{row.arp}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+---
+import { modules, categories } from "@/data/modules";
+---
+
+<section id="modules" class="py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold md:text-4xl">
+        <span
+          class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+        >
+          40+
+        </span> модуль, нэг платформ
+      </h2>
+      <p class="mt-4 text-lg text-surface-200">
+        Хэрэгтэй модулиа сонгоод шууд эхэл. Бүгдийг нь авах шаардлагагүй.
+      </p>
+    </div>
+
+    {
+      categories
+        .filter((cat) => cat.id !== "platform")
+        .map((cat) => (
+          <div class="mt-12">
+            <h3 class="mb-6 text-sm font-semibold uppercase tracking-wider text-surface-200">
+              {cat.name}
+            </h3>
+            <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {modules
+                .filter((m) => m.category === cat.id)
+                .map((mod) => (
+                  <div class="group flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4 transition-all hover:border-primary-500/20 hover:bg-white/[0.05]">
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 text-xs font-bold text-primary-400">
+                      {mod.nameEn.slice(0, 2).toUpperCase()}
+                    </div>
+                    <div class="min-w-0">
+                      <div class="text-sm font-medium">{mod.name}</div>
+                      <div class="mt-0.5 text-xs text-surface-200 line-clamp-2">{mod.desc}</div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        ))
+    }
+
+    <div class="mt-12 text-center">
+      <a
+        href="/modules"
+        class="inline-flex items-center gap-2 text-sm font-medium text-primary-400 transition-colors hover:text-primary-300"
+      >
+        Бүх модулиуд үзэх
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

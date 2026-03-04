@@ -1,0 +1,82 @@
+---
+const industries = [
+  {
+    name: "Уул уурхай",
+    desc: "Олборлолт, тоног төхөөрөмж, GPS мониторинг, лабораторийн шинжилгээ, аюулгүй байдал",
+    icon: "M2 20h20M5 20V8l7-5 7 5v12M9 20v-4h6v4",
+    modules: ["mining", "inventory", "hrm", "logistics"],
+  },
+  {
+    name: "Аялал жуулчлал",
+    desc: "Зочид буудал, тур захиалга, гид менежмент, онлайн төлбөр",
+    icon: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91",
+    modules: ["tourism", "ecommerce", "crm", "marketing"],
+  },
+  {
+    name: "Худалдаа",
+    desc: "Онлайн дэлгүүр, агуулах, нийлүүлэгч, хүргэлт, төлбөр, e-Barimt",
+    icon: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18M16 10a4 4 0 0 1-8 0",
+    modules: ["ecommerce", "inventory", "procurement", "logistics"],
+  },
+  {
+    name: "Эрүүл мэнд",
+    desc: "Өвчтөний бүртгэл, цаг захиалга, оношилгоо, эмийн сан",
+    icon: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z",
+    modules: ["clinic", "hrm", "finance", "crm"],
+  },
+  {
+    name: "Үйлдвэрлэл",
+    desc: "BOM, MRP, чанарын хяналт, үйлдвэрийн удирдлага",
+    icon: "M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z",
+    modules: ["factory", "inventory", "procurement", "hrm"],
+  },
+  {
+    name: "Санхүү & Даатгал",
+    desc: "Данс, тайлан, даатгалын полис, нөхөн олговор, зээл",
+    icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6",
+    modules: ["finance", "insurance", "invest", "pawnshop"],
+  },
+];
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold md:text-4xl">Салбар бүрийн шийдэл</h2>
+      <p class="mt-4 text-lg text-surface-200">
+        ARP нь ямар ч салбарт тохирно. Модулиудыг хослуулж өөрийн бизнест тохируулна.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        industries.map((ind) => (
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-primary-500/20 hover:bg-white/[0.05]">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/10 text-accent-400">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path d={ind.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold">{ind.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-surface-200">{ind.desc}</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              {ind.modules.map((m) => (
+                <span class="rounded-md bg-white/5 px-2 py-0.5 text-xs text-surface-200">
+                  {m}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
