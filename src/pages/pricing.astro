@@ -33,9 +33,9 @@ const faqs = [
 
 <BaseLayout title="Үнэ — orinux ARP">
   <section class="pt-32">
-    <div class="mx-auto max-w-3xl text-center">
-      <h1 class="text-4xl font-bold md:text-5xl">Энгийн, ил тод үнэ</h1>
-      <p class="mt-4 text-lg text-surface-200">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Энгийн, ил тод үнэ</h1>
+      <p class="mt-4 text-lg text-surface-300">
         Нуугдмал төлбөр байхгүй. Хэрэгтэй зүйлдээ л төлнө.
       </p>
     </div>
@@ -46,16 +46,20 @@ const faqs = [
   <!-- FAQ -->
   <section class="py-24">
     <div class="mx-auto max-w-3xl px-6">
-      <h2 class="text-center text-3xl font-bold">Түгээмэл асуулт</h2>
+      <h2 class="text-center text-3xl font-bold tracking-tight" data-reveal>Түгээмэл асуулт</h2>
 
       <div class="mt-12 space-y-4">
         {
-          faqs.map((faq) => (
-            <details class="group rounded-xl border border-white/10 bg-white/[0.03]">
+          faqs.map((faq, i) => (
+            <details
+              class="group rounded-xl border border-white/[0.08] bg-white/[0.02] transition-colors hover:border-white/15"
+              data-reveal
+              data-reveal-delay={String(Math.min(i + 1, 5))}
+            >
               <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-medium transition-colors hover:text-primary-400">
                 {faq.q}
                 <svg
-                  class="h-4 w-4 shrink-0 text-surface-200 transition-transform group-open:rotate-180"
+                  class="h-4 w-4 shrink-0 text-surface-400 transition-transform group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
@@ -64,7 +68,7 @@ const faqs = [
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div class="px-6 pb-4 text-sm leading-relaxed text-surface-200">{faq.a}</div>
+              <div class="px-6 pb-4 text-sm leading-relaxed text-surface-300">{faq.a}</div>
             </details>
           ))
         }

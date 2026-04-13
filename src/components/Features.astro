@@ -13,18 +13,22 @@ const iconPaths: Record<string, string> = {
 
 <section id="features" class="py-24">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold md:text-4xl">Яагаад ARP?</h2>
-      <p class="mt-4 text-lg text-surface-200">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Яагаад ARP?</h2>
+      <p class="mt-4 text-lg text-surface-300">
         Бизнесийн бүх процессыг нэг платформд, AI-ийн хүчээр.
       </p>
     </div>
 
     <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        features.map((feature) => (
-          <div class="group rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-primary-500/30 hover:bg-white/[0.06]">
-            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-400 transition-colors group-hover:bg-primary-500/20">
+        features.map((feature, i) => (
+          <div
+            class="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 hover-lift transition-all hover:border-primary-500/20 hover:bg-white/[0.05]"
+            data-reveal
+            data-reveal-delay={String(Math.min(i + 1, 5))}
+          >
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500/15 to-accent-500/15 text-primary-400 transition-all group-hover:from-primary-500/25 group-hover:to-accent-500/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/10">
               <svg
                 class="h-6 w-6"
                 fill="none"
@@ -37,8 +41,8 @@ const iconPaths: Record<string, string> = {
                 <path d={iconPaths[feature.icon] || iconPaths["blocks"]} />
               </svg>
             </div>
-            <h3 class="mt-5 text-lg font-semibold">{feature.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-surface-200">{feature.desc}</p>
+            <h3 class="mt-5 text-lg font-semibold tracking-tight">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-surface-300">{feature.desc}</p>
           </div>
         ))
       }

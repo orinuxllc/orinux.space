@@ -40,13 +40,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
+    <meta name="theme-color" content="#020617" />
     <title>{title}</title>
   </head>
-  <body class="bg-surface-950 text-white antialiased">
+  <body class="bg-surface-950 text-white antialiased bg-noise">
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
+
+    <script>
+      import "@/scripts/scroll-reveal";
+      import "@/scripts/counter";
+      import "@/scripts/header-scroll";
+    </script>
   </body>
 </html>

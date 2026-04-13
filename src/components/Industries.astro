@@ -41,18 +41,22 @@ const industries = [
 
 <section class="py-24">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold md:text-4xl">Салбар бүрийн шийдэл</h2>
-      <p class="mt-4 text-lg text-surface-200">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Салбар бүрийн шийдэл</h2>
+      <p class="mt-4 text-lg text-surface-300">
         ARP нь ямар ч салбарт тохирно. Модулиудыг хослуулж өөрийн бизнест тохируулна.
       </p>
     </div>
 
     <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        industries.map((ind) => (
-          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-primary-500/20 hover:bg-white/[0.05]">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/10 text-accent-400">
+        industries.map((ind, i) => (
+          <div
+            class="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7 hover-lift transition-all hover:border-accent-500/20 hover:bg-white/[0.04]"
+            data-reveal
+            data-reveal-delay={String(Math.min(i + 1, 5))}
+          >
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500/15 to-primary-500/10 text-accent-400 transition-all group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent-500/10">
               <svg
                 class="h-5 w-5"
                 fill="none"
@@ -65,11 +69,11 @@ const industries = [
                 <path d={ind.icon} />
               </svg>
             </div>
-            <h3 class="mt-4 text-lg font-semibold">{ind.name}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-surface-200">{ind.desc}</p>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight">{ind.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-surface-300">{ind.desc}</p>
             <div class="mt-4 flex flex-wrap gap-1.5">
               {ind.modules.map((m) => (
-                <span class="rounded-md bg-white/5 px-2 py-0.5 text-xs text-surface-200">
+                <span class="rounded-md border border-white/[0.06] bg-white/[0.04] px-2.5 py-1 text-xs text-surface-300">
                   {m}
                 </span>
               ))}

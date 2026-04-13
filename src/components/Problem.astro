@@ -25,47 +25,48 @@ const comparisons = [
 
 <section class="py-24">
   <div class="mx-auto max-w-7xl px-6">
-    <!-- Section Header -->
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold md:text-4xl">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
         ERP хуучирсан.
-        <span
-          class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
-        >
-          ARP
-        </span> шинэ стандарт.
+        <span class="text-gradient-accent">ARP</span> шинэ стандарт.
       </h2>
-      <p class="mt-4 text-lg text-surface-200">
+      <p class="mt-4 text-lg text-surface-300">
         Уламжлалт ERP системүүд хүнээс хамааралтай. ARP нь AI Agent-ууд ажлыг гүйцэтгэж, хүн
         зөвхөн стратеги, шийдвэрт анхаарна.
       </p>
     </div>
 
-    <!-- Comparison Table -->
-    <div class="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-white/10">
+    <div class="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02]" data-reveal data-reveal-delay="1">
       <!-- Header -->
-      <div class="grid grid-cols-2 bg-white/5">
-        <div class="border-r border-white/10 px-6 py-4">
-          <span class="text-sm font-medium text-surface-200">Хуучин ERP</span>
+      <div class="grid grid-cols-2 bg-white/[0.04]">
+        <div class="border-r border-white/[0.06] px-6 py-4">
+          <span class="text-sm font-medium text-surface-400">Хуучин ERP</span>
         </div>
         <div class="px-6 py-4">
-          <span class="text-sm font-medium text-primary-400">ARP (orinux)</span>
+          <span class="text-sm font-semibold text-primary-400">ARP (orinux)</span>
         </div>
       </div>
 
-      <!-- Rows -->
       {
         comparisons.map((row, i) => (
           <div
             class:list={[
-              "grid grid-cols-2",
-              i < comparisons.length - 1 && "border-b border-white/5",
+              "grid grid-cols-2 transition-colors hover:bg-white/[0.03]",
+              i < comparisons.length - 1 && "border-b border-white/[0.04]",
             ]}
           >
-            <div class="border-r border-white/10 px-6 py-4 text-sm text-surface-200">
+            <div class="flex items-center gap-3 border-r border-white/[0.06] px-6 py-4 text-sm text-surface-400">
+              <svg class="h-4 w-4 shrink-0 text-red-400/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
               {row.erp}
             </div>
-            <div class="px-6 py-4 text-sm text-white">{row.arp}</div>
+            <div class="flex items-center gap-3 px-6 py-4 text-sm text-white">
+              <svg class="h-4 w-4 shrink-0 text-primary-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              {row.arp}
+            </div>
           </div>
         ))
       }

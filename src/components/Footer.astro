@@ -4,13 +4,12 @@ const currentYear = new Date().getFullYear();
 const footerLinks = {
   product: [
     { label: "Модулиуд", href: "/modules" },
+    { label: "Үйлчилгээ", href: "/services" },
     { label: "Үнэ", href: "/pricing" },
-    { label: "Changelog", href: "#" },
   ],
   company: [
     { label: "Бидний тухай", href: "/about" },
     { label: "Холбоо барих", href: "/contact" },
-    { label: "Блог", href: "#" },
   ],
   legal: [
     { label: "Нууцлалын бодлого", href: "#" },
@@ -19,27 +18,42 @@ const footerLinks = {
 };
 ---
 
-<footer class="border-t border-white/10 bg-surface-950">
+<footer class="relative border-t border-white/[0.06] bg-surface-950">
+  <!-- Gradient top border -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent"></div>
+
   <div class="mx-auto max-w-7xl px-6 py-16">
-    <div class="grid gap-12 md:grid-cols-4">
+    <div class="grid gap-12 md:grid-cols-5">
       <!-- Brand -->
-      <div class="md:col-span-1">
-        <a href="/" class="flex items-center gap-2">
+      <div class="md:col-span-2">
+        <a href="/" class="group inline-flex items-center gap-2.5">
           <div
-            class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500"
+            class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg shadow-primary-500/20 transition-shadow group-hover:shadow-primary-500/40"
           >
             <span class="text-sm font-bold text-white">O</span>
           </div>
-          <span class="text-lg font-bold">orinux</span>
+          <span class="text-lg font-bold tracking-tight">orinux</span>
         </a>
-        <p class="mt-4 text-sm leading-relaxed text-surface-200">
-          Agentic Resource Planning — AI-ийн хүчээр бизнесээ удирд.
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-surface-400">
+          Agentic Resource Planning — AI Agent-ууд таны бизнес процессыг автомат удирдаж, хүнийг давтагдах ажлаас чөлөөлнө.
         </p>
+        <div class="mt-6 flex items-center gap-3 text-sm text-surface-400">
+          <svg class="h-4 w-4 text-primary-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          info@orinux.space
+        </div>
+        <div class="mt-2 flex items-center gap-3 text-sm text-surface-400">
+          <svg class="h-4 w-4 text-primary-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          +976 6003-4140
+        </div>
       </div>
 
       <!-- Product -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-surface-200">
+        <h3 class="mb-4 text-xs font-semibold uppercase tracking-widest text-surface-400">
           Бүтээгдэхүүн
         </h3>
         <ul class="space-y-3">
@@ -48,7 +62,7 @@ const footerLinks = {
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-surface-200 transition-colors hover:text-white"
+                  class="text-sm text-surface-400 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -60,7 +74,7 @@ const footerLinks = {
 
       <!-- Company -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-surface-200">
+        <h3 class="mb-4 text-xs font-semibold uppercase tracking-widest text-surface-400">
           Компани
         </h3>
         <ul class="space-y-3">
@@ -69,7 +83,7 @@ const footerLinks = {
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-surface-200 transition-colors hover:text-white"
+                  class="text-sm text-surface-400 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -81,7 +95,7 @@ const footerLinks = {
 
       <!-- Legal -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-surface-200">
+        <h3 class="mb-4 text-xs font-semibold uppercase tracking-widest text-surface-400">
           Хууль
         </h3>
         <ul class="space-y-3">
@@ -90,7 +104,7 @@ const footerLinks = {
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-surface-200 transition-colors hover:text-white"
+                  class="text-sm text-surface-400 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -103,26 +117,15 @@ const footerLinks = {
 
     <!-- Bottom -->
     <div
-      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row"
+      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 md:flex-row"
     >
-      <p class="text-sm text-surface-200">
+      <p class="text-sm text-surface-400">
         &copy; {currentYear} Orinux LLC. Бүх эрх хуулиар хамгаалагдсан.
       </p>
-      <div class="flex items-center gap-4">
-        <a
-          href="https://www.digitalocean.com/?refcode=bb0808766724&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg"
-            alt="DigitalOcean Referral Badge"
-            class="h-10"
-          />
-        </a>
+      <div class="flex items-center gap-5">
         <a
           href="#"
-          class="text-surface-200 transition-colors hover:text-white"
+          class="text-surface-400 transition-all hover:text-white hover:scale-110"
           aria-label="Facebook"
         >
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -133,7 +136,7 @@ const footerLinks = {
         </a>
         <a
           href="#"
-          class="text-surface-200 transition-colors hover:text-white"
+          class="text-surface-400 transition-all hover:text-white hover:scale-110"
           aria-label="LinkedIn"
         >
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

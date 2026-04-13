@@ -39,19 +39,18 @@ const values = [
 <BaseLayout title="Бидний тухай — orinux ARP">
   <section class="pt-32 pb-24">
     <div class="mx-auto max-w-7xl px-6">
-      <!-- Header -->
-      <div class="mx-auto max-w-3xl text-center">
-        <h1 class="text-4xl font-bold md:text-5xl">Бидний тухай</h1>
-        <p class="mt-4 text-lg text-surface-200">
+      <div class="mx-auto max-w-3xl text-center" data-reveal>
+        <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Бидний тухай</h1>
+        <p class="mt-4 text-lg text-surface-300">
           Orinux LLC — Монголын бизнесүүдэд зориулсан дараа үеийн ARP платформ бүтээгч.
         </p>
       </div>
 
       <!-- Mission -->
-      <div class="mx-auto mt-16 max-w-3xl">
-        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12">
-          <h2 class="text-2xl font-bold">Эрхэм зорилго</h2>
-          <p class="mt-4 text-lg leading-relaxed text-surface-200">
+      <div class="mx-auto mt-16 max-w-3xl" data-reveal data-reveal-delay="1">
+        <div class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 md:p-12">
+          <h2 class="text-2xl font-bold tracking-tight">Эрхэм зорилго</h2>
+          <p class="mt-4 text-lg leading-relaxed text-surface-300">
             Монголын аж ахуйн нэгж бүрт хүртээмжтэй, AI-д суурилсан бизнес удирдлагын платформ
             бүтээх. ERP-ийн хуучин загварыг ARP-ээр солих — хүнийг давтагдах ажлаас чөлөөлж,
             стратегийн шийдвэрт анхаарлаа хандуулах боломж олгох.
@@ -61,13 +60,17 @@ const values = [
 
       <!-- Values -->
       <div class="mt-16">
-        <h2 class="text-center text-2xl font-bold">Үнэт зүйлс</h2>
+        <h2 class="text-center text-2xl font-bold tracking-tight" data-reveal>Үнэт зүйлс</h2>
         <div class="mt-8 grid gap-6 md:grid-cols-2">
           {
-            values.map((v) => (
-              <div class="rounded-xl border border-white/10 bg-white/[0.03] p-6">
-                <h3 class="text-lg font-semibold">{v.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-surface-200">{v.desc}</p>
+            values.map((v, i) => (
+              <div
+                class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6 hover-lift transition-all hover:border-primary-500/15"
+                data-reveal
+                data-reveal-delay={String(i + 1)}
+              >
+                <h3 class="text-lg font-semibold tracking-tight">{v.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-surface-300">{v.desc}</p>
               </div>
             ))
           }
@@ -76,20 +79,20 @@ const values = [
 
       <!-- Tech Stack -->
       <div class="mt-20">
-        <h2 class="text-center text-2xl font-bold">Технологийн стек</h2>
-        <p class="mt-2 text-center text-surface-200">
+        <h2 class="text-center text-2xl font-bold tracking-tight" data-reveal>Технологийн стек</h2>
+        <p class="mt-2 text-center text-surface-300" data-reveal>
           Орчин үеийн, батлагдсан технологиуд дээр суурилсан.
         </p>
-        <div class="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" data-reveal>
           {
             techStack.map((tech) => (
-              <div class="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3">
-                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500/10 text-xs font-bold text-primary-400">
+              <div class="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 hover-lift transition-all hover:border-primary-500/15">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500/15 to-accent-500/10 text-xs font-bold text-primary-400">
                   {tech.name.slice(0, 2)}
                 </div>
                 <div>
                   <div class="text-sm font-medium">{tech.name}</div>
-                  <div class="text-xs text-surface-200">{tech.desc}</div>
+                  <div class="text-xs text-surface-400">{tech.desc}</div>
                 </div>
               </div>
             ))
@@ -98,32 +101,34 @@ const values = [
       </div>
 
       <!-- Numbers -->
-      <div class="mt-20 grid gap-8 rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:grid-cols-2 md:grid-cols-4">
-        <div class="text-center">
-          <div class="text-3xl font-bold text-primary-400">40+</div>
-          <div class="mt-1 text-sm text-surface-200">Модуль</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-primary-400">21</div>
-          <div class="mt-1 text-sm text-surface-200">Tool/Сервис</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-primary-400">12+</div>
-          <div class="mt-1 text-sm text-surface-200">Салбар</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-primary-400">2026</div>
-          <div class="mt-1 text-sm text-surface-200">Байгуулагдсан</div>
-        </div>
+      <div class="mt-20 grid gap-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 sm:grid-cols-2 md:grid-cols-4" data-reveal>
+        {
+          [
+            { value: "40", suffix: "+", label: "Модуль" },
+            { value: "21", suffix: "", label: "Tool/Сервис" },
+            { value: "12", suffix: "+", label: "Салбар" },
+            { value: "2026", suffix: "", label: "Байгуулагдсан" },
+          ].map((stat) => (
+            <div class="text-center">
+              <div
+                class="text-3xl font-bold text-primary-400"
+                data-count={stat.value}
+                data-suffix={stat.suffix}
+              >
+                {stat.value}{stat.suffix}
+              </div>
+              <div class="mt-1 text-sm text-surface-400">{stat.label}</div>
+            </div>
+          ))
+        }
       </div>
 
-      <!-- Contact CTA -->
-      <div class="mt-16 text-center">
-        <a
-          href="/contact"
-          class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-8 py-3 font-medium transition-colors hover:bg-primary-500"
-        >
+      <div class="mt-16 text-center" data-reveal>
+        <a href="/contact" class="btn-primary">
           Бидэнтэй холбогдох
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
         </a>
       </div>
     </div>
