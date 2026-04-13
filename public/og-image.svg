@@ -1,0 +1,103 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617"/>
+      <stop offset="50%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#020617"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="30%" cy="40%" r="40%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="70%" cy="60%" r="35%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.08">
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(60,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(120,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(180,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(240,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(300,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(360,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(420,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(480,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(540,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(600,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(660,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(720,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(780,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(840,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(900,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(960,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(1020,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(1080,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="0.5" transform="translate(1140,0)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,60)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,120)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,180)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,240)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,300)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,360)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,420)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,480)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="0.5" transform="translate(0,540)"/>
+  </g>
+
+  <!-- Glow blobs -->
+  <rect width="1200" height="630" fill="url(#blob1)"/>
+  <rect width="1200" height="630" fill="url(#blob2)"/>
+
+  <!-- Logo -->
+  <g transform="translate(80, 180)">
+    <rect width="56" height="56" rx="14" fill="url(#accent)"/>
+    <text x="28" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">O</text>
+  </g>
+
+  <!-- Brand -->
+  <text x="152" y="220" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="-0.5">orinux</text>
+
+  <!-- Title -->
+  <text x="80" y="310" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">Agentic Resource</text>
+  <text x="80" y="385" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="url(#accent)" letter-spacing="-2">Planning</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="440" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#94a3b8" letter-spacing="-0.3">AI Agent-ууд таны бизнес процессыг автомат удирддаг</text>
+
+  <!-- Stats bar -->
+  <g transform="translate(80, 490)">
+    <rect width="1040" height="1" fill="white" opacity="0.06"/>
+
+    <text x="0" y="50" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="white">40+</text>
+    <text x="0" y="75" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">Модуль</text>
+
+    <text x="260" y="50" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="white">21</text>
+    <text x="260" y="75" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">Tool</text>
+
+    <text x="520" y="50" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="white">500+</text>
+    <text x="520" y="75" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">API Endpoint</text>
+
+    <text x="780" y="50" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="white">24/7</text>
+    <text x="780" y="75" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">AI Agent</text>
+  </g>
+
+  <!-- Accent line top -->
+  <rect x="80" y="270" width="120" height="3" rx="1.5" fill="url(#accent)" opacity="0.6"/>
+
+  <!-- URL -->
+  <text x="1120" y="600" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#475569" text-anchor="end">orinux.space</text>
+</svg>

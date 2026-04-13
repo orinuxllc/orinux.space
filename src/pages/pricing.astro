@@ -31,7 +31,21 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Үнэ — orinux ARP">
+<BaseLayout title="Үнэ — orinux ARP" description="Orinux ARP тарифууд — Starter 99,000₮, Business 299,000₮, Enterprise тохиролцоно. 14 хоног үнэгүй туршилт.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.a
+        }
+      }))
+    })} />
+  </Fragment>
   <section class="pt-32">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
       <h1 class="text-4xl font-bold tracking-tight md:text-5xl">Энгийн, ил тод үнэ</h1>
