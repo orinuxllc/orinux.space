@@ -13,6 +13,7 @@
   let content = $state(null);
   let unpublished = $state(false);
   let loading = $state(false);
+  let loadError = $state("");
 
   // ---- ui state ----
   let view = $state("text");
@@ -91,12 +92,15 @@
 
   async function loadContent() {
     loading = true;
+    loadError = "";
     try {
       const r = await api("content");
       content = r.content;
       unpublished = !!r.unpublished;
+      if (!content) loadError = "GitHub дээр src/content/content.json олдсонгүй. GITHUB_REPO зөв эсэх + main branch дээр тэр файл байгаа эсэхийг шалгана уу.";
     } catch (e) {
-      flash(e.message, "bad");
+      loadError = String(e.message || e);
+      flash(loadError, "bad");
     } finally {
       loading = false;
     }
@@ -212,7 +216,19 @@
     </div>
   </div>
 {:else if !content}
-  <div class="gate"><div class="gate-card"><p>{loading ? "Ачааллаж байна…" : "Контент алга."}</p></div></div>
+  <div class="gate">
+    <div class="gate-card">
+      {#if loading}
+        <p>Ачааллаж байна…</p>
+      {:else}
+        <div class="brand sm"><span class="mark">O</span> orinux</div>
+        <p>Контент уншиж чадсангүй.</p>
+        {#if loadError}<div class="err">{loadError}</div>{/if}
+        <p class="cfg">Шалгах зүйл: <b>GITHUB_TOKEN</b> (Contents: Read and write), <b>GITHUB_REPO</b> зөв эсэх, env нэмсний дараа Vercel дээр <b>Redeploy</b> хийсэн эсэх.</p>
+        <button class="btn" onclick={loadContent}>↻ Дахин оролдох</button>
+      {/if}
+    </div>
+  </div>
 {:else}
   <!-- ===== app ===== -->
   <header class="top">
@@ -470,7 +486,9 @@
   .brand.sm { font-size: 17px; }
   .brand .mark { width: 26px; height: 26px; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; border-radius: 8px; font-size: 15px; }
   .brand .tag { font-size: 11px; font-weight: 600; color: var(--faint); border: 1px solid var(--line); padding: 2px 7px; border-radius: 99px; }
-  .err { margin-top: 16px; color: var(--bad); font-size: 13px; }
+  .err { margin-top: 16px; color: var(--bad); font-size: 13px; word-break: break-word; }
+  .cfg { font-size: 12px; color: var(--faint); margin: 16px 0; line-height: 1.6; }
+  .cfg b { color: var(--dim); }
 
   .top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 12px 18px; background: rgba(10,12,16,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   .spacer { flex: 1; }
