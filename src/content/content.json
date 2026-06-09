@@ -744,6 +744,58 @@
     "final_sub": [
       "AI Agent-ууд таны бизнес процессыг 24/7 автоматжуулна. Демо авч, ARP-ийн хүчийг мэдрээрэй.",
       "AI agents automate your processes 24/7. Get a demo and feel the power of ARP."
+    ],
+    "nav_news": [
+      "Мэдээ",
+      "News"
+    ],
+    "news_eyebrow": [
+      "Мэдээ & мэдээлэл",
+      "News & updates"
+    ],
+    "news_h2_html": [
+      "Orinux-ийн <em>сүүлийн үеийн</em> мэдээ",
+      "Latest from <em>Orinux</em>"
+    ],
+    "news_sub": [
+      "Бүтээгдэхүүний шинэчлэл, түншлэл, салбарын дүн шинжилгээ.",
+      "Product updates, partnerships and industry insight."
+    ],
+    "news_read": [
+      "мин унших",
+      "min read"
+    ],
+    "news_more": [
+      "Бүх мэдээ",
+      "All news"
+    ],
+    "news_back": [
+      "← Мэдээ рүү буцах",
+      "← Back to news"
+    ],
+    "news_empty": [
+      "Одоогоор мэдээ алга.",
+      "No news yet."
+    ],
+    "news_page_h1": [
+      "Мэдээ & мэдээлэл",
+      "News & updates"
+    ],
+    "nav_team": [
+      "Баг",
+      "Team"
+    ],
+    "team_eyebrow": [
+      "Бидний баг",
+      "Our team"
+    ],
+    "team_h2_html": [
+      "Orinux-ийг <em>бүтээж буй</em> хүмүүс",
+      "The people <em>building</em> Orinux"
+    ],
+    "team_sub": [
+      "Технологи, бизнес, дизайны туршлагатай баг.",
+      "A team with deep technology, business and design experience."
     ]
   },
   "heroStats": [
@@ -1389,6 +1441,35 @@
       "qEn": "Can I take only the modules I need?",
       "a": "Мэдээж. ARP бүхэлдээ модульчлагдсан. Эхэндээ 2-3 модулиар эхлээд, шаардлага гарах бүрд нэмж болно. Хэрэглэснээрээ л төлнө.",
       "aEn": "Of course. ARP is fully modular. Start with 2–3 modules and add more whenever you need. You only pay for what you use."
+    }
+  ],
+  "teams": [
+    {
+      "name": "Б. Батэрдэнэ",
+      "nameEn": "B. Baterdene",
+      "role": "Үүсгэн байгуулагч, CEO",
+      "roleEn": "Founder, CEO",
+      "photo": "",
+      "bio": "Бүтээгдэхүүн ба стратегийн чиглэлээр тэргүүлдэг.",
+      "bioEn": "Leads product and strategy."
+    },
+    {
+      "name": "Орин баг",
+      "nameEn": "Orin team",
+      "role": "Инженерчлэл",
+      "roleEn": "Engineering",
+      "photo": "",
+      "bio": "AI-агент платформыг хөгжүүлдэг.",
+      "bioEn": "Builds the AI-agent platform."
+    },
+    {
+      "name": "Дизайн баг",
+      "nameEn": "Design team",
+      "role": "Бүтээгдэхүүний дизайн",
+      "roleEn": "Product design",
+      "photo": "",
+      "bio": "Хэрэглэгчийн туршлагыг хариуцдаг.",
+      "bioEn": "Owns the user experience."
     }
   ]
 }

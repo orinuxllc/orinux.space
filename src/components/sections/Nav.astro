@@ -12,6 +12,8 @@ const t = (k: string) => mn(k, content);
       <a href="/modules" data-i18n="nav_modules" set:html={t("nav_modules")}></a>
       <a href="/#pricing" data-i18n="nav_pricing" set:html={t("nav_pricing")}></a>
       <a href="/#industries" data-i18n="nav_industries" set:html={t("nav_industries")}></a>
+      <a href="/#team" data-i18n="nav_team" set:html={t("nav_team")}></a>
+      <a href="/news" data-i18n="nav_news" set:html={t("nav_news")}></a>
       <a href="/#faq" data-i18n="nav_faq" set:html={t("nav_faq")}></a>
     </div>
     <div class="nav-actions">
@@ -25,7 +27,6 @@ const t = (k: string) => mn(k, content);
           <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
         </button>
       </div>
-      {!preview && <a class="login" href="/admin" data-i18n="nav_login" set:html={t("nav_login")}></a>}
       <a class="btn btn-primary nav-cta" href="/#demo" data-i18n="nav_cta" set:html={t("nav_cta")}></a>
       <button class="menu-btn" aria-label="Цэс">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>

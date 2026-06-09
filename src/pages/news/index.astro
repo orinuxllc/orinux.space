@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/sections/PageHeader.astro";
+import News from "@/components/sections/News.astro";
+import FinalCta from "@/components/sections/FinalCta.astro";
+import { content } from "@/lib/content";
+---
+<BaseLayout content={content} title={`Мэдээ — ${content.meta.title}`}>
+  <PageHeader
+    eyebrow="Мэдээ & мэдээлэл" eyebrowEn="News & updates"
+    title={'Мэдээ & <span class="grad-text">мэдээлэл</span>'} titleEn={'News & <span class="grad-text">updates</span>'}
+    sub="Бүтээгдэхүүний шинэчлэл, түншлэл, салбарын дүн шинжилгээ." subEn="Product updates, partnerships and industry insight."
+  />
+  <News content={content} />
+  <FinalCta content={content} />
+</BaseLayout>

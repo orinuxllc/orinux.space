@@ -1,5 +1,5 @@
 ---
-import { type Content } from "@/lib/content";
+import { news as staticNews, type Content, type News } from "@/lib/content";
 import Hero from "@/components/sections/Hero.astro";
 import Trust from "@/components/sections/Trust.astro";
 import Platform from "@/components/sections/Platform.astro";
@@ -14,10 +14,12 @@ import IndustryStage from "@/components/sections/IndustryStage.astro";
 import Industries from "@/components/sections/Industries.astro";
 import Demo from "@/components/sections/Demo.astro";
 import Faq from "@/components/sections/Faq.astro";
+import News from "@/components/sections/News.astro";
+import Team from "@/components/sections/Team.astro";
 import FinalCta from "@/components/sections/FinalCta.astro";
 
-interface Props { content: Content }
-const { content } = Astro.props;
+interface Props { content: Content; news?: News }
+const { content, news = staticNews } = Astro.props;
 ---
 <Hero content={content} />
 <Trust content={content} />
@@ -33,4 +35,6 @@ const { content } = Astro.props;
 <Industries content={content} />
 <Demo content={content} />
 <Faq content={content} />
+<Team content={content} />
+<News content={content} news={news} limit={3} />
 <FinalCta content={content} />

@@ -5,17 +5,22 @@ export const prerender = false;
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Page from "@/components/Page.astro";
-import { content as staticContent } from "@/lib/content";
+import { content as staticContent, news as staticNews } from "@/lib/content";
 import { getJson, DRAFT_BRANCH } from "@/server/github.js";
 
 let content = staticContent;
+let news = staticNews;
 try {
-  const draft = await getJson("src/content/content.json", DRAFT_BRANCH());
-  if (draft?.json) content = draft.json as typeof staticContent;
+  const [c, n] = await Promise.all([
+    getJson("src/content/content.json", DRAFT_BRANCH()).catch(() => null),
+    getJson("src/content/news.json", DRAFT_BRANCH()).catch(() => null),
+  ]);
+  if (c?.json) content = c.json as typeof staticContent;
+  if (n?.json) news = n.json as typeof staticNews;
 } catch (e) {
   // No GitHub config / no draft branch — fall back to the committed content.
 }
 ---
 <BaseLayout content={content} preview>
-  <Page content={content} />
+  <Page content={content} news={news} />
 </BaseLayout>

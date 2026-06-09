@@ -19,10 +19,14 @@ editable content is JSON committed to GitHub branches and served via Astro API r
 
 ## Architecture
 
-- **Single content source:** `src/content/content.json` — the i18n dictionary (`i18n`, MN/EN pairs)
-  plus structured lists (`modules`, `features`, `services`, `industries`, `pricing`, `faq`, `trust`,
-  `heroStats`, `resultStats`, `quote`, `contact`, `footer`, `meta`). Imported at build by
-  `src/lib/content.ts`. This is the live, admin-editable content.
+- **Content sources:** `src/content/content.json` — the i18n dictionary (`i18n`, MN/EN pairs) plus
+  structured lists (`modules`, `features`, `services`, `industries`, `pricing`, `faq`, `trust`,
+  `teams`, `heroStats`, `resultStats`, `quote`, `contact`, `footer`, `meta`). The editorial news feed
+  lives in a SEPARATE `src/content/news.json` (`{ items: [...] }`) so frequent news edits don't churn
+  the big dictionary. Both are imported at build by `src/lib/content.ts` (exports `content` + `news`)
+  and are the live, admin-editable content. The admin's `content`/`save` API read & write both files;
+  `/preview` loads both from the draft branch. News pages: `News.astro` section + `/news` listing +
+  `/news/[slug]` detail (prerendered via `getStaticPaths`). Team: `Team.astro` section on the home page.
 - **Rendering:** public pages are prerendered (`output: "static"`). Section components live in
   `src/components/sections/*.astro`; `Page.astro` composes the home page; each takes a `content` prop
   so the same components render the preview from draft content.

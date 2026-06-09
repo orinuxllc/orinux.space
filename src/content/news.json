@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "slug": "orinux-launch",
+      "feature": true,
+      "tag": "Бүтээгдэхүүн",
+      "tagEn": "Product",
+      "date": "2026-06-09",
+      "read": "4",
+      "cover": "",
+      "author": "Orinux баг",
+      "authorEn": "Orinux team",
+      "role": "Бүтээгдэхүүн",
+      "roleEn": "Product",
+      "title": "Orinux ARP — агентлаг нөөц төлөвлөлтийн платформоо танилцууллаа",
+      "titleEn": "Introducing Orinux ARP — the agentic resource planning platform",
+      "excerpt": "Бид Монголын бизнесүүдэд зориулсан AI-агент суурьтай нөөц төлөвлөлтийн системээ нээлээ.",
+      "excerptEn": "We are unveiling our AI-agent-driven resource planning system built for Mongolian businesses.",
+      "body": [
+        {
+          "mn": "Orinux ARP нь уламжлалт ERP системийн орлуулагч биш, харин дараагийн үеийн шийдэл юм. Агентлаг архитектур нь өдөр тутмын ажиллагааны шийдвэрийг автоматжуулж, багуудыг давтагдсан ажлаас чөлөөлдөг.",
+          "en": "Orinux ARP is not just another ERP — it is the next generation. Its agentic architecture automates day-to-day operational decisions and frees teams from repetitive work."
+        },
+        {
+          "mn": "Платформ нь санхүү, нөөц, хүний нөөц, нийлүүлэлтийн сүлжээг нэг дороос удирдаж, бодит цагийн дүн шинжилгээ өгдөг.",
+          "en": "The platform manages finance, inventory, HR and supply chain from one place, giving real-time analytics."
+        },
+        {
+          "mn": "Бид эхний шатанд уул уурхай, үйлдвэрлэл, жижиглэн худалдааны салбарт төвлөрч байна.",
+          "en": "In the first phase we are focusing on mining, manufacturing and retail."
+        }
+      ]
+    },
+    {
+      "slug": "agentic-vs-erp",
+      "feature": false,
+      "tag": "Дүн шинжилгээ",
+      "tagEn": "Insight",
+      "date": "2026-05-22",
+      "read": "6",
+      "cover": "",
+      "author": "Orinux баг",
+      "authorEn": "Orinux team",
+      "role": "Стратеги",
+      "roleEn": "Strategy",
+      "title": "ERP vs ARP: яагаад агентлаг хандлага илүү вэ?",
+      "titleEn": "ERP vs ARP: why the agentic approach wins",
+      "excerpt": "Уламжлалт ERP нь өгөгдөл хадгалдаг. ARP нь шийдвэр гаргадаг. Ялгааг тайлбарлая.",
+      "excerptEn": "Traditional ERP stores data. ARP makes decisions. Let us explain the difference.",
+      "body": [
+        {
+          "mn": "ERP систем нь өгөгдлийг бүртгэж, тайлагнадаг хэдий ч шийдвэрийг хүн гаргадаг. Энэ нь удаашрал, алдаа үүсгэдэг.",
+          "en": "ERP systems record and report data, but humans still make the decisions — creating delays and errors."
+        },
+        {
+          "mn": "Orinux ARP нь AI-агентуудаар дамжуулан давтагдсан шийдвэрийг автоматжуулж, хүнийг стратегийн ажилд төвлөрүүлдэг.",
+          "en": "Orinux ARP automates repetitive decisions through AI agents, letting people focus on strategy."
+        }
+      ]
+    }
+  ]
+}

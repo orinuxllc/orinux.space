@@ -8,9 +8,10 @@ import { json, readBody } from "@/server/http.js";
 
 export const prerender = false;
 const CONTENT_PATH = "src/content/content.json";
+const NEWS_PATH = "src/content/news.json";
 
 export const POST: APIRoute = async ({ request }) => {
-  const { token, content, users } = await readBody(request);
+  const { token, content, news, users } = await readBody(request);
   if (!token) return json({ error: "token шаардлагатай" }, 400);
 
   let user, access;
@@ -39,6 +40,20 @@ export const POST: APIRoute = async ({ request }) => {
         DRAFT_BRANCH(),
       );
       commits.push({ what: "content", url: r.commit?.html_url });
+    }
+
+    if (news) {
+      if (typeof news !== "object" || !Array.isArray(news.items)) {
+        return json({ error: "Мэдээний бүтэц буруу (items массив байх ёстой)" }, 400);
+      }
+      await ensureBranch(DRAFT_BRANCH());
+      const r = await putFile(
+        NEWS_PATH,
+        JSON.stringify(news, null, 2) + "\n",
+        `Админ: ноорог мэдээ (${user.email})`,
+        DRAFT_BRANCH(),
+      );
+      commits.push({ what: "news", url: r.commit?.html_url });
     }
 
     if (users) {

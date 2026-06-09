@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { content, newsItems, isImgBlock, mn, type NewsItem } from "@/lib/content";
+
+export function getStaticPaths() {
+  return newsItems().map((n) => ({ params: { slug: n.slug }, props: { item: n } }));
+}
+
+interface Props { item: NewsItem }
+const { item } = Astro.props;
+const t = (k: string) => mn(k, content);
+const fmt = (d: string) => (d || "").replace(/-/g, " · ");
+const avatar = (item.author || "O").trim().charAt(0).toUpperCase();
+---
+<BaseLayout content={content} title={`${item.title} — ${content.meta.title}`}>
+  <article class="article">
+    <div class="wrap article-wrap">
+      <a class="article-back" href="/news"><span data-i18n="news_back" set:html={t("news_back")}></span></a>
+
+      <div class="article-meta">
+        <span class="news-tag" data-bi data-mn={item.tag} data-en={item.tagEn || item.tag}>{item.tag}</span>
+        <span class="news-date">{fmt(item.date)}</span>
+        {item.read && <span class="news-date" data-bi data-mn={`${item.read} ${t("news_read")}`} data-en={`${item.read} ${content.i18n.news_read?.[1] || ""}`}>{item.read} {t("news_read")}</span>}
+      </div>
+
+      <h1 class="article-title" data-bi data-mn={item.title} data-en={item.titleEn || item.title}>{item.title}</h1>
+
+      {item.excerpt && (
+        <p class="article-lead" data-bi data-mn={item.excerpt} data-en={item.excerptEn || item.excerpt}>{item.excerpt}</p>
+      )}
+
+      <div class="article-byline">
+        <span class="article-av">{avatar}</span>
+        <div>
+          <div class="article-author" data-bi data-mn={item.author || ""} data-en={item.authorEn || item.author || ""}>{item.author}</div>
+          {item.role && <div class="article-role" data-bi data-mn={item.role} data-en={item.roleEn || item.role}>{item.role}</div>}
+        </div>
+      </div>
+
+      {item.cover && <div class="article-cover" style={`background-image:url('${item.cover}')`}></div>}
+
+      <div class="article-body">
+        {item.body.map((b) => (
+          isImgBlock(b) ? (
+            <figure class="article-fig">
+              <img src={b.img} alt={b.cap || ""} loading="lazy" />
+              {b.cap && <figcaption data-bi data-mn={b.cap} data-en={b.capEn || b.cap}>{b.cap}</figcaption>}
+            </figure>
+          ) : (
+            <p data-bi data-mn={b.mn} data-en={b.en || b.mn}>{b.mn}</p>
+          )
+        ))}
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .article { padding: 130px 0 40px; }
+  .article-wrap { max-width: 760px; }
+  .article-back { display: inline-block; color: var(--text-dim, #aeb6c6); font-size: 14px; margin-bottom: 26px; text-decoration: none; }
+  .article-back:hover { color: var(--text, #fff); }
+  .article-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .article-title { font-family: var(--display, "Unbounded", sans-serif); font-size: clamp(28px, 5vw, 46px); line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+  .article-lead { margin: 18px 0 0; font-size: clamp(16px, 2vw, 20px); color: var(--text-dim, #aeb6c6); line-height: 1.6; }
+  .article-byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 8px; }
+  .article-av { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--accent, #6366f1), var(--accent-2, #8b5cf6)); }
+  .article-author { font-weight: 600; font-size: 14px; }
+  .article-role { font-size: 12px; color: var(--text-faint, #7c8598); }
+  .article-cover { height: clamp(200px, 38vw, 380px); border-radius: 18px; background-size: cover; background-position: center; margin: 24px 0 8px; border: 1px solid var(--line, rgba(255,255,255,.08)); }
+  .article-body { margin-top: 18px; }
+  .article-body p { font-size: 17px; line-height: 1.8; color: var(--text, #e6e9f0); margin: 18px 0; }
+  .article-fig { margin: 26px 0; }
+  .article-fig img { width: 100%; height: auto; border-radius: 14px; display: block; border: 1px solid var(--line, rgba(255,255,255,.08)); }
+  .article-fig figcaption { margin-top: 8px; font-size: 13px; color: var(--text-faint, #7c8598); text-align: center; }
+</style>

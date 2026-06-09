@@ -1,0 +1,48 @@
+---
+import { mn, newsItems, news as staticNews, type Content, type News } from "@/lib/content";
+interface Props { content: Content; news?: News; limit?: number }
+const { content, news = staticNews, limit } = Astro.props;
+const t = (k: string) => mn(k, content);
+let items = newsItems(news);
+if (limit) items = items.slice(0, limit);
+const fmt = (d: string) => (d || "").replace(/-/g, " · ");
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+---
+<section class="s-pad" id="news" data-screen-label="News">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="news_eyebrow" set:html={t("news_eyebrow")}></span></span>
+      <h2 data-i18n="news_h2_html" set:html={t("news_h2_html")}></h2>
+      <p data-i18n="news_sub" set:html={t("news_sub")}></p>
+    </div>
+
+    {items.length === 0 ? (
+      <p class="news-empty" data-i18n="news_empty" set:html={t("news_empty")}></p>
+    ) : (
+      <div class="news-grid reveal d1">
+        {items.map((n) => (
+          <a class:list={["news-card", n.feature && "feature"]} href={`/news/${n.slug}`}>
+            {n.cover && <div class="news-thumb" style={`background-image:url('${n.cover}')`}></div>}
+            <div class="news-tagline">
+              <span class="news-tag" data-bi data-mn={n.tag} data-en={n.tagEn || n.tag}>{n.tag}</span>
+              <span class="news-date">{fmt(n.date)}</span>
+            </div>
+            <h3 class="news-title" data-bi data-mn={n.title} data-en={n.titleEn || n.title}>{n.title}</h3>
+            {n.excerpt && (
+              <p class="news-excerpt" data-bi data-mn={n.excerpt} data-en={n.excerptEn || n.excerpt}>{n.excerpt}</p>
+            )}
+            <span class="news-meta">
+              {n.read && <span data-bi data-mn={`${n.read} ${t("news_read")}`} data-en={`${n.read} ${content.i18n.news_read?.[1] || ""}`}>{n.read} {t("news_read")}</span>}
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+
+    {limit && items.length > 0 && (
+      <div class="news-more-wrap reveal">
+        <a class="btn btn-ghost news-more" href="/news"><span data-i18n="news_more" set:html={t("news_more")}></span><Fragment set:html={arrow} /></a>
+      </div>
+    )}
+  </div>
+</section>

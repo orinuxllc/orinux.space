@@ -195,6 +195,11 @@
 
   var lang = "mn";
   try { lang = localStorage.getItem("orinux-lang") || "mn"; } catch (e) {}
+  // A ?lang= URL param wins (used by the admin preview iframe + shareable links).
+  try {
+    var qlang = new URLSearchParams(location.search).get("lang");
+    if (qlang === "mn" || qlang === "en") lang = qlang;
+  } catch (e) {}
 
   function apply(l) {
     var idx = l === "en" ? 1 : 0;

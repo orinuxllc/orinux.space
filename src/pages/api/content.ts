@@ -9,6 +9,7 @@ import { json, readBody } from "@/server/http.js";
 
 export const prerender = false;
 const CONTENT_PATH = "src/content/content.json";
+const NEWS_PATH = "src/content/news.json";
 
 export const POST: APIRoute = async ({ request }) => {
   const { token } = await readBody(request);
@@ -35,15 +36,19 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    const [draft, prod] = await Promise.all([
+    const [draft, prod, newsDraft, newsProd] = await Promise.all([
       getJson(CONTENT_PATH, DRAFT_BRANCH()).catch(() => null),
       getJson(CONTENT_PATH, PROD_BRANCH()).catch(() => null),
+      getJson(NEWS_PATH, DRAFT_BRANCH()).catch(() => null),
+      getJson(NEWS_PATH, PROD_BRANCH()).catch(() => null),
     ]);
     const content = draft?.json || prod?.json || null;
+    const news = newsDraft?.json || newsProd?.json || { items: [] };
     const unpublished = !!(
-      draft?.json && prod?.json && JSON.stringify(draft.json) !== JSON.stringify(prod.json)
+      (draft?.json && prod?.json && JSON.stringify(draft.json) !== JSON.stringify(prod.json)) ||
+      (newsDraft?.json && newsProd?.json && JSON.stringify(newsDraft.json) !== JSON.stringify(newsProd.json))
     );
-    return json({ ok: true, content, unpublished });
+    return json({ ok: true, content, news, unpublished });
   } catch (e: any) {
     return json({ error: "Агуулга уншиж чадсангүй", detail: String(e?.message || e) }, 500);
   }

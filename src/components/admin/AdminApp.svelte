@@ -11,6 +11,7 @@
 
   // ---- content state ----
   let content = $state(null);
+  let news = $state({ items: [] });   // editorial feed (separate news.json)
   let unpublished = $state(false);
   let loading = $state(false);
   let loadError = $state("");
@@ -21,6 +22,17 @@
   let openGroups = $state({});
   let toast = $state(null);         // { kind: 'ok'|'bad', text }
   let busy = $state("");            // label of in-flight action
+
+  // ---- preview state ----
+  let pvDevice = $state("desktop"); // mobile | tablet | desktop
+  let pvLang = $state("mn");        // mn | en
+  let pvExpanded = $state(false);
+  let pvNonce = $state(0);          // bump to force iframe reload
+  const PV_DEVICES = [
+    { id: "mobile", label: "📱", w: "390px" },
+    { id: "tablet", label: "▭", w: "834px" },
+    { id: "desktop", label: "🖥", w: "100%" },
+  ];
 
   // ---- side panels data ----
   let submissions = $state(null);
@@ -96,6 +108,8 @@
     try {
       const r = await api("content");
       content = r.content;
+      news = r.news && Array.isArray(r.news.items) ? r.news : { items: [] };
+      if (content && !Array.isArray(content.teams)) content.teams = [];
       unpublished = !!r.unpublished;
       if (!content) loadError = "GitHub дээр src/content/content.json олдсонгүй. GITHUB_REPO зөв эсэх + main branch дээр тэр файл байгаа эсэхийг шалгана уу.";
     } catch (e) {
@@ -109,7 +123,7 @@
   async function save() {
     busy = "save";
     try {
-      await api("save", { content });
+      await api("save", { content, news });
       unpublished = true;
       flash("Ноорогт хадгаллаа ✓");
     } catch (e) { flash(e.message, "bad"); }
@@ -165,6 +179,21 @@
     finally { uploadingFor = ""; }
   }
 
+  // ---------- preview ----------
+  // Save the draft first (so /preview shows your latest edits), then reload the
+  // iframe — same flow as urgam's live preview.
+  async function refreshPreview(saveFirst = true) {
+    if (saveFirst) {
+      busy = "preview";
+      try { await api("save", { content, news }); unpublished = true; }
+      catch (e) { flash(e.message, "bad"); busy = ""; return; }
+      busy = "";
+    }
+    pvNonce++;
+  }
+  let pvSrc = $derived(`/preview?preview=1&lang=${pvLang}&n=${pvNonce}`);
+  let pvWidth = $derived(PV_DEVICES.find((d) => d.id === pvDevice)?.w || "100%");
+
   // ---------- list helpers ----------
   function move(arr, i, d) {
     const j = i + d;
@@ -172,6 +201,35 @@
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   function removeAt(arr, i) { arr.splice(i, 1); }
+
+  // ---------- news helpers (separate news.json) ----------
+  function slugify(s) {
+    return (s || "")
+      .toLowerCase().trim()
+      .replace(/[^a-z0-9Ѐ-ӿ\s-]/g, "")
+      .replace(/\s+/g, "-").replace(/-+/g, "-").slice(0, 60) || ("news-" + (news.items.length + 1));
+  }
+  function addNews() {
+    news.items.unshift({
+      slug: "news-" + (news.items.length + 1),
+      feature: false, tag: "Мэдээ", tagEn: "News",
+      date: new Date().toISOString().slice(0, 10), read: "3", cover: "",
+      author: "Orinux баг", authorEn: "Orinux team", role: "", roleEn: "",
+      title: "", titleEn: "", excerpt: "", excerptEn: "",
+      body: [{ mn: "", en: "" }],
+    });
+  }
+  const isImgBlk = (b) => b && typeof b === "object" && "img" in b;
+  function addBlock(item, kind) {
+    if (kind === "img") item.body.push({ img: "", cap: "", capEn: "" });
+    else item.body.push({ mn: "", en: "" });
+  }
+
+  // ---------- team helpers ----------
+  function addTeam() {
+    if (!Array.isArray(content.teams)) content.teams = [];
+    content.teams.push({ name: "", nameEn: "", role: "", roleEn: "", photo: "", bio: "", bioEn: "" });
+  }
 
   // ---------- derived: grouped i18n ----------
   let groups = $derived.by(() => {
@@ -187,19 +245,29 @@
     return g;
   });
 
-  const SECTIONS = [
-    { id: "text", label: "Текст (МН/EN)" },
-    { id: "modules", label: "Модулиуд" },
-    { id: "pricing", label: "Үнэ" },
-    { id: "features", label: "Онцлог" },
-    { id: "services", label: "Үйлчилгээ" },
-    { id: "industries", label: "Салбарууд" },
-    { id: "faq", label: "Асуулт хариулт" },
-    { id: "trust", label: "Лого" },
-    { id: "meta", label: "Холбоо / SEO" },
-    { id: "preview", label: "Урьдчилж үзэх" },
-    { id: "submissions", label: "Демо хүсэлт" },
-    { id: "history", label: "Түүх" },
+  const SECTION_GROUPS = [
+    { title: "Сайт", items: [
+      { id: "text", label: "Текст (МН/EN)" },
+      { id: "modules", label: "Модулиуд" },
+      { id: "pricing", label: "Үнэ" },
+      { id: "features", label: "Онцлог" },
+      { id: "services", label: "Үйлчилгээ" },
+      { id: "industries", label: "Салбарууд" },
+      { id: "faq", label: "Асуулт хариулт" },
+    ]},
+    { title: "Мэдээ & баг", items: [
+      { id: "news", label: "Мэдээ" },
+      { id: "team", label: "Баг" },
+    ]},
+    { title: "Бусад", items: [
+      { id: "trust", label: "Лого" },
+      { id: "meta", label: "Холбоо / SEO" },
+    ]},
+    { title: "Систем", items: [
+      { id: "preview", label: "Урьдчилж үзэх" },
+      { id: "submissions", label: "Демо хүсэлт" },
+      { id: "history", label: "Түүх" },
+    ]},
   ];
 </script>
 
@@ -249,10 +317,14 @@
 
   <div class="layout">
     <nav class="side">
-      {#each SECTIONS as s}
-        <button class:active={view===s.id} onclick={() => { view = s.id; if (s.id==="submissions") openSubmissions(); if (s.id==="history") openHistory(); }}>{s.label}</button>
+      {#each SECTION_GROUPS as g}
+        <div class="side-grp">{g.title}</div>
+        {#each g.items as s}
+          <button class:active={view===s.id} onclick={() => { view = s.id; if (s.id==="submissions") openSubmissions(); if (s.id==="history") openHistory(); }}>{s.label}</button>
+        {/each}
       {/each}
       {#if user.canManage}
+        <div class="side-grp">Эрх</div>
         <button class:active={view==="access"} onclick={() => view="access"}>Хандалт</button>
       {/if}
     </nav>
@@ -392,6 +464,88 @@
           </div>
         {/each}
 
+      {:else if view === "news"}
+        <div class="head"><h2>Мэдээ ({news.items.length})</h2>
+          <button class="btn primary" onclick={addNews}>+ Шинэ мэдээ</button></div>
+        <p class="hint">Тусдаа <code>news.json</code> файлд хадгалагдана. Эхний нүд = Монгол, хоёр дахь = English. Биеийн хэсэгт текст догол мөр эсвэл зураг нэмж, дарааллыг өөрчилж болно.</p>
+        {#if !news.items.length}<p class="hint">Мэдээ алга. “+ Шинэ мэдээ” дарж эхэл.</p>{/if}
+        {#each news.items as n, i}
+          <div class="card">
+            <div class="row">
+              <input class="w-code" placeholder="slug (url)" bind:value={n.slug} />
+              <input placeholder="Огноо (2026-06-09)" bind:value={n.date} />
+              <input class="w-code" placeholder="Унших (мин)" bind:value={n.read} />
+              <label class="chk"><input type="checkbox" bind:checked={n.feature} /> Онцлох</label>
+              <div class="rowsp"></div>
+              <button class="ic" onclick={() => move(news.items, i, -1)}>↑</button>
+              <button class="ic" onclick={() => move(news.items, i, 1)}>↓</button>
+              <button class="ic bad" onclick={() => removeAt(news.items, i)}>✕</button>
+            </div>
+            <div class="row2"><input placeholder="Шошго (МН)" bind:value={n.tag} /><input placeholder="Tag (EN)" bind:value={n.tagEn} /></div>
+            <div class="row2">
+              <input placeholder="Гарчиг (МН)" bind:value={n.title} oninput={() => { if (!n.slug || n.slug.startsWith('news-')) n.slug = slugify(n.title); }} />
+              <input placeholder="Title (EN)" bind:value={n.titleEn} />
+            </div>
+            <div class="row2"><textarea rows="2" placeholder="Товч (МН)" bind:value={n.excerpt}></textarea><textarea rows="2" placeholder="Excerpt (EN)" bind:value={n.excerptEn}></textarea></div>
+            <div class="row2"><input placeholder="Зохиогч (МН)" bind:value={n.author} /><input placeholder="Author (EN)" bind:value={n.authorEn} /></div>
+            <div class="row2"><input placeholder="Албан тушаал (МН)" bind:value={n.role} /><input placeholder="Role (EN)" bind:value={n.roleEn} /></div>
+            <div class="row">
+              <span class="cover-prev" style={n.cover ? `background-image:url('${n.cover}')` : ""}></span>
+              <input placeholder="Cover зураг зам (/uploads/…)" bind:value={n.cover} />
+              <label class="btn file-btn">Зураг<input type="file" accept="image/*" hidden onchange={(e) => uploadImage(e.currentTarget.files?.[0], (p) => n.cover = p)} /></label>
+            </div>
+
+            <div class="sub-list">
+              <div class="sub-h">Биеийн хэсэг <button class="ic" onclick={() => addBlock(n, 'text')}>+¶</button> <button class="ic" onclick={() => addBlock(n, 'img')}>+🖼</button></div>
+              {#each n.body as blk, j}
+                <div class="blk" class:imgblk={isImgBlk(blk)}>
+                  <div class="blk-head">
+                    <span class="blk-t">{isImgBlk(blk) ? "🖼 Зураг" : "¶ Текст"}</span>
+                    <div class="rowsp"></div>
+                    <button class="ic" onclick={() => move(n.body, j, -1)}>↑</button>
+                    <button class="ic" onclick={() => move(n.body, j, 1)}>↓</button>
+                    <button class="ic bad" onclick={() => removeAt(n.body, j)}>✕</button>
+                  </div>
+                  {#if isImgBlk(blk)}
+                    <div class="row">
+                      <span class="cover-prev sm" style={blk.img ? `background-image:url('${blk.img}')` : ""}></span>
+                      <input placeholder="Зураг зам (/uploads/…)" bind:value={blk.img} />
+                      <label class="btn file-btn">Зураг<input type="file" accept="image/*" hidden onchange={(e) => uploadImage(e.currentTarget.files?.[0], (p) => blk.img = p)} /></label>
+                    </div>
+                    <div class="row2"><input placeholder="Тайлбар (МН)" bind:value={blk.cap} /><input placeholder="Caption (EN)" bind:value={blk.capEn} /></div>
+                  {:else}
+                    <div class="row2"><textarea rows="3" placeholder="Догол мөр (МН)" bind:value={blk.mn}></textarea><textarea rows="3" placeholder="Paragraph (EN)" bind:value={blk.en}></textarea></div>
+                  {/if}
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/each}
+
+      {:else if view === "team"}
+        <div class="head"><h2>Баг ({content.teams?.length || 0})</h2>
+          <button class="btn primary" onclick={addTeam}>+ Гишүүн</button></div>
+        <p class="hint">Багийн гишүүд. Зургийг upload хийхэд WebP болж, зам нь автоматаар бичигдэнэ.</p>
+        {#if !content.teams?.length}<p class="hint">Гишүүн алга. “+ Гишүүн” дарж эхэл.</p>{/if}
+        {#each content.teams as m, i}
+          <div class="card">
+            <div class="row">
+              <span class="cover-prev" style={m.photo ? `background-image:url('${m.photo}')` : ""}></span>
+              <input placeholder="Нэр (МН)" bind:value={m.name} />
+              <input placeholder="Name (EN)" bind:value={m.nameEn} />
+              <button class="ic" onclick={() => move(content.teams, i, -1)}>↑</button>
+              <button class="ic" onclick={() => move(content.teams, i, 1)}>↓</button>
+              <button class="ic bad" onclick={() => removeAt(content.teams, i)}>✕</button>
+            </div>
+            <div class="row2"><input placeholder="Албан тушаал (МН)" bind:value={m.role} /><input placeholder="Role (EN)" bind:value={m.roleEn} /></div>
+            <div class="row2"><textarea rows="2" placeholder="Танилцуулга (МН)" bind:value={m.bio}></textarea><textarea rows="2" placeholder="Bio (EN)" bind:value={m.bioEn}></textarea></div>
+            <div class="row">
+              <input placeholder="Зураг зам (/uploads/…)" bind:value={m.photo} />
+              <label class="btn file-btn">Зураг<input type="file" accept="image/*" hidden onchange={(e) => uploadImage(e.currentTarget.files?.[0], (p) => m.photo = p)} /></label>
+            </div>
+          </div>
+        {/each}
+
       {:else if view === "trust"}
         <div class="head"><h2>Итгэлийн лого</h2>
           <button class="btn" onclick={() => content.trust.push({ name:"Brand", svg:"<circle cx='12' cy='12' r='9'/>" })}>+ Нэмэх</button></div>
@@ -428,9 +582,29 @@
         </div>
 
       {:else if view === "preview"}
-        <div class="head"><h2>Урьдчилж үзэх</h2><button class="btn" onclick={() => { const f = document.getElementById('pv'); if (f) f.src = '/preview?preview=1&ts=' + Date.now(); }}>↻ Сэргээх</button></div>
-        <p class="hint">Энэ нь <b>ноорог</b> branch-ийн агуулгыг харуулна. Эхлээд <b>Хадгалах</b> дарж дараа нь сэргээ.</p>
-        <iframe id="pv" class="pv" title="preview" src="/preview?preview=1"></iframe>
+        <div class="head"><h2>Урьдчилж үзэх</h2></div>
+        <p class="hint">Таны <b>хадгалсан</b> ноорог энд шууд харагдана. “Хадгалаад сэргээх” дарахад одоогийн өөрчлөлтийг ноорогт хадгалаад дахин ачаална.</p>
+        <div class="pv-bar">
+          <div class="seg">
+            {#each PV_DEVICES as d}
+              <button class:on={pvDevice===d.id} onclick={() => pvDevice=d.id} title={d.id}>{d.label}</button>
+            {/each}
+          </div>
+          <div class="seg">
+            <button class:on={pvLang==='mn'} onclick={() => pvLang='mn'}>МН</button>
+            <button class:on={pvLang==='en'} onclick={() => pvLang='en'}>EN</button>
+          </div>
+          <div class="rowsp"></div>
+          <button class="btn primary" disabled={busy==='preview'} onclick={() => refreshPreview(true)}>{busy==='preview' ? '…' : '↻ Хадгалаад сэргээх'}</button>
+          <button class="btn" onclick={() => pvNonce++}>Зөвхөн сэргээх</button>
+          <button class="btn" onclick={() => pvExpanded = !pvExpanded}>{pvExpanded ? '⤡ Багасгах' : '⤢ Томруулах'}</button>
+          <a class="btn ghost" href={pvSrc} target="_blank" rel="noopener">Шинэ цонх ↗</a>
+        </div>
+        <div class="pv-stage" class:framed={pvDevice!=='desktop'} class:full={pvExpanded}>
+          {#key pvNonce + pvLang}
+            <iframe class="pv" style={`width:${pvWidth}`} title="preview" src={pvSrc}></iframe>
+          {/key}
+        </div>
 
       {:else if view === "submissions"}
         <div class="head"><h2>Демо хүсэлтүүд</h2><button class="btn" onclick={openSubmissions}>↻</button></div>
@@ -503,6 +677,8 @@
   .side button { text-align: left; background: none; border: none; color: var(--dim); padding: 9px 12px; border-radius: 9px; cursor: pointer; font-size: 14px; }
   .side button:hover { background: var(--panel); color: var(--text); }
   .side button.active { background: var(--panel-2); color: var(--text); font-weight: 600; }
+  .side-grp { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); padding: 14px 12px 5px; }
+  .side-grp:first-child { padding-top: 4px; }
 
   .main { padding: 22px 26px; max-width: 1000px; }
   .head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
@@ -550,7 +726,23 @@
   .muted { color: var(--faint); font-size: 12px; }
   .up { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--ok); }
 
-  .pv { width: 100%; height: 70vh; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+  .pv-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .seg { display: inline-flex; gap: 2px; padding: 2px; background: var(--bg); border: 1px solid var(--line); border-radius: 9px; }
+  .seg button { background: none; border: none; color: var(--dim); padding: 6px 11px; border-radius: 7px; cursor: pointer; font-size: 13px; }
+  .seg button.on { background: var(--panel-2); color: var(--text); font-weight: 600; }
+  .pv-stage { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 0; display: flex; justify-content: center; overflow: auto; height: 72vh; }
+  .pv-stage.framed { background: #0b0e14; padding: 16px 0; }
+  .pv-stage.full { position: fixed; inset: 3vh 3vw; height: auto; z-index: 60; box-shadow: 0 30px 90px rgba(0,0,0,.6); }
+  .pv { height: 100%; min-height: 100%; border: 0; border-radius: 10px; background: #fff; flex: 0 0 auto; }
+  .pv-stage.framed .pv { box-shadow: 0 20px 60px rgba(0,0,0,.5); border-radius: 18px; }
+
+  .cover-prev { width: 54px; height: 38px; flex: 0 0 54px; border-radius: 7px; background: var(--bg) center/cover no-repeat; border: 1px solid var(--line); }
+  .cover-prev.sm { width: 44px; height: 32px; flex-basis: 44px; }
+  .file-btn { position: relative; cursor: pointer; white-space: nowrap; }
+  .blk { border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-bottom: 8px; background: var(--bg); }
+  .blk.imgblk { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+  .blk-head { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .blk-t { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
   .sub p { margin: 6px 0 0; color: var(--dim); font-size: 13px; }
   .hist { width: 100%; border-collapse: collapse; font-size: 12px; }
   .hist td { padding: 7px 8px; border-bottom: 1px solid var(--line); }

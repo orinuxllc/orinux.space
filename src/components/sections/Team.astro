@@ -1,0 +1,32 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const team = content.teams ?? [];
+const initial = (n: string) => (n || "O").trim().charAt(0).toUpperCase();
+const delays = ["", "d1", "d2"];
+---
+{team.length > 0 && (
+  <section class="s-pad" id="team" data-screen-label="Team">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow"><span class="dot"></span><span data-i18n="team_eyebrow" set:html={t("team_eyebrow")}></span></span>
+        <h2 data-i18n="team_h2_html" set:html={t("team_h2_html")}></h2>
+        <p data-i18n="team_sub" set:html={t("team_sub")}></p>
+      </div>
+      <div class="team-grid">
+        {team.map((m, i) => (
+          <article class:list={["team-card", "reveal", delays[i % delays.length]]}>
+            {m.photo
+              ? <div class="team-photo" style={`background-image:url('${m.photo}')`}></div>
+              : <div class="team-photo team-initial">{initial(m.name)}</div>}
+            <h3 class="team-name" data-bi data-mn={m.name} data-en={m.nameEn || m.name}>{m.name}</h3>
+            {m.role && <p class="team-role" data-bi data-mn={m.role} data-en={m.roleEn || m.role}>{m.role}</p>}
+            {m.bio && <p class="team-bio" data-bi data-mn={m.bio} data-en={m.bioEn || m.bio}>{m.bio}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
