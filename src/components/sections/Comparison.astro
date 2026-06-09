@@ -1,0 +1,47 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+
+const xIcon = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="rgba(238,241,247,.4)" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+const checkIcon = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>';
+
+const oldRows = [
+  ["Хүн бүх зүйлийг гараар оруулна", "People enter everything by hand"],
+  ["Тогтмол workflow дүрэм", "Fixed workflow rules"],
+  ["Нэг том suite худалдаж авах", "Buy one big monolithic suite"],
+  ["Нэг байгууллагад суулгац", "Installed for a single org"],
+  ["Хүнд, удаан тохиргоо", "Heavy, slow setup"],
+];
+const newRows = [
+  ["AI Agent автомат оруулна, хүн батална", "AI agents enter data; people approve"],
+  ["AI шийдвэр + Event-driven автоматжуулалт", "AI decisions + event-driven automation"],
+  ["Хэрэгтэй модулиа л сонгоно", "Pick only the modules you need"],
+  ["Multi-tenant SaaS — хаанаас ч хандана", "Multi-tenant SaaS — access anywhere"],
+  ["AI тохируулна, минутын дотор эхэлнэ", "AI configures it; start in minutes"],
+];
+---
+<section class="s-pad" id="why" data-screen-label="ERP vs ARP">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="cmp_eyebrow" set:html={t("cmp_eyebrow")}></span></span>
+      <h2 data-i18n="cmp_h2_html" set:html={t("cmp_h2_html")}></h2>
+      <p data-i18n="cmp_sub" set:html={t("cmp_sub")}></p>
+    </div>
+    <div class="cmp-grid">
+      <div class="cmp-col old reveal d1">
+        <h3><span class="tag"></span><span data-i18n="cmp_old" set:html={t("cmp_old")}></span></h3>
+        {oldRows.map((r) => (
+          <div class="cmp-row"><Fragment set:html={xIcon} /><span data-bi data-mn={r[0]} data-en={r[1]}>{r[0]}</span></div>
+        ))}
+      </div>
+      <div class="cmp-col new reveal d2">
+        <h3><span class="tag"></span><span data-i18n="cmp_new" set:html={t("cmp_new")}></span></h3>
+        {newRows.map((r) => (
+          <div class="cmp-row"><Fragment set:html={checkIcon} /><span data-bi data-mn={r[0]} data-en={r[1]}>{r[0]}</span></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

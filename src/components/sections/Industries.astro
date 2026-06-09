@@ -1,0 +1,26 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const delays = ["", "d1", "d2", "", "d1", "d2"];
+---
+<section class="s-pad" id="industries" data-screen-label="Industries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="ind_eyebrow" set:html={t("ind_eyebrow")}></span></span>
+      <h2 data-i18n="ind_h2_html" set:html={t("ind_h2_html")}></h2>
+      <p data-i18n="ind_sub" set:html={t("ind_sub")}></p>
+    </div>
+    <div class="ind-grid">
+      {content.industries.map((ind: any, i: number) => (
+        <article class:list={["ind-card", "reveal", delays[i % delays.length]]}>
+          <div class="ind-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={ind.icon}></svg></div>
+          <h3 data-bi data-mn={ind.title} data-en={ind.titleEn}>{ind.title}</h3>
+          <p data-bi data-mn={ind.desc} data-en={ind.descEn}>{ind.desc}</p>
+          <div class="ind-tags">{ind.tags.map((tg: string) => <span>{tg}</span>)}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

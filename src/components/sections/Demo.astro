@@ -1,0 +1,57 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="demo" id="demo" data-screen-label="Demo form">
+  <div class="wrap">
+    <div class="demo-grid">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:8px;">
+          <span class="eyebrow"><span class="dot"></span><span data-i18n="demo_eyebrow" set:html={t("demo_eyebrow")}></span></span>
+          <h2 data-i18n="demo_h2_html" set:html={t("demo_h2_html")}></h2>
+          <p data-i18n="demo_sub" set:html={t("demo_sub")}></p>
+        </div>
+        <ul class="demo-points">
+          <li><div class="dp-ic"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5 11a7 7 0 0 0 14 0"/></svg></div><div><b data-i18n="dp1_t" set:html={t("dp1_t")}></b><p data-i18n="dp1_p" set:html={t("dp1_p")}></p></div></li>
+          <li><div class="dp-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b data-i18n="dp2_t" set:html={t("dp2_t")}></b><p data-i18n="dp2_p" set:html={t("dp2_p")}></p></div></li>
+          <li><div class="dp-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div><b data-i18n="dp3_t" set:html={t("dp3_t")}></b><p data-i18n="dp3_p" set:html={t("dp3_p")}></p></div></li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal d1">
+        <form id="demo-form" novalidate>
+          <div class="fld-row">
+            <div class="fld"><label data-i18n="f_name" set:html={t("f_name")}></label><input name="name" type="text" data-i18n-ph="f_name_ph" placeholder={t("f_name_ph")} /><span class="err" data-i18n="f_name_err" set:html={t("f_name_err")}></span></div>
+            <div class="fld"><label data-i18n="f_company" set:html={t("f_company")}></label><input name="company" type="text" data-i18n-ph="f_company_ph" placeholder={t("f_company_ph")} /><span class="err" data-i18n="f_company_err" set:html={t("f_company_err")}></span></div>
+          </div>
+          <div class="fld-row">
+            <div class="fld"><label data-i18n="f_email" set:html={t("f_email")}></label><input name="email" type="email" placeholder="name@company.mn" /><span class="err" data-i18n="f_email_err" set:html={t("f_email_err")}></span></div>
+            <div class="fld"><label data-i18n="f_phone" set:html={t("f_phone")}></label><input name="phone" type="tel" placeholder="9911-2233" /><span class="err" data-i18n="f_phone_err" set:html={t("f_phone_err")}></span></div>
+          </div>
+          <div class="fld"><label data-i18n="f_industry" set:html={t("f_industry")}></label>
+            <select name="industry">
+              <option value="" data-i18n="f_industry_ph">{t("f_industry_ph")}</option>
+              <option data-i18n="ind_mining">{t("ind_mining")}</option>
+              <option data-i18n="ind_health">{t("ind_health")}</option>
+              <option data-i18n="ind_edu">{t("ind_edu")}</option>
+              <option data-i18n="ind_factory">{t("ind_factory")}</option>
+              <option data-i18n="ind_retail">{t("ind_retail")}</option>
+              <option data-i18n="ind_other">{t("ind_other")}</option>
+            </select>
+          </div>
+          <div class="fld"><label data-i18n="f_msg" set:html={t("f_msg")}></label><textarea name="message" data-i18n-ph="f_msg_ph" placeholder={t("f_msg_ph")}></textarea></div>
+          <button class="btn btn-primary magnetic" type="submit"><span data-i18n="f_submit" set:html={t("f_submit")}></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+        <div class="form-ok" id="form-ok">
+          <div class="ok-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3 data-i18n="ok_t" set:html={t("ok_t")}></h3>
+          <p data-i18n="ok_p" set:html={t("ok_p")}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

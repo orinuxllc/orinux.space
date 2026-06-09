@@ -1,0 +1,22 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="final" id="contact" data-screen-label="Final CTA">
+  <canvas id="cta-canvas" style="position:absolute;inset:0;opacity:.4;"></canvas>
+  <div class="wrap">
+    <div class="final-card reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="final_eyebrow" set:html={t("final_eyebrow")}></span></span>
+      <h2 style="margin-top:22px;" data-i18n="final_h2_html" set:html={t("final_h2_html")}></h2>
+      <p data-i18n="final_sub" set:html={t("final_sub")}></p>
+      <div class="final-cta">
+        <a class="btn btn-primary magnetic" href="/#demo"><span data-i18n="cta_demo" set:html={t("cta_demo")}></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost magnetic" href={`mailto:${content.contact.email}`} data-i18n="cta_contact" set:html={t("cta_contact")}></a>
+      </div>
+    </div>
+  </div>
+</section>

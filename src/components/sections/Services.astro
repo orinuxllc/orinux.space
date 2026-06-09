@@ -1,0 +1,31 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const delays = ["", "d1", "d2"];
+const check = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>';
+---
+<section class="s-pad" id="services" data-screen-label="Services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="svc_eyebrow" set:html={t("svc_eyebrow")}></span></span>
+      <h2 data-i18n="svc_h2_html" set:html={t("svc_h2_html")}></h2>
+      <p data-i18n="svc_sub" set:html={t("svc_sub")}></p>
+    </div>
+    <div class="svc-grid">
+      {content.services.map((s: any, i: number) => (
+        <article class:list={["svc-card", "reveal", delays[i % delays.length]]}>
+          <span class="svc-pill" data-bi data-mn={s.pill} data-en={s.pillEn}>{s.pill}</span>
+          <h3 data-bi data-mn={s.title} data-en={s.titleEn}>{s.title}</h3>
+          <p data-bi data-mn={s.desc} data-en={s.descEn}>{s.desc}</p>
+          <ul class="svc-list">
+            {s.points.map((pt: string, j: number) => (
+              <li><Fragment set:html={check} /><span data-bi data-mn={pt} data-en={s.pointsEn?.[j] || pt}>{pt}</span></li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

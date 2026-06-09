@@ -1,0 +1,31 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<header class="hero" id="top" data-screen-label="Hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow reveal"><span class="dot"></span><span data-i18n="hero_eyebrow" set:html={t("hero_eyebrow")}></span></span>
+      <h1 class="reveal d1"><span data-i18n="hero_h1a" set:html={t("hero_h1a")}></span><span class="line2 grad-text" data-i18n="hero_h1b" set:html={t("hero_h1b")}></span></h1>
+      <p class="hero-sub reveal d2"><span data-i18n="hero_sub" set:html={t("hero_sub")}></span> <strong data-i18n="hero_sub_b" set:html={t("hero_sub_b")}></strong></p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary magnetic" href="/#demo"><span data-i18n="cta_demo" set:html={t("cta_demo")}></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost magnetic" href="/#platform" data-i18n="cta_explore" set:html={t("cta_explore")}></a>
+      </div>
+      <div class="hero-stats reveal d4">
+        {content.heroStats.map((s: any) => (
+          <div class="stat">
+            <div class="num" {...(s.static ? {} : { "data-count": s.value, "data-suffix": s.suffix })}>{s.static ? s.value : "0"}</div>
+            <div class="label" data-bi data-mn={s.label} data-en={s.labelEn}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="mouse"></span><span data-i18n="scroll" set:html={t("scroll")}></span></div>
+</header>

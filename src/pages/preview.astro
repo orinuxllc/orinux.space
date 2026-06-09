@@ -1,0 +1,21 @@
+---
+// On-demand render of the DRAFT content (unpublished edits) using the same Astro
+// components as the live site. The admin opens this in an iframe with ?preview=1.
+export const prerender = false;
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Page from "@/components/Page.astro";
+import { content as staticContent } from "@/lib/content";
+import { getJson, DRAFT_BRANCH } from "@/server/github.js";
+
+let content = staticContent;
+try {
+  const draft = await getJson("src/content/content.json", DRAFT_BRANCH());
+  if (draft?.json) content = draft.json as typeof staticContent;
+} catch (e) {
+  // No GitHub config / no draft branch — fall back to the committed content.
+}
+---
+<BaseLayout content={content} preview>
+  <Page content={content} />
+</BaseLayout>

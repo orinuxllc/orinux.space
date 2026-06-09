@@ -1,0 +1,35 @@
+---
+import { type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const f = content.footer;
+const c = content.contact;
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="/#top"><span class="mark">O</span>orinux</a>
+        <p data-bi data-mn={f.blurb} data-en={f.blurbEn}>{f.blurb}</p>
+        <div class="foot-contact">
+          <a href={`mailto:${c.email}`}>{c.email}</a>
+          <a href={`tel:${c.phoneHref}`}>{c.phone}</a>
+        </div>
+      </div>
+      {f.cols.map((col: any) => (
+        <div class="foot-col">
+          <h4 data-bi data-mn={col.title} data-en={col.titleEn}>{col.title}</h4>
+          <ul>
+            {col.links.map((l: any) => (
+              <li><a href={l.href} data-bi data-mn={l.label} data-en={l.labelEn}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="foot-bottom">
+      <span data-bi data-mn={f.copyright} data-en={f.copyrightEn}>{f.copyright}</span>
+      <span style="font-family:var(--mono);">{f.tagline}</span>
+    </div>
+  </div>
+</footer>

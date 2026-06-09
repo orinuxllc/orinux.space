@@ -1,0 +1,32 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const mods = content.modules;
+const bizN = mods.filter((m) => m.cat === "biz").length;
+const indN = mods.filter((m) => m.cat === "ind").length;
+---
+<section class="s-pad" id="modules" data-screen-label="Modules">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="mod_eyebrow" set:html={t("mod_eyebrow")}></span></span>
+      <h2 data-i18n="mod_h2_html" set:html={t("mod_h2_html")}></h2>
+      <p data-i18n="mod_sub" set:html={t("mod_sub")}></p>
+    </div>
+    <div class="mod-tabs reveal">
+      <button class="mod-tab" data-cat="all" aria-selected="true"><span data-i18n="mod_all" set:html={t("mod_all")}></span><span class="cnt">{mods.length}</span></button>
+      <button class="mod-tab" data-cat="biz" aria-selected="false"><span data-i18n="mod_biz" set:html={t("mod_biz")}></span><span class="cnt">{bizN}</span></button>
+      <button class="mod-tab" data-cat="ind" aria-selected="false"><span data-i18n="mod_ind" set:html={t("mod_ind")}></span><span class="cnt">{indN}</span></button>
+    </div>
+    <div class="mod-grid reveal" id="mod-grid">
+      {mods.map((m) => (
+        <article class="mod-card" data-cat={m.cat}>
+          <div class="badge">{m.code}</div>
+          <h4 data-bi data-mn={m.name} data-en={m.nameEn}>{m.name}</h4>
+          <p data-bi data-mn={m.desc} data-en={m.descEn}>{m.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

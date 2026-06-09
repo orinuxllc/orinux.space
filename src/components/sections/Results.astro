@@ -1,0 +1,32 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const q = content.quote;
+---
+<section class="results" data-screen-label="Results">
+  <div class="wrap">
+    <div class="res-grid">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:32px;">
+          <span class="eyebrow"><span class="dot"></span><span data-i18n="res_eyebrow" set:html={t("res_eyebrow")}></span></span>
+          <h2 data-i18n="res_h2_html" set:html={t("res_h2_html")}></h2>
+        </div>
+        <div class="res-stats">
+          {content.resultStats.map((s: any) => (
+            <div class="res-stat">
+              <div class="rv" data-count={s.value} data-suffix={s.suffix}>0</div>
+              <div class="rl" data-bi data-mn={s.label} data-en={s.labelEn}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="quote reveal d1">
+        <div class="qm">"</div>
+        <blockquote data-bi data-mn={q.text} data-en={q.textEn}>{q.text}</blockquote>
+        <div class="qby"><div class="qav">{q.avatar}</div><div><b data-bi data-mn={q.name} data-en={q.nameEn}>{q.name}</b><span data-bi data-mn={q.role} data-en={q.roleEn}>{q.role}</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>

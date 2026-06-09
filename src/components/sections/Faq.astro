@@ -1,0 +1,22 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="faq" id="faq" data-screen-label="FAQ">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="faq_eyebrow" set:html={t("faq_eyebrow")}></span></span>
+      <h2 data-i18n="faq_h2" set:html={t("faq_h2")}></h2>
+    </div>
+    <div class="faq-list reveal d1">
+      {content.faq.map((item: any) => (
+        <div class="faq-item">
+          <button class="faq-q"><span data-bi data-mn={item.q} data-en={item.qEn}>{item.q}</span><span class="pm"></span></button>
+          <div class="faq-a"><p data-bi data-mn={item.a} data-en={item.aEn}>{item.a}</p></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

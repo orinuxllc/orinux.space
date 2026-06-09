@@ -1,0 +1,14 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="trust" aria-label="Хэрэглэгчид">
+  <div class="wrap">
+    <p class="trust-label" data-i18n="trust_label" set:html={t("trust_label")}></p>
+    <div class="marquee">
+      <div class="marquee-track" id="trust-track"></div>
+    </div>
+  </div>
+</section>

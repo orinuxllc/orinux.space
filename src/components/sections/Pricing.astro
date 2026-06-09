@@ -1,0 +1,37 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const delays = ["", "d1", "d2"];
+---
+<section class="pricing" id="pricing" data-screen-label="Pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="price_eyebrow" set:html={t("price_eyebrow")}></span></span>
+      <h2 data-i18n="price_h2_html" set:html={t("price_h2_html")}></h2>
+      <p data-i18n="price_sub" set:html={t("price_sub")}></p>
+    </div>
+    <div class="price-grid">
+      {content.pricing.map((p: any, i: number) => (
+        <div class:list={["price-card", p.featured && "feature", "reveal", delays[i % delays.length]]}>
+          {p.featured && <span class="price-tag" data-i18n="price_popular" set:html={t("price_popular")}></span>}
+          <h3 data-bi data-mn={p.name} data-en={p.nameEn}>{p.name}</h3>
+          <p class="pdesc" data-bi data-mn={p.desc} data-en={p.descEn}>{p.desc}</p>
+          <div class="price-amount">
+            {p.custom
+              ? <span class="amt" data-i18n="price_custom" set:html={t("price_custom")}></span>
+              : <Fragment><span class="amt">{p.price}</span><span class="per" data-i18n="per_mo" set:html={t("per_mo")}></span></Fragment>}
+          </div>
+          <p class="price-note" data-bi data-mn={p.note} data-en={p.noteEn}>{p.note}</p>
+          <ul class="price-list">
+            {p.features.map((f: string, j: number) => (
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-bi data-mn={f} data-en={p.featuresEn?.[j] || f}>{f}</span></li>
+            ))}
+          </ul>
+          <a class:list={["btn", p.featured ? "btn-primary" : "btn-ghost", "magnetic"]} href="/#demo" data-i18n={p.cta} set:html={t(p.cta)}></a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

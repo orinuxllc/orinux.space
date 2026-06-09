@@ -1,0 +1,1394 @@
+{
+  "meta": {
+    "title": "orinux — Agentic Resource Planning",
+    "description": "ARP (Agentic Resource Planning) — AI Agent-ууд бизнес процессыг автомат удирддаг дараа үеийн ERP платформ. 40+ модуль, 21 tool.",
+    "descriptionEn": "ARP (Agentic Resource Planning) — the next-generation ERP platform where AI agents run business processes automatically. 40+ modules, 21 tools.",
+    "ogImage": "/og-image.svg"
+  },
+  "contact": {
+    "email": "info@orinux.space",
+    "phone": "+976 6003-4140",
+    "phoneHref": "+97660034140"
+  },
+  "footer": {
+    "blurb": "Agentic Resource Planning — AI Agent-ууд таны бизнес процессыг автомат удирдаж, хүнийг давтагдах ажлаас чөлөөлнө.",
+    "blurbEn": "Agentic Resource Planning — AI agents run your business processes automatically and free people from repetitive work.",
+    "cols": [
+      {
+        "title": "Бүтээгдэхүүн",
+        "titleEn": "Product",
+        "links": [
+          {
+            "label": "Модулиуд",
+            "labelEn": "Modules",
+            "href": "/modules"
+          },
+          {
+            "label": "Үйлчилгээ",
+            "labelEn": "Services",
+            "href": "/services"
+          }
+        ]
+      },
+      {
+        "title": "Компани",
+        "titleEn": "Company",
+        "links": [
+          {
+            "label": "Бидний тухай",
+            "labelEn": "About",
+            "href": "/about"
+          },
+          {
+            "label": "Холбоо барих",
+            "labelEn": "Contact",
+            "href": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Хууль",
+        "titleEn": "Legal",
+        "links": [
+          {
+            "label": "Нууцлалын бодлого",
+            "labelEn": "Privacy policy",
+            "href": "#"
+          },
+          {
+            "label": "Үйлчилгээний нөхцөл",
+            "labelEn": "Terms of service",
+            "href": "#"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Orinux LLC. Бүх эрх хуулиар хамгаалагдсан.",
+    "copyrightEn": "© 2026 Orinux LLC. All rights reserved.",
+    "tagline": "Built for Mongolia. Ready for the World."
+  },
+  "quote": {
+    "text": "Orinux-ийг нэвтрүүлснээр манай агуулах, борлуулалтын баг өдөрт хэдэн цаг хэмнэж эхэлсэн. AI Agent давтагдах ажлыг хийж, бид стратегид анхаарах боллоо.",
+    "textEn": "Since adopting Orinux, our warehouse and sales teams save hours every day. AI agents handle the repetitive work, so we can focus on strategy.",
+    "name": "Г. Энхбаяр",
+    "nameEn": "G. Enkhbayar",
+    "role": "Гүйцэтгэх захирал, Тэрэлж Групп",
+    "roleEn": "CEO, Terelj Group",
+    "avatar": "Г"
+  },
+  "i18n": {
+    "nav_platform": [
+      "Платформ",
+      "Platform"
+    ],
+    "nav_modules": [
+      "Модулиуд",
+      "Modules"
+    ],
+    "nav_pricing": [
+      "Үнэ",
+      "Pricing"
+    ],
+    "nav_industries": [
+      "Салбарууд",
+      "Industries"
+    ],
+    "nav_faq": [
+      "Асуулт",
+      "FAQ"
+    ],
+    "nav_login": [
+      "Нэвтрэх",
+      "Log in"
+    ],
+    "nav_cta": [
+      "Демо авах",
+      "Get a demo"
+    ],
+    "hero_eyebrow": [
+      "Дараа үеийн ERP платформ",
+      "The next-generation ERP platform"
+    ],
+    "hero_h1a": [
+      "Agentic Resource",
+      "Agentic Resource"
+    ],
+    "hero_h1b": [
+      "Planning",
+      "Planning"
+    ],
+    "hero_sub": [
+      "AI Agent-ууд таны бизнес процессыг автомат удирддаг. Хүн зөвхөн шийдвэр батална.",
+      "AI agents run your business processes automatically. People just approve decisions."
+    ],
+    "hero_sub_b": [
+      "40+ модуль, 21 tool.",
+      "40+ modules, 21 tools."
+    ],
+    "cta_demo": [
+      "Демо авах",
+      "Get a demo"
+    ],
+    "cta_explore": [
+      "Платформ үзэх",
+      "Explore the platform"
+    ],
+    "cta_contact": [
+      "Холбоо барих",
+      "Contact us"
+    ],
+    "stat_modules": [
+      "Модуль",
+      "Modules"
+    ],
+    "scroll": [
+      "Доош гүйлгэ",
+      "Scroll"
+    ],
+    "trust_label": [
+      "Монголын тэргүүлэх байгууллагууд итгэдэг",
+      "Trusted by leading Mongolian organizations"
+    ],
+    "cmp_eyebrow": [
+      "Шинэ стандарт",
+      "A new standard"
+    ],
+    "cmp_h2_html": [
+      "ERP хуучирсан.<br /><span class=\"grad-text\">ARP шинэ стандарт.</span>",
+      "ERP is outdated.<br /><span class=\"grad-text\">ARP is the new standard.</span>"
+    ],
+    "cmp_sub": [
+      "Уламжлалт ERP системүүд хүнээс хамааралтай. ARP нь AI Agent-ууд ажлыг гүйцэтгэж, хүн зөвхөн стратеги, шийдвэрт анхаарна.",
+      "Traditional ERP depends on people. With ARP, AI agents do the work and people focus only on strategy and decisions."
+    ],
+    "cmp_old": [
+      "Хуучин ERP",
+      "Legacy ERP"
+    ],
+    "cmp_new": [
+      "ARP (orinux)",
+      "ARP (orinux)"
+    ],
+    "feat_eyebrow": [
+      "Яагаад ARP?",
+      "Why ARP?"
+    ],
+    "feat_h2_html": [
+      "Бизнесийн бүх процессыг нэг платформд, <span class=\"grad-text\">AI-ийн хүчээр.</span>",
+      "Every business process on one platform, <span class=\"grad-text\">powered by AI.</span>"
+    ],
+    "mod_eyebrow": [
+      "40+ модуль, нэг платформ",
+      "40+ modules, one platform"
+    ],
+    "mod_h2_html": [
+      "Хэрэгтэй модулиа сонгоод <span class=\"grad-text\">шууд эхэл.</span>",
+      "Pick the modules you need and <span class=\"grad-text\">start instantly.</span>"
+    ],
+    "mod_sub": [
+      "Бүгдийг нь авах шаардлагагүй. Хэзээ ч нэмж, хасч болно.",
+      "No need to take them all. Add or remove anytime."
+    ],
+    "mod_all": [
+      "Бүгд",
+      "All"
+    ],
+    "mod_biz": [
+      "Бизнес",
+      "Business"
+    ],
+    "mod_ind": [
+      "Салбарын шийдэл",
+      "Industry"
+    ],
+    "plat_eyebrow": [
+      "Платформ",
+      "The platform"
+    ],
+    "plat_h2_html": [
+      "Нэг дэлгэцэнд — <span class=\"grad-text\">бүх бизнес.</span>",
+      "Your whole business — <span class=\"grad-text\">on one screen.</span>"
+    ],
+    "plat_sub": [
+      "AI Agent-ууд бодит цагт ажиллаж, шийдвэр санал болгоно. Та зөвхөн нэг товч дарж батална.",
+      "AI agents work in real time and propose decisions. You approve with a single click."
+    ],
+    "dn_overview": [
+      "Хяналтын самбар",
+      "Dashboard"
+    ],
+    "dn_inventory": [
+      "Агуулах",
+      "Inventory"
+    ],
+    "dn_sales": [
+      "Борлуулалт",
+      "Sales"
+    ],
+    "dn_hr": [
+      "Хүний нөөц",
+      "HR"
+    ],
+    "dn_finance": [
+      "Санхүү",
+      "Finance"
+    ],
+    "dn_agents": [
+      "AI Agents",
+      "AI Agents"
+    ],
+    "dash_title": [
+      "Хяналтын самбар",
+      "Dashboard"
+    ],
+    "dash_sub": [
+      "Бодит цагийн тойм — өнөөдөр",
+      "Real-time overview — today"
+    ],
+    "dash_live": [
+      "6 AI Agent идэвхтэй",
+      "6 AI agents active"
+    ],
+    "kpi_rev": [
+      "Орлого",
+      "Revenue"
+    ],
+    "kpi_orders": [
+      "Захиалга",
+      "Orders"
+    ],
+    "kpi_auto": [
+      "Автоматжсан",
+      "Automated"
+    ],
+    "kpi_tasks": [
+      "AI даалгавар",
+      "AI tasks"
+    ],
+    "chart_title": [
+      "Орлого vs Автоматжуулалт",
+      "Revenue vs Automation"
+    ],
+    "leg_rev": [
+      "Орлого",
+      "Revenue"
+    ],
+    "leg_auto": [
+      "Авто",
+      "Auto"
+    ],
+    "feed_title": [
+      "AI Agent үйлдэл",
+      "AI agent activity"
+    ],
+    "wf_title": [
+      "Нэхэмжлэх батлах · Agent workflow",
+      "Invoice approval · agent workflow"
+    ],
+    "wf1": [
+      "Хүлээн авав",
+      "Received"
+    ],
+    "wf2": [
+      "AI шалгав",
+      "AI checked"
+    ],
+    "wf2s": [
+      "зөрчилгүй",
+      "no issues"
+    ],
+    "wf3": [
+      "Хүн баталгаажуулав",
+      "Human approved"
+    ],
+    "wf4": [
+      "Төлбөр хийгдэв",
+      "Paid"
+    ],
+    "wf4s": [
+      "e-Barimt",
+      "e-Barimt"
+    ],
+    "pf1_t": [
+      "Бодит цагийн",
+      "Real-time"
+    ],
+    "pf1_p": [
+      "Бүх өгөгдөл секунд тутамд шинэчлэгдэж, AI шууд хариу үйлдэл хийнэ.",
+      "Every data point updates by the second and AI reacts instantly."
+    ],
+    "pf2_t": [
+      "Хүн төвтэй",
+      "Human-in-the-loop"
+    ],
+    "pf2_p": [
+      "AI санал болгоно, эцсийн шийдвэрийг хүн нэг товчоор батална.",
+      "AI proposes; a person approves the final decision in one click."
+    ],
+    "pf3_t": [
+      "Аль ч төхөөрөмжид",
+      "Any device"
+    ],
+    "pf3_p": [
+      "Веб дээр суурилсан — утас, таблет, компьютер хаанаас ч хандана.",
+      "Web-based — access from phone, tablet or desktop anywhere."
+    ],
+    "res_eyebrow": [
+      "Хэмжигдэхүйц үр дүн",
+      "Measurable results"
+    ],
+    "res_h2_html": [
+      "Тоо өөрөө <span class=\"grad-text\">ярьдаг.</span>",
+      "The numbers <span class=\"grad-text\">speak.</span>"
+    ],
+    "res_s1": [
+      "Гар ажиллагаа цөөрсөн",
+      "Less manual work"
+    ],
+    "res_s2": [
+      "Процесс хурдассан",
+      "Faster processes"
+    ],
+    "res_s3": [
+      "Зардал хэмнэсэн",
+      "Cost saved"
+    ],
+    "res_s4": [
+      "Системийн тогтвортой байдал",
+      "System uptime"
+    ],
+    "quote_text": [
+      "Orinux-ийг нэвтрүүлснээр манай агуулах, борлуулалтын баг өдөрт хэдэн цаг хэмнэж эхэлсэн. AI Agent давтагдах ажлыг хийж, бид стратегид анхаарах боллоо.",
+      "Since adopting Orinux, our warehouse and sales teams save hours every day. AI agents handle the repetitive work, so we can focus on strategy."
+    ],
+    "quote_name": [
+      "Г. Энхбаяр",
+      "G. Enkhbayar"
+    ],
+    "quote_role": [
+      "Гүйцэтгэх захирал, Тэрэлж Групп",
+      "CEO, Terelj Group"
+    ],
+    "how_eyebrow": [
+      "Хэрхэн ажилладаг вэ?",
+      "How it works"
+    ],
+    "how_h2_html": [
+      "3 энгийн алхамаар <span class=\"grad-text\">бизнесээ автоматжуул.</span>",
+      "Automate your business in <span class=\"grad-text\">3 simple steps.</span>"
+    ],
+    "how1_t": [
+      "Бүртгүүлээд эхэл",
+      "Sign up & start"
+    ],
+    "how1_p": [
+      "Байгууллагаа бүртгүүлж, тусдаа орчин ав. 2 минутын дотор бэлэн.",
+      "Register your organization and get a dedicated workspace. Ready in 2 minutes."
+    ],
+    "how2_t": [
+      "Модуль сонго",
+      "Choose modules"
+    ],
+    "how2_p": [
+      "40+ модулиас хэрэгтэйгээ идэвхжүүл. Хэзээ ч нэмж, хасч болно.",
+      "Activate what you need from 40+ modules. Add or remove anytime."
+    ],
+    "how3_t": [
+      "AI Agent ажиллана",
+      "AI agents go to work"
+    ],
+    "how3_p": [
+      "Модуль бүрийн AI Agent бизнес процессыг автоматжуулж эхэлнэ. Та зөвхөн батална.",
+      "Each module's AI agent starts automating your processes. You just approve."
+    ],
+    "svc_eyebrow": [
+      "Мэргэжлийн үйлчилгээ",
+      "Professional services"
+    ],
+    "svc_h2_html": [
+      "AI Agent &amp; RAG <span class=\"grad-text\">Тохируулалт</span>",
+      "AI Agent &amp; RAG <span class=\"grad-text\">Implementation</span>"
+    ],
+    "svc_sub": [
+      "Танай байгууллагын үйл ажиллагааг AI-ээр автоматжуулж, мэдлэгийн санд суурилсан ухаалаг систем бүтээж өгнө.",
+      "We automate your operations with AI and build intelligent systems grounded in your knowledge base."
+    ],
+    "stage_eyebrow": [
+      "Салбарын трансформаци",
+      "Industry transformation"
+    ],
+    "stage_h2_html": [
+      "Нэг платформ.<br /><span class=\"grad-text\">Хязгааргүй салбар.</span>",
+      "One platform.<br /><span class=\"grad-text\">Infinite industries.</span>"
+    ],
+    "stage_lede": [
+      "Салбар бүрийн талбайн өгөгдлийг ARP-ийн AI Core бодит цагт боловсруулж, шийдвэр болгон удирдлагад дамжуулна. Сонгоод үзээрэй.",
+      "ARP's AI Core processes each industry's field data in real time and turns it into decisions for management. Take a look."
+    ],
+    "ind_eyebrow": [
+      "Салбар бүрийн шийдэл",
+      "A solution for every industry"
+    ],
+    "ind_h2_html": [
+      "ARP нь <span class=\"grad-text\">ямар ч салбарт</span> тохирно.",
+      "ARP fits <span class=\"grad-text\">any industry.</span>"
+    ],
+    "ind_sub": [
+      "Модулиудыг хослуулж өөрийн бизнест тохируулна.",
+      "Combine modules to fit your own business."
+    ],
+    "price_eyebrow": [
+      "Уян хатан үнэ",
+      "Flexible pricing"
+    ],
+    "price_h2_html": [
+      "Хэрэглэснээрээ <span class=\"grad-text\">төл.</span>",
+      "Pay for <span class=\"grad-text\">what you use.</span>"
+    ],
+    "price_sub": [
+      "Модулиар тоологддог — шаардлагагүй зүйлд төлөхгүй. Хэдийд ч өргөтгөнө.",
+      "Billed per module — never pay for what you don't need. Scale up anytime."
+    ],
+    "per_mo": [
+      "/ сар",
+      "/ mo"
+    ],
+    "price_popular": [
+      "Хамгийн эрэлттэй",
+      "Most popular"
+    ],
+    "price_custom": [
+      "Тусгай",
+      "Custom"
+    ],
+    "price_try": [
+      "Эхлүүлэх",
+      "Start now"
+    ],
+    "price_try2": [
+      "Демо авах",
+      "Get a demo"
+    ],
+    "price_contact": [
+      "Холбоо барих",
+      "Contact us"
+    ],
+    "pr1_t": [
+      "Эхлэл",
+      "Starter"
+    ],
+    "pr1_d": [
+      "Шинэ болон жижиг бизнест.",
+      "For new and small businesses."
+    ],
+    "pr1_n": [
+      "3 хүртэл модуль · 10 хэрэглэгч",
+      "Up to 3 modules · 10 users"
+    ],
+    "pr1_f1": [
+      "Үндсэн 3 модуль",
+      "3 core modules"
+    ],
+    "pr1_f2": [
+      "AI Agent (үндсэн)",
+      "AI agent (basic)"
+    ],
+    "pr1_f3": [
+      "e-Barimt, QPay интеграц",
+      "e-Barimt, QPay integration"
+    ],
+    "pr1_f4": [
+      "Имэйл дэмжлэг",
+      "Email support"
+    ],
+    "pr2_t": [
+      "Бизнес",
+      "Business"
+    ],
+    "pr2_d": [
+      "Өсөн нэмэгдэж буй компанид.",
+      "For growing companies."
+    ],
+    "pr2_n": [
+      "10 хүртэл модуль · 50 хэрэглэгч",
+      "Up to 10 modules · 50 users"
+    ],
+    "pr2_f1": [
+      "10 хүртэл модуль",
+      "Up to 10 modules"
+    ],
+    "pr2_f2": [
+      "Бүх AI Agent + workflow",
+      "All AI agents + workflows"
+    ],
+    "pr2_f3": [
+      "Бүх 21 tool интеграц",
+      "All 21 tool integrations"
+    ],
+    "pr2_f4": [
+      "Тэргүүлэх дэмжлэг 24/7",
+      "Priority support 24/7"
+    ],
+    "pr3_t": [
+      "Корпораци",
+      "Enterprise"
+    ],
+    "pr3_d": [
+      "Том байгууллага, олон салбарт.",
+      "For large, multi-branch organizations."
+    ],
+    "pr3_n": [
+      "Хязгааргүй модуль · хэрэглэгч",
+      "Unlimited modules · users"
+    ],
+    "pr3_f1": [
+      "Бүх 40+ модуль",
+      "All 40+ modules"
+    ],
+    "pr3_f2": [
+      "Custom AI Agent & RAG",
+      "Custom AI agents & RAG"
+    ],
+    "pr3_f3": [
+      "On-premise / тусгай дата",
+      "On-premise / dedicated data"
+    ],
+    "pr3_f4": [
+      "Зориулалтын менежер",
+      "Dedicated manager"
+    ],
+    "demo_eyebrow": [
+      "Демо захиалах",
+      "Request a demo"
+    ],
+    "demo_h2_html": [
+      "Бизнестээ <span class=\"grad-text\">ARP-г</span> туршаарай",
+      "Try <span class=\"grad-text\">ARP</span> in your business"
+    ],
+    "demo_sub": [
+      "Хувийн демо захиалаарай. Танай салбарт тохирсон AI Agent шийдлийг 30 минутын дотор үзүүлнэ.",
+      "Book a personal demo. We'll show an AI agent solution tailored to your industry in 30 minutes."
+    ],
+    "dp1_t": [
+      "Танай салбарт тохирсон",
+      "Tailored to your industry"
+    ],
+    "dp1_p": [
+      "Уул уурхай, эрүүл мэнд, худалдаа — танай процесст яаж тохирохыг харуулна.",
+      "Mining, healthcare, retail — we'll show how it fits your process."
+    ],
+    "dp2_t": [
+      "30 минутын танилцуулга",
+      "30-minute walkthrough"
+    ],
+    "dp2_p": [
+      "Шууд бүтээгдэхүүн дээр, бодит жишээгээр. Үүрэг хүлээлгэхгүй.",
+      "Live in the product, with real examples. No obligation."
+    ],
+    "dp3_t": [
+      "Үнэгүй зөвлөгөө",
+      "Free consultation"
+    ],
+    "dp3_p": [
+      "Танай одоогийн системийг хэрхэн шилжүүлэх төлөвлөгөө гаргаж өгнө.",
+      "We'll map out a plan to migrate from your current system."
+    ],
+    "f_name": [
+      "Нэр <span class=\"req\">*</span>",
+      "Name <span class=\"req\">*</span>"
+    ],
+    "f_name_ph": [
+      "Таны нэр",
+      "Your name"
+    ],
+    "f_name_err": [
+      "Нэрээ оруулна уу",
+      "Please enter your name"
+    ],
+    "f_company": [
+      "Байгууллага <span class=\"req\">*</span>",
+      "Company <span class=\"req\">*</span>"
+    ],
+    "f_company_ph": [
+      "Компанийн нэр",
+      "Company name"
+    ],
+    "f_company_err": [
+      "Байгууллагаа оруулна уу",
+      "Please enter your company"
+    ],
+    "f_email": [
+      "Имэйл <span class=\"req\">*</span>",
+      "Email <span class=\"req\">*</span>"
+    ],
+    "f_email_err": [
+      "Зөв имэйл оруулна уу",
+      "Please enter a valid email"
+    ],
+    "f_phone": [
+      "Утас <span class=\"req\">*</span>",
+      "Phone <span class=\"req\">*</span>"
+    ],
+    "f_phone_err": [
+      "Зөв дугаар оруулна уу",
+      "Please enter a valid number"
+    ],
+    "f_industry": [
+      "Салбар",
+      "Industry"
+    ],
+    "f_industry_ph": [
+      "Салбараа сонгоно уу",
+      "Select your industry"
+    ],
+    "ind_mining": [
+      "Уул уурхай",
+      "Mining"
+    ],
+    "ind_health": [
+      "Эрүүл мэнд",
+      "Healthcare"
+    ],
+    "ind_edu": [
+      "Боловсрол",
+      "Education"
+    ],
+    "ind_factory": [
+      "Үйлдвэрлэл",
+      "Manufacturing"
+    ],
+    "ind_retail": [
+      "Худалдаа",
+      "Retail"
+    ],
+    "ind_other": [
+      "Бусад",
+      "Other"
+    ],
+    "f_msg": [
+      "Нэмэлт мэдээлэл",
+      "Additional details"
+    ],
+    "f_msg_ph": [
+      "Юуг автоматжуулахыг хүсэж байна вэ?",
+      "What would you like to automate?"
+    ],
+    "f_submit": [
+      "Демо хүсэлт илгээх",
+      "Send demo request"
+    ],
+    "ok_t": [
+      "Баярлалаа! 🎉",
+      "Thank you! 🎉"
+    ],
+    "ok_p": [
+      "Таны хүсэлтийг хүлээн авлаа. Манай баг 24 цагийн дотор холбогдоно.",
+      "We've received your request. Our team will reach out within 24 hours."
+    ],
+    "faq_eyebrow": [
+      "Түгээмэл асуулт",
+      "FAQ"
+    ],
+    "faq_h2": [
+      "Асуумаар байсан зүйлс",
+      "Questions you might have"
+    ],
+    "faq_q1": [
+      "ARP гэж юу вэ? ERP-ээс юугаараа ялгаатай вэ?",
+      "What is ARP? How is it different from ERP?"
+    ],
+    "faq_a1": [
+      "ARP (Agentic Resource Planning) нь уламжлалт ERP-ийн дараагийн үе. ERP-д хүн бүх өгөгдлийг гараар оруулдаг бол ARP-д AI Agent-ууд процессыг автоматаар гүйцэтгэж, хүн зөвхөн шийдвэрийг батална.",
+      "ARP (Agentic Resource Planning) is the next generation of ERP. Where ERP needs people to enter all data manually, ARP has AI agents run the processes automatically while people only approve decisions."
+    ],
+    "faq_q2": [
+      "Нэвтрүүлэхэд хэр хугацаа шаардагдах вэ?",
+      "How long does onboarding take?"
+    ],
+    "faq_a2": [
+      "Үндсэн модулиудыг 2 минутын дотор идэвхжүүлж эхэлнэ. Бүрэн тохиргоо, дата шилжүүлэг танай хэмжээнээс хамаарч 1-4 долоо хоног үргэлжилнэ. Манай баг бүх шатанд дэмжинэ.",
+      "You can activate core modules within 2 minutes. Full setup and data migration takes 1–4 weeks depending on your size. Our team supports you at every step."
+    ],
+    "faq_q3": [
+      "Миний өгөгдөл хаана хадгалагдах вэ? Аюулгүй юу?",
+      "Where is my data stored? Is it secure?"
+    ],
+    "faq_a3": [
+      "Байгууллага бүр тусдаа, тусгаарлагдсан орчинд (multi-tenant) ажиллана. Өгөгдөл шифрлэгдэж, тогтмол нөөцлөгдөнө. Шаардлагатай бол on-premise буюу танай дотоод серверт байршуулах боломжтой.",
+      "Each organization runs in its own isolated multi-tenant environment. Data is encrypted and backed up regularly. If needed, it can be deployed on-premise on your own servers."
+    ],
+    "faq_q4": [
+      "e-Barimt, QPay, банкны системтэй холбогдох уу?",
+      "Does it connect to e-Barimt, QPay and banks?"
+    ],
+    "faq_a4": [
+      "Тийм. e-Barimt, QPay, SocialPay, дотоодын банкуудын API бүгд бэлэн интеграцитай. Нэмэлт интеграц хэрэгтэй бол манай баг хийж өгнө.",
+      "Yes. e-Barimt, QPay, SocialPay and local bank APIs all come with ready integrations. We can build additional integrations on request."
+    ],
+    "faq_q5": [
+      "Зөвхөн хэрэгтэй модулиа авч болох уу?",
+      "Can I take only the modules I need?"
+    ],
+    "faq_a5": [
+      "Мэдээж. ARP бүхэлдээ модульчлагдсан. Эхэндээ 2-3 модулиар эхлээд, шаардлага гарах бүрд нэмж болно. Хэрэглэснээрээ л төлнө.",
+      "Of course. ARP is fully modular. Start with 2–3 modules and add more whenever you need. You only pay for what you use."
+    ],
+    "final_eyebrow": [
+      "Бэлэн үү?",
+      "Ready?"
+    ],
+    "final_h2_html": [
+      "Бизнесээ <span class=\"grad-text\">дараа үед</span> аваач",
+      "Take your business <span class=\"grad-text\">into the future</span>"
+    ],
+    "final_sub": [
+      "AI Agent-ууд таны бизнес процессыг 24/7 автоматжуулна. Демо авч, ARP-ийн хүчийг мэдрээрэй.",
+      "AI agents automate your processes 24/7. Get a demo and feel the power of ARP."
+    ]
+  },
+  "heroStats": [
+    {
+      "value": "40",
+      "suffix": "+",
+      "label": "Модуль",
+      "labelEn": "Modules"
+    },
+    {
+      "value": "21",
+      "suffix": "",
+      "label": "Tool",
+      "labelEn": "Tools"
+    },
+    {
+      "value": "500",
+      "suffix": "+",
+      "label": "API Endpoint",
+      "labelEn": "API Endpoints"
+    },
+    {
+      "value": "24/7",
+      "suffix": "",
+      "label": "AI Agent",
+      "labelEn": "AI Agents",
+      "static": true
+    }
+  ],
+  "resultStats": [
+    {
+      "value": "68",
+      "suffix": "%",
+      "label": "Гар ажиллагаа цөөрсөн",
+      "labelEn": "Less manual work"
+    },
+    {
+      "value": "3.2",
+      "suffix": "×",
+      "label": "Процесс хурдассан",
+      "labelEn": "Faster processes"
+    },
+    {
+      "value": "42",
+      "suffix": "%",
+      "label": "Зардал хэмнэсэн",
+      "labelEn": "Cost saved"
+    },
+    {
+      "value": "99.9",
+      "suffix": "%",
+      "label": "Системийн тогтвортой байдал",
+      "labelEn": "System uptime"
+    }
+  ],
+  "trust": [
+    {
+      "name": "M5",
+      "svg": "<path d=\"M3 20h18M5 20V9l4-3 4 3M13 20V12l4-3 4 3v8\"/>"
+    },
+    {
+      "name": "NOMAD",
+      "svg": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 0 1 0 18\"/>"
+    },
+    {
+      "name": "Gobi Tech",
+      "svg": "<path d=\"M12 2 4 7v10l8 5 8-5V7z\"/>"
+    },
+    {
+      "name": "Altan",
+      "svg": "<path d=\"M12 2l3 6 6 .5-4.5 4 1.5 6-6-3.5L6 18.5 7.5 12.5 3 8.5 9 8z\"/>"
+    },
+    {
+      "name": "Erdene",
+      "svg": "<path d=\"M3 20h18M5 20V9l4-3 4 3M13 20V12l4-3 4 3v8\"/>"
+    },
+    {
+      "name": "Khaan Co",
+      "svg": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><path d=\"M8 12h8M12 8v8\"/>"
+    },
+    {
+      "name": "Tenger",
+      "svg": "<path d=\"M5 18a4 4 0 0 1 0-8 6 6 0 0 1 11.5-2A4.5 4.5 0 0 1 18 18z\"/>"
+    },
+    {
+      "name": "Mandal",
+      "svg": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v3M12 19v3M2 12h3M19 12h3\"/>"
+    }
+  ],
+  "modules": [
+    {
+      "code": "E",
+      "cat": "biz",
+      "name": "И-Худалдаа",
+      "nameEn": "E-Commerce",
+      "desc": "B2B/B2C онлайн худалдаа, захиалга, төлбөр",
+      "descEn": ""
+    },
+    {
+      "code": "IN",
+      "cat": "biz",
+      "name": "Агуулах",
+      "nameEn": "Inventory",
+      "desc": "Бараа материал, нөөц удирдлага, шилжүүлэг",
+      "descEn": ""
+    },
+    {
+      "code": "PR",
+      "cat": "biz",
+      "name": "Худалдан авалт",
+      "nameEn": "Procurement",
+      "desc": "Нийлүүлэгч, PR/PO/GRN, invoice workflow",
+      "descEn": ""
+    },
+    {
+      "code": "FI",
+      "cat": "biz",
+      "name": "Санхүү",
+      "nameEn": "Finance",
+      "desc": "Данс, тооцоо, орлого зарлага, тайлан",
+      "descEn": ""
+    },
+    {
+      "code": "HR",
+      "cat": "biz",
+      "name": "Хүний нөөц",
+      "nameEn": "HRM",
+      "desc": "Ажилтан, цалин, чөлөө, гүйцэтгэл",
+      "descEn": ""
+    },
+    {
+      "code": "CR",
+      "cat": "biz",
+      "name": "CRM",
+      "nameEn": "CRM",
+      "desc": "Харилцагч удирдлага, борлуулалтын суваг",
+      "descEn": ""
+    },
+    {
+      "code": "PJ",
+      "cat": "biz",
+      "name": "Төсөл удирдлага",
+      "nameEn": "Project Mgmt",
+      "desc": "Төсөл, даалгавар, дэд ажил, timeline",
+      "descEn": ""
+    },
+    {
+      "code": "LO",
+      "cat": "biz",
+      "name": "Логистик",
+      "nameEn": "Logistics",
+      "desc": "Тээвэр, хүргэлт, маршрут оновчлол",
+      "descEn": ""
+    },
+    {
+      "code": "MA",
+      "cat": "biz",
+      "name": "Маркетинг",
+      "nameEn": "Marketing",
+      "desc": "Кампанит ажил, email, SMS, аналитик",
+      "descEn": ""
+    },
+    {
+      "code": "AS",
+      "cat": "biz",
+      "name": "Хөрөнгө",
+      "nameEn": "Asset Mgmt",
+      "desc": "Хөрөнгийн бүртгэл, элэгдэл, шилжүүлэг",
+      "descEn": ""
+    },
+    {
+      "code": "LE",
+      "cat": "biz",
+      "name": "Хууль",
+      "nameEn": "Legal",
+      "desc": "Гэрээ, хэрэг, өмгөөлөл",
+      "descEn": ""
+    },
+    {
+      "code": "CE",
+      "cat": "biz",
+      "name": "CEO Dashboard",
+      "nameEn": "CEO Dashboard",
+      "desc": "Удирдлагын хяналт, KPI, AI зөвлөгөө",
+      "descEn": ""
+    },
+    {
+      "code": "MI",
+      "cat": "ind",
+      "name": "Уул уурхай",
+      "nameEn": "Mining",
+      "desc": "Олборлолт, GPS, аюулгүй байдал, лаборатори",
+      "descEn": ""
+    },
+    {
+      "code": "TO",
+      "cat": "ind",
+      "name": "Аялал жуулчлал",
+      "nameEn": "Tourism",
+      "desc": "Зочид буудал, тур, захиалга, гид",
+      "descEn": ""
+    },
+    {
+      "code": "CL",
+      "cat": "ind",
+      "name": "Эмнэлэг",
+      "nameEn": "Clinic",
+      "desc": "Өвчтөн, цаг захиалга, оношилгоо",
+      "descEn": ""
+    },
+    {
+      "code": "IN",
+      "cat": "ind",
+      "name": "Даатгал",
+      "nameEn": "Insurance",
+      "desc": "Полис, нөхөн олговор, агент",
+      "descEn": ""
+    },
+    {
+      "code": "RE",
+      "cat": "ind",
+      "name": "Үл хөдлөх",
+      "nameEn": "Real Estate",
+      "desc": "Зар, түрээс, гэрээ, барилга",
+      "descEn": ""
+    },
+    {
+      "code": "SC",
+      "cat": "ind",
+      "name": "Сургууль",
+      "nameEn": "School",
+      "desc": "Сурагч, хичээл, дүн, ирц",
+      "descEn": ""
+    },
+    {
+      "code": "PA",
+      "cat": "ind",
+      "name": "Ломбард",
+      "nameEn": "Pawnshop",
+      "desc": "Барьцаа, зээл, дуудлага худалдаа",
+      "descEn": ""
+    },
+    {
+      "code": "SP",
+      "cat": "ind",
+      "name": "Спорт",
+      "nameEn": "Sports",
+      "desc": "Клуб, тамирчин, тэмцээн, холбоо",
+      "descEn": ""
+    },
+    {
+      "code": "IV",
+      "cat": "ind",
+      "name": "Хөрөнгө оруулалт",
+      "nameEn": "Investment",
+      "desc": "Брокер, дилер, портфолио",
+      "descEn": ""
+    },
+    {
+      "code": "FA",
+      "cat": "ind",
+      "name": "Үйлдвэрлэл",
+      "nameEn": "Factory",
+      "desc": "Үйлдвэр, BOM, MRP, чанарын хяналт",
+      "descEn": ""
+    },
+    {
+      "code": "TI",
+      "cat": "ind",
+      "name": "Тасалбар",
+      "nameEn": "Ticketing",
+      "desc": "Арга хэмжээ, суудал, check-in",
+      "descEn": ""
+    },
+    {
+      "code": "FT",
+      "cat": "ind",
+      "name": "Фитнесс",
+      "nameEn": "Fitness",
+      "desc": "Гишүүнчлэл, хичээл, дасгалжуулагч",
+      "descEn": ""
+    },
+    {
+      "code": "HO",
+      "cat": "ind",
+      "name": "СӨХ",
+      "nameEn": "HOA",
+      "desc": "Сууц өмчлөгч, төлбөр, засвар",
+      "descEn": ""
+    },
+    {
+      "code": "NE",
+      "cat": "ind",
+      "name": "Мэдээ",
+      "nameEn": "News",
+      "desc": "Нийтлэл, категори, сэтгүүлч",
+      "descEn": ""
+    },
+    {
+      "code": "SE",
+      "cat": "ind",
+      "name": "Үйлчилгээ",
+      "nameEn": "Services",
+      "desc": "Захиалга, гүйцэтгэгч, нэхэмжлэх",
+      "descEn": ""
+    },
+    {
+      "code": "FE",
+      "cat": "ind",
+      "name": "ТЭЗ",
+      "nameEn": "Feasibility",
+      "desc": "NPV, IRR, мэдрэмжийн шинжилгээ",
+      "descEn": ""
+    },
+    {
+      "code": "FK",
+      "cat": "ind",
+      "name": "Финтек",
+      "nameEn": "Fintech",
+      "desc": "Цахим зээл, scoring, KYC",
+      "descEn": ""
+    },
+    {
+      "code": "TA",
+      "cat": "ind",
+      "name": "Оёдол",
+      "nameEn": "Tailoring",
+      "desc": "Захиалга, хэмжээс, загвар, үйлдвэрлэл",
+      "descEn": ""
+    },
+    {
+      "code": "EV",
+      "cat": "ind",
+      "name": "Эвент",
+      "nameEn": "Events",
+      "desc": "Арга хэмжээ зохион байгуулалт",
+      "descEn": ""
+    },
+    {
+      "code": "SO",
+      "cat": "ind",
+      "name": "Сошиал",
+      "nameEn": "Social",
+      "desc": "Нийгмийн сүлжээ, пост, групп",
+      "descEn": ""
+    },
+    {
+      "code": "GU",
+      "cat": "ind",
+      "name": "Хамгаалалт",
+      "nameEn": "Security",
+      "desc": "Харуул хамгаалалт, ээлж, объект",
+      "descEn": ""
+    }
+  ],
+  "features": [
+    {
+      "icon": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"4\"/><circle cx=\"9\" cy=\"10\" r=\"1.3\"/><circle cx=\"15\" cy=\"10\" r=\"1.3\"/><path d=\"M9 15h6\"/>",
+      "title": "AI Agent бүр модулд",
+      "titleEn": "An AI agent in every module",
+      "desc": "Борлуулалт, агуулах, HR, санхүү — модуль бүрт AI туслах автомат ажиллана. Хүн зөвхөн батална.",
+      "descEn": "Sales, inventory, HR, finance — every module has an AI assistant that works automatically. People just approve."
+    },
+    {
+      "icon": "<path d=\"M13 2 4 14h6l-1 8 9-12h-6z\"/>",
+      "title": "Event-Driven Автоматжуулалт",
+      "titleEn": "Event-Driven Automation",
+      "desc": "Бизнес үйл явдал тохиолдоход AI agent шууд хариу үйлдэл үзүүлнэ. Хүлээлт байхгүй.",
+      "descEn": "When a business event happens, an AI agent reacts instantly. No waiting."
+    },
+    {
+      "icon": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/>",
+      "title": "Модульчлагдсан Архитектур",
+      "titleEn": "Modular Architecture",
+      "desc": "40+ модулиас хэрэгтэйгээ л сонго. Шаардлагагүй зүйлд төлөхгүй, хэрэгтэй болоход нэм.",
+      "descEn": "Pick only what you need from 40+ modules. Don’t pay for the rest; add when needed."
+    },
+    {
+      "icon": "<path d=\"M3 7l9-4 9 4-9 4-9-4z\"/><path d=\"M3 12l9 4 9-4M3 17l9 4 9-4\"/>",
+      "title": "Multi-Tenant SaaS",
+      "titleEn": "Multi-Tenant SaaS",
+      "desc": "Байгууллага бүр тусдаа орчин, тусдаа өгөгдөл. Нэг платформ дээр хэдэн ч бизнес.",
+      "descEn": "Each organization gets its own isolated environment and data. Any number of businesses on one platform."
+    },
+    {
+      "icon": "<path d=\"M14.7 6.3a4 4 0 0 0-5.6 5.6l-6 6 2 2 6-6a4 4 0 0 0 5.6-5.6l-2.5 2.5-2-2 2.5-2.5z\"/>",
+      "title": "21 Бэлэн Tool",
+      "titleEn": "21 Ready Tools",
+      "desc": "Email, SMS, төлбөр, файл хадгалалт, PDF, e-Barimt — бүгд бэлэн. Интеграцид цаг зарахгүй.",
+      "descEn": "Email, SMS, payments, file storage, PDF, e-Barimt — all ready. No time lost on integrations."
+    },
+    {
+      "icon": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18\"/>",
+      "title": "Монгол Зах Зээлд",
+      "titleEn": "Built for Mongolia",
+      "desc": "QPay, SocialPay, e-Barimt, банкны API, Монгол хэл — бүгд дэмжинэ.",
+      "descEn": "QPay, SocialPay, e-Barimt, bank APIs, Mongolian language — all supported."
+    }
+  ],
+  "services": [
+    {
+      "pill": "Хамгийн эрэлттэй",
+      "pillEn": "Most popular",
+      "title": "AI Agent Суурилуулалт",
+      "titleEn": "AI Agent Deployment",
+      "desc": "Танай байгууллагын үйл ажиллагааг бүрэн автоматжуулах AI Agent тохируулж, суурилуулж өгнө. Бизнесийн бүх процесст тохирсон agent deploy хийнэ.",
+      "descEn": "We configure and deploy AI agents that fully automate your operations — an agent tailored to every business process.",
+      "points": [
+        "Бизнес процесс шинжилгээ",
+        "Custom AI Agent бүтээх",
+        "Одоо байгаа системтэй холбох",
+        "Ажилтнуудыг сургах"
+      ],
+      "pointsEn": [
+        "Business process analysis",
+        "Build custom AI agents",
+        "Integrate with existing systems",
+        "Train your staff"
+      ]
+    },
+    {
+      "pill": "AI Шийдэл",
+      "pillEn": "AI Solution",
+      "title": "RAG Систем Тохируулалт",
+      "titleEn": "RAG System Setup",
+      "desc": "Танай бичиг баримт, мэдлэгийн сан, гарын авлагыг AI-д ойлгуулж, ажилтнууд болон хэрэглэгчдэд хиймэл оюунаар хариулт өгөх RAG систем бүтээнэ.",
+      "descEn": "We teach AI your documents, knowledge base and manuals, building a RAG system that answers staff and customers intelligently.",
+      "points": [
+        "Бичиг баримт vectorization",
+        "Мэдлэгийн сан бүтээх",
+        "LLM сонголт, тохиргоо",
+        "Chatbot / Q&A интерфэйс"
+      ],
+      "pointsEn": [
+        "Document vectorization",
+        "Build a knowledge base",
+        "LLM selection & tuning",
+        "Chatbot / Q&A interface"
+      ]
+    },
+    {
+      "pill": "Үр ашигтай",
+      "pillEn": "Efficient",
+      "title": "Процесс Автоматжуулалт",
+      "titleEn": "Process Automation",
+      "desc": "Давтагдах ажлуудыг бүрэн автоматжуулна. Email, тайлан, мэдэгдэл, батламж workflow — бүгдийг event-driven automation-оор шийднэ.",
+      "descEn": "We fully automate repetitive work. Email, reports, notifications, approval workflows — all solved with event-driven automation.",
+      "points": [
+        "Workflow mapping & дизайн",
+        "Event-driven trigger тохируулах",
+        "Гуравдагч системтэй интеграц",
+        "Approval workflow бүтээх"
+      ],
+      "pointsEn": [
+        "Workflow mapping & design",
+        "Configure event-driven triggers",
+        "Third-party integrations",
+        "Build approval workflows"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "icon": "<path d=\"M3 20h18M5 20V9l4-3 4 3M13 20V12l4-3 4 3v8\"/>",
+      "title": "Уул уурхай",
+      "titleEn": "Mining",
+      "desc": "Олборлолт, тоног төхөөрөмж, GPS мониторинг, лабораторийн шинжилгээ, аюулгүй байдал.",
+      "descEn": "Extraction, equipment, GPS monitoring, lab analysis, safety.",
+      "tags": [
+        "mining",
+        "inventory",
+        "hrm",
+        "logistics"
+      ]
+    },
+    {
+      "icon": "<path d=\"M3 21V10l9-7 9 7v11M9 21v-6h6v6\"/>",
+      "title": "Аялал жуулчлал",
+      "titleEn": "Tourism",
+      "desc": "Зочид буудал, тур захиалга, гид менежмент, онлайн төлбөр.",
+      "descEn": "Hotels, tour booking, guide management, online payments.",
+      "tags": [
+        "tourism",
+        "ecommerce",
+        "crm",
+        "marketing"
+      ]
+    },
+    {
+      "icon": "<path d=\"M6 2h12l2 6-8 14L4 8z\"/><path d=\"M6 8h12\"/>",
+      "title": "Худалдаа",
+      "titleEn": "Retail",
+      "desc": "Онлайн дэлгүүр, агуулах, нийлүүлэгч, хүргэлт, төлбөр, e-Barimt.",
+      "descEn": "Online store, inventory, suppliers, delivery, payments, e-Barimt.",
+      "tags": [
+        "ecommerce",
+        "inventory",
+        "procurement",
+        "logistics"
+      ]
+    },
+    {
+      "icon": "<path d=\"M12 5v14M5 12h14\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>",
+      "title": "Эрүүл мэнд",
+      "titleEn": "Healthcare",
+      "desc": "Өвчтөний бүртгэл, цаг захиалга, оношилгоо, эмийн сан.",
+      "descEn": "Patient records, appointments, diagnostics, pharmacy.",
+      "tags": [
+        "clinic",
+        "hrm",
+        "finance",
+        "crm"
+      ]
+    },
+    {
+      "icon": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 8V5a4 4 0 0 1 8 0v3\"/>",
+      "title": "Үйлдвэрлэл",
+      "titleEn": "Manufacturing",
+      "desc": "BOM, MRP, чанарын хяналт, үйлдвэрийн удирдлага.",
+      "descEn": "BOM, MRP, quality control, factory management.",
+      "tags": [
+        "factory",
+        "inventory",
+        "procurement",
+        "hrm"
+      ]
+    },
+    {
+      "icon": "<path d=\"M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"/>",
+      "title": "Санхүү & Даатгал",
+      "titleEn": "Finance & Insurance",
+      "desc": "Данс, тайлан, даатгалын полис, нөхөн олговор, зээл.",
+      "descEn": "Accounts, reports, insurance policies, claims, loans.",
+      "tags": [
+        "finance",
+        "insurance",
+        "invest",
+        "pawnshop"
+      ]
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Эхлэл",
+      "nameEn": "Starter",
+      "desc": "Шинэ болон жижиг бизнест.",
+      "descEn": "For new and small businesses.",
+      "price": "₮199k",
+      "custom": false,
+      "note": "3 хүртэл модуль · 10 хэрэглэгч",
+      "noteEn": "Up to 3 modules · 10 users",
+      "featured": false,
+      "cta": "price_try",
+      "features": [
+        "Үндсэн 3 модуль",
+        "AI Agent (үндсэн)",
+        "e-Barimt, QPay интеграц",
+        "Имэйл дэмжлэг"
+      ],
+      "featuresEn": [
+        "3 core modules",
+        "AI agent (basic)",
+        "e-Barimt, QPay integration",
+        "Email support"
+      ]
+    },
+    {
+      "name": "Бизнес",
+      "nameEn": "Business",
+      "desc": "Өсөн нэмэгдэж буй компанид.",
+      "descEn": "For growing companies.",
+      "price": "₮599k",
+      "custom": false,
+      "note": "10 хүртэл модуль · 50 хэрэглэгч",
+      "noteEn": "Up to 10 modules · 50 users",
+      "featured": true,
+      "cta": "price_try2",
+      "features": [
+        "10 хүртэл модуль",
+        "Бүх AI Agent + workflow",
+        "Бүх 21 tool интеграц",
+        "Тэргүүлэх дэмжлэг 24/7"
+      ],
+      "featuresEn": [
+        "Up to 10 modules",
+        "All AI agents + workflows",
+        "All 21 tool integrations",
+        "Priority support 24/7"
+      ]
+    },
+    {
+      "name": "Корпораци",
+      "nameEn": "Enterprise",
+      "desc": "Том байгууллага, олон салбарт.",
+      "descEn": "For large, multi-branch organizations.",
+      "price": "",
+      "custom": true,
+      "note": "Хязгааргүй модуль · хэрэглэгч",
+      "noteEn": "Unlimited modules · users",
+      "featured": false,
+      "cta": "price_contact",
+      "features": [
+        "Бүх 40+ модуль",
+        "Custom AI Agent & RAG",
+        "On-premise / тусгай дата",
+        "Зориулалтын менежер"
+      ],
+      "featuresEn": [
+        "All 40+ modules",
+        "Custom AI agents & RAG",
+        "On-premise / dedicated data",
+        "Dedicated manager"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "ARP гэж юу вэ? ERP-ээс юугаараа ялгаатай вэ?",
+      "qEn": "What is ARP? How is it different from ERP?",
+      "a": "ARP (Agentic Resource Planning) нь уламжлалт ERP-ийн дараагийн үе. ERP-д хүн бүх өгөгдлийг гараар оруулдаг бол ARP-д AI Agent-ууд процессыг автоматаар гүйцэтгэж, хүн зөвхөн шийдвэрийг батална.",
+      "aEn": "ARP (Agentic Resource Planning) is the next generation of ERP. Where ERP needs people to enter all data manually, ARP has AI agents run the processes automatically while people only approve decisions."
+    },
+    {
+      "q": "Нэвтрүүлэхэд хэр хугацаа шаардагдах вэ?",
+      "qEn": "How long does onboarding take?",
+      "a": "Үндсэн модулиудыг 2 минутын дотор идэвхжүүлж эхэлнэ. Бүрэн тохиргоо, дата шилжүүлэг танай хэмжээнээс хамаарч 1-4 долоо хоног үргэлжилнэ. Манай баг бүх шатанд дэмжинэ.",
+      "aEn": "You can activate core modules within 2 minutes. Full setup and data migration takes 1–4 weeks depending on your size. Our team supports you at every step."
+    },
+    {
+      "q": "Миний өгөгдөл хаана хадгалагдах вэ? Аюулгүй юу?",
+      "qEn": "Where is my data stored? Is it secure?",
+      "a": "Байгууллага бүр тусдаа, тусгаарлагдсан орчинд (multi-tenant) ажиллана. Өгөгдөл шифрлэгдэж, тогтмол нөөцлөгдөнө. Шаардлагатай бол on-premise буюу танай дотоод серверт байршуулах боломжтой.",
+      "aEn": "Each organization runs in its own isolated multi-tenant environment. Data is encrypted and backed up regularly. If needed, it can be deployed on-premise on your own servers."
+    },
+    {
+      "q": "e-Barimt, QPay, банкны системтэй холбогдох уу?",
+      "qEn": "Does it connect to e-Barimt, QPay and banks?",
+      "a": "Тийм. e-Barimt, QPay, SocialPay, дотоодын банкуудын API бүгд бэлэн интеграцитай. Нэмэлт интеграц хэрэгтэй бол манай баг хийж өгнө.",
+      "aEn": "Yes. e-Barimt, QPay, SocialPay and local bank APIs all come with ready integrations. We can build additional integrations on request."
+    },
+    {
+      "q": "Зөвхөн хэрэгтэй модулиа авч болох уу?",
+      "qEn": "Can I take only the modules I need?",
+      "a": "Мэдээж. ARP бүхэлдээ модульчлагдсан. Эхэндээ 2-3 модулиар эхлээд, шаардлага гарах бүрд нэмж болно. Хэрэглэснээрээ л төлнө.",
+      "aEn": "Of course. ARP is fully modular. Start with 2–3 modules and add more whenever you need. You only pay for what you use."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="s-pad" data-screen-label="How it works">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="how_eyebrow" set:html={t("how_eyebrow")}></span></span>
+      <h2 data-i18n="how_h2_html" set:html={t("how_h2_html")}></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01</div><span class="line"></span>
+        <h3 data-i18n="how1_t" set:html={t("how1_t")}></h3>
+        <p data-i18n="how1_p" set:html={t("how1_p")}></p>
+      </div>
+      <div class="step reveal d1">
+        <div class="n">02</div><span class="line"></span>
+        <h3 data-i18n="how2_t" set:html={t("how2_t")}></h3>
+        <p data-i18n="how2_p" set:html={t("how2_p")}></p>
+      </div>
+      <div class="step reveal d2">
+        <div class="n">03</div>
+        <h3 data-i18n="how3_t" set:html={t("how3_t")}></h3>
+        <p data-i18n="how3_p" set:html={t("how3_p")}></p>
+      </div>
+    </div>
+  </div>
+</section>

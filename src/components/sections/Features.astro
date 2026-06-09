@@ -1,0 +1,24 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+const delays = ["", "d1", "d2", "", "d1", "d2"];
+---
+<section class="s-pad" data-screen-label="Why ARP">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="feat_eyebrow" set:html={t("feat_eyebrow")}></span></span>
+      <h2 data-i18n="feat_h2_html" set:html={t("feat_h2_html")}></h2>
+    </div>
+    <div class="feat-grid">
+      {content.features.map((f: any, i: number) => (
+        <article class:list={["feat-card", "reveal", delays[i % delays.length]]}>
+          <div class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon}></svg></div>
+          <h3 data-bi data-mn={f.title} data-en={f.titleEn}>{f.title}</h3>
+          <p data-bi data-mn={f.desc} data-en={f.descEn}>{f.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

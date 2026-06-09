@@ -1,0 +1,39 @@
+---
+export const prerender = false;
+import AdminApp from "@/components/admin/AdminApp.svelte";
+import { getEnv } from "@/server/env.js";
+
+const clientId = getEnv("PUBLIC_GOOGLE_CLIENT_ID") || getEnv("GOOGLE_CLIENT_ID");
+---
+<!doctype html>
+<html lang="mn" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Orinux — Админ</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://accounts.google.com/gsi/client" async defer is:inline></script>
+  </head>
+  <body>
+    <AdminApp client:only="svelte" clientId={clientId} />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #0a0c10; --panel: #12151c; --panel-2: #171b24; --line: #232936;
+    --text: #e7ecf4; --dim: #9aa6b8; --faint: #647084;
+    --accent: #6e8bff; --accent-2: #9a6bff; --ok: #34d399; --warn: #fbbf24; --bad: #f87171;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  button { font-family: inherit; }
+  ::placeholder { color: var(--faint); }
+</style>

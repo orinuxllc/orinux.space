@@ -1,0 +1,46 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="stage" id="industry-stage" data-screen-label="Industry Transformation">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="stage_eyebrow" set:html={t("stage_eyebrow")}></span></span>
+      <h2 data-i18n="stage_h2_html" set:html={t("stage_h2_html")}></h2>
+      <p class="stage-lede" data-i18n="stage_lede" set:html={t("stage_lede")}></p>
+    </div>
+    <nav class="stage-tabs reveal" id="stg-tabs" aria-label="Салбар сонгох"></nav>
+    <div class="opsboard reveal d1">
+      <div class="ops-top">
+        <div>
+          <span class="stage-idx"><span id="stg-num">01</span> <i>/ 06</i></span>
+          <h3 id="stg-name">Уул уурхай</h3>
+        </div>
+        <p id="stg-desc">Талбайн ажилтан, техник, сенсорын өгөгдлийг AI боловсруулж удирдлагад дамжуулна.</p>
+      </div>
+      <div class="ops-progress"><span id="stg-bar"></span></div>
+      <div class="ops-heads">
+        <span>Талбай · эх үүсвэр</span>
+        <span class="mid">ARP AI · бодит цаг</span>
+        <span class="end">Үр дүн · удирдлага</span>
+      </div>
+      <div class="ops" id="ops">
+        <svg id="ops-links"></svg>
+        <div class="ops-col ops-left" id="ops-left"></div>
+        <div class="ops-core">
+          <div class="core-ring2"></div>
+          <div class="core-card">
+            <div class="core-pulse"></div>
+            <div>
+              <div class="clabel">ARP</div>
+              <div class="csub">AI Core</div>
+            </div>
+          </div>
+        </div>
+        <div class="ops-col ops-right" id="ops-right"></div>
+      </div>
+    </div>
+  </div>
+</section>

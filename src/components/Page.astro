@@ -1,0 +1,36 @@
+---
+import { type Content } from "@/lib/content";
+import Hero from "@/components/sections/Hero.astro";
+import Trust from "@/components/sections/Trust.astro";
+import Platform from "@/components/sections/Platform.astro";
+import Results from "@/components/sections/Results.astro";
+import Comparison from "@/components/sections/Comparison.astro";
+import Features from "@/components/sections/Features.astro";
+import Modules from "@/components/sections/Modules.astro";
+import Pricing from "@/components/sections/Pricing.astro";
+import HowItWorks from "@/components/sections/HowItWorks.astro";
+import Services from "@/components/sections/Services.astro";
+import IndustryStage from "@/components/sections/IndustryStage.astro";
+import Industries from "@/components/sections/Industries.astro";
+import Demo from "@/components/sections/Demo.astro";
+import Faq from "@/components/sections/Faq.astro";
+import FinalCta from "@/components/sections/FinalCta.astro";
+
+interface Props { content: Content }
+const { content } = Astro.props;
+---
+<Hero content={content} />
+<Trust content={content} />
+<Platform content={content} />
+<Results content={content} />
+<Comparison content={content} />
+<Features content={content} />
+<Modules content={content} />
+<Pricing content={content} />
+<HowItWorks content={content} />
+<Services content={content} />
+<IndustryStage content={content} />
+<Industries content={content} />
+<Demo content={content} />
+<Faq content={content} />
+<FinalCta content={content} />

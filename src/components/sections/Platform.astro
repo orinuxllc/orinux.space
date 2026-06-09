@@ -1,0 +1,83 @@
+---
+import { mn, type Content } from "@/lib/content";
+interface Props { content: Content }
+const { content } = Astro.props;
+const t = (k: string) => mn(k, content);
+---
+<section class="platform" id="platform" data-screen-label="Platform">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="plat_eyebrow" set:html={t("plat_eyebrow")}></span></span>
+      <h2 data-i18n="plat_h2_html" set:html={t("plat_h2_html")}></h2>
+      <p data-i18n="plat_sub" set:html={t("plat_sub")}></p>
+    </div>
+
+    <div class="win reveal d1" id="dash-win">
+      <div class="win-bar">
+        <div class="win-dots"><i></i><i></i><i></i></div>
+        <div class="win-url">app.orinux.space/dashboard</div>
+      </div>
+      <div class="dash">
+        <aside class="dash-side">
+          <div class="dash-brand"><span class="mark">O</span>orinux</div>
+          <a class="dash-nav on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span data-i18n="dn_overview" set:html={t("dn_overview")}></span></a>
+          <a class="dash-nav"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/></svg><span data-i18n="dn_inventory" set:html={t("dn_inventory")}></span><span class="live"></span></a>
+          <a class="dash-nav"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 12h11"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg><span data-i18n="dn_sales" set:html={t("dn_sales")}></span></a>
+          <a class="dash-nav"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/></svg><span data-i18n="dn_hr" set:html={t("dn_hr")}></span></a>
+          <a class="dash-nav"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M14.5 9.5C14 8.5 13 8 12 8s-2.5.8-2.5 2 1.1 1.6 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2"/></svg><span data-i18n="dn_finance" set:html={t("dn_finance")}></span></a>
+          <div class="dash-sep"></div>
+          <a class="dash-nav"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5 11a7 7 0 0 0 14 0"/></svg><span data-i18n="dn_agents" set:html={t("dn_agents")}></span><span class="live"></span></a>
+        </aside>
+        <div class="dash-main">
+          <div class="dash-head">
+            <div>
+              <h4 data-i18n="dash_title" set:html={t("dash_title")}></h4>
+              <div class="sub" data-i18n="dash_sub" set:html={t("dash_sub")}></div>
+            </div>
+            <div class="dash-badge"><span class="live"></span><span data-i18n="dash_live" set:html={t("dash_live")}></span></div>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><div class="kl" data-i18n="kpi_rev" set:html={t("kpi_rev")}></div><div class="kv" data-kpi="rev">₮0</div><div class="kd up">↑ 12.4%</div></div>
+            <div class="kpi"><div class="kl" data-i18n="kpi_orders" set:html={t("kpi_orders")}></div><div class="kv" data-kpi="ord">0</div><div class="kd up">↑ 8.1%</div></div>
+            <div class="kpi"><div class="kl" data-i18n="kpi_auto" set:html={t("kpi_auto")}></div><div class="kv" data-kpi="auto">0%</div><div class="kd up">↑ 5.6%</div></div>
+            <div class="kpi"><div class="kl" data-i18n="kpi_tasks" set:html={t("kpi_tasks")}></div><div class="kv" data-kpi="task">0</div><div class="kd up">↑ 23%</div></div>
+          </div>
+
+          <div class="dash-row">
+            <div class="panel">
+              <div class="panel-h">
+                <h5 data-i18n="chart_title" set:html={t("chart_title")}></h5>
+                <div class="leg"><span><i style="background:var(--accent-bright)"></i><span data-i18n="leg_rev" set:html={t("leg_rev")}></span></span><span><i style="background:var(--accent-2)"></i><span data-i18n="leg_auto" set:html={t("leg_auto")}></span></span></div>
+              </div>
+              <div class="chart" id="dash-chart">
+                <svg viewBox="0 0 480 180" preserveAspectRatio="none"></svg>
+              </div>
+              <div class="chart-x"><span>Дав</span><span>Мяг</span><span>Лха</span><span>Пүр</span><span>Баа</span><span>Бям</span><span>Ням</span></div>
+            </div>
+            <div class="panel feed">
+              <div class="panel-h"><h5 data-i18n="feed_title" set:html={t("feed_title")}></h5><span class="dash-badge" style="font-size:10px;padding:4px 9px;"><span class="live"></span>live</span></div>
+              <div class="feed-list" id="feed-list"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-h"><h5 data-i18n="wf_title" set:html={t("wf_title")}></h5><span style="font-family:var(--mono);font-size:11px;color:var(--text-faint)" id="wf-status">боловсруулж байна…</span></div>
+            <div class="wf" id="wf">
+              <div class="wf-step"><div class="wf-node"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg></div><b data-i18n="wf1" set:html={t("wf1")}></b><span>PO-2841</span></div>
+              <div class="wf-step"><div class="wf-node"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5 11a7 7 0 0 0 14 0"/></svg></div><b data-i18n="wf2" set:html={t("wf2")}></b><span data-i18n="wf2s" set:html={t("wf2s")}></span></div>
+              <div class="wf-step"><div class="wf-node"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><b data-i18n="wf3" set:html={t("wf3")}></b><span>B.Бат</span></div>
+              <div class="wf-step"><div class="wf-node"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M14.5 9.5C14 8.5 13 8 12 8s-2.5.8-2.5 2 1.1 1.6 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2"/></svg></div><b data-i18n="wf4" set:html={t("wf4")}></b><span data-i18n="wf4s" set:html={t("wf4s")}></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="platform-feats reveal d2">
+      <div class="pf"><div class="pf-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><div><b data-i18n="pf1_t" set:html={t("pf1_t")}></b><p data-i18n="pf1_p" set:html={t("pf1_p")}></p></div></div>
+      <div class="pf"><div class="pf-ic"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5 11a7 7 0 0 0 14 0"/></svg></div><div><b data-i18n="pf2_t" set:html={t("pf2_t")}></b><p data-i18n="pf2_p" set:html={t("pf2_p")}></p></div></div>
+      <div class="pf"><div class="pf-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/></svg></div><div><b data-i18n="pf3_t" set:html={t("pf3_t")}></b><p data-i18n="pf3_p" set:html={t("pf3_p")}></p></div></div>
+    </div>
+  </div>
+</section>

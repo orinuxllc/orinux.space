@@ -1,102 +1,107 @@
 ---
-import "@/styles/global.css";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import Nav from "@/components/sections/Nav.astro";
+import Footer from "@/components/sections/Footer.astro";
+import { content as staticContent, type Content } from "@/lib/content";
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
-  ogImage?: string;
+  /** Live content (defaults to the committed JSON; preview passes the draft). */
+  content?: Content;
+  /** Hide admin-only chrome when rendered inside the admin preview iframe. */
+  preview?: boolean;
 }
 
 const {
-  title,
-  description = "ARP (Agentic Resource Planning) — AI Agent-ууд бизнес процессыг автомат удирддаг дараа үеийн ERP платформ. 40+ модуль, 21 tool.",
-  ogImage = "/og-image.svg",
+  content = staticContent,
+  preview = false,
+  title = content.meta.title,
+  description = content.meta.description,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url.pathname;
+const ogImage = content.meta.ogImage;
 ---
 
 <!doctype html>
-<html lang="mn">
+<html lang="mn" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Orinux LLC" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Open Graph -->
+    <!-- Fonts (design system) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Unbounded:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/assets/pro.css" />
+
+    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-
-    <!-- Twitter -->
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="theme-color" content="#060709" />
 
-    <meta name="theme-color" content="#020617" />
+    <!-- Avoid theme flash before interactions.js runs -->
+    <script is:inline>
+      try {
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("orinux-theme") || "dark",
+        );
+      } catch (e) {}
+    </script>
 
-    <!-- Structured Data -->
+    <!-- CMS content → client globals (i18n dictionary + trust logos) -->
+    <script is:inline define:vars={{ dict: content.i18n, trust: content.trust, preview }}>
+      window.__ORINUX_I18N__ = dict;
+      window.__ORINUX_TRUST__ = trust;
+      window.__ORINUX_PREVIEW__ = preview;
+    </script>
+
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Orinux LLC",
-      "url": "https://orinux.space",
-      "logo": "https://orinux.space/favicon.svg",
-      "description": "ARP (Agentic Resource Planning) — AI Agent-ууд бизнес процессыг автомат удирддаг дараа үеийн ERP платформ.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ulaanbaatar",
-        "addressCountry": "MN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+976-6003-4140",
-        "email": "info@orinux.space",
-        "contactType": "sales"
-      },
-      "sameAs": []
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "orinux",
-      "url": "https://orinux.space"
+      "@type": "SoftwareApplication",
+      name: "Orinux ARP",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: content.meta.description,
+      offers: { "@type": "Offer", price: "199000", priceCurrency: "MNT" },
+      publisher: { "@type": "Organization", name: "Orinux LLC", email: content.contact.email },
     })} />
 
     <slot name="head" />
-
-    <title>{title}</title>
   </head>
-  <body class="bg-surface-950 text-white antialiased bg-noise">
-    <!-- Skip to content -->
-    <a
-      href="#main-content"
-      class="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-transform focus:translate-y-0"
-    >
-      Агуулга руу очих
-    </a>
+  <body class:list={[{ "is-preview": preview }]}>
+    <div class="cursor-glow" id="cursor-glow"></div>
+    <div class="backdrop"></div>
+    <div class="grain"></div>
 
-    <Header />
-    <main id="main-content" role="main">
-      <slot />
-    </main>
-    <Footer />
+    <Nav content={content} preview={preview} />
+    <slot />
+    <Footer content={content} />
 
-    <script>
-      import "@/scripts/scroll-reveal";
-      import "@/scripts/counter";
-      import "@/scripts/header-scroll";
-    </script>
+    <!-- Ported design scripts (plain IIFEs in /public/assets) -->
+    <script is:inline src="/assets/app.js"></script>
+    <script is:inline src="/assets/opsScene.js"></script>
+    <script is:inline src="/assets/dashboard.js"></script>
+    <script is:inline src="/assets/interactions.js"></script>
+    <script is:inline src="/assets/i18n.js"></script>
   </body>
 </html>
