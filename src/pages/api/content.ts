@@ -4,6 +4,7 @@
 import type { APIRoute } from "astro";
 import { verifyGoogle, listAccess } from "@/server/auth.js";
 import { getJson, PROD_BRANCH, DRAFT_BRANCH } from "@/server/github.js";
+import { getEnv } from "@/server/env.js";
 import { json, readBody } from "@/server/http.js";
 
 export const prerender = false;
@@ -22,6 +23,15 @@ export const POST: APIRoute = async ({ request }) => {
   }
   if (!access.allEmails.includes(user.email)) {
     return json({ error: "Танд хандах эрх алга" }, 403);
+  }
+
+  // Distinguish "GitHub not configured" from "content.json missing" so the
+  // admin shows a precise reason instead of a bare "no content".
+  if (!getEnv("GITHUB_REPO") || !getEnv("GITHUB_TOKEN")) {
+    return json(
+      { error: "GITHUB_REPO / GITHUB_TOKEN тохируулагдаагүй байна. Vercel env дээр нэмээд Redeploy хийнэ үү." },
+      500,
+    );
   }
 
   try {
