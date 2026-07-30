@@ -76,6 +76,32 @@ export const POST: APIRoute = async ({ request }) => {
     }
   }
 
+  // Best-effort: also land this as a lead in the orinux platform's own
+  // marketing module, so sales can work it from Contacts like any other
+  // lead — not the site's only record of the submission (submissions/demo.json
+  // + email above already are), so a failure here must never affect the
+  // user-facing response.
+  const marketingBase = getEnv("MARKETING_PUBLIC_BASE_URL");
+  if (marketingBase) {
+    try {
+      await fetch(`${marketingBase}/api/v1/public/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: sub.name,
+          company: sub.company,
+          email: sub.email,
+          phone: sub.phone,
+          industry: sub.industry,
+          message: sub.message,
+          source: "orinux.space",
+        }),
+      });
+    } catch (e) {
+      console.error("[enroll] marketing lead forward failed", e);
+    }
+  }
+
   if (!stored && !mailed) {
     return json({ error: "Хүсэлтийг хадгалж/илгээж чадсангүй" }, 500);
   }
