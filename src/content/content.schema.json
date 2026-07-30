@@ -1,0 +1,1958 @@
+{
+  "sections": [
+    {
+      "key": "meta",
+      "label": "Meta / SEO",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Title",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "type": "richtext",
+          "source": "git"
+        },
+        {
+          "key": "descriptionEn",
+          "label": "Description En",
+          "type": "richtext",
+          "source": "git"
+        },
+        {
+          "key": "ogImage",
+          "label": "Og Image",
+          "type": "image",
+          "source": "git"
+        }
+      ]
+    },
+    {
+      "key": "contact",
+      "label": "Contact",
+      "fields": [
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "phoneHref",
+          "label": "Phone Href",
+          "type": "text",
+          "source": "git"
+        }
+      ]
+    },
+    {
+      "key": "footer",
+      "label": "Footer",
+      "fields": [
+        {
+          "key": "blurb",
+          "label": "Blurb",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "blurbEn",
+          "label": "Blurb En",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "cols",
+          "label": "Cols",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "title",
+              "label": "Title",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "titleEn",
+              "label": "Title En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "links",
+              "label": "Links",
+              "type": "list",
+              "source": "git",
+              "item_fields": [
+                {
+                  "key": "label",
+                  "label": "Label",
+                  "type": "text",
+                  "source": "git"
+                },
+                {
+                  "key": "labelEn",
+                  "label": "Label En",
+                  "type": "text",
+                  "source": "git"
+                },
+                {
+                  "key": "href",
+                  "label": "Href",
+                  "type": "text",
+                  "source": "git"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "copyright",
+          "label": "Copyright",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "copyrightEn",
+          "label": "Copyright En",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "tagline",
+          "label": "Tagline",
+          "type": "text",
+          "source": "git"
+        }
+      ]
+    },
+    {
+      "key": "quote",
+      "label": "Homepage quote",
+      "fields": [
+        {
+          "key": "text",
+          "label": "Text",
+          "type": "richtext",
+          "source": "git"
+        },
+        {
+          "key": "textEn",
+          "label": "Text En",
+          "type": "richtext",
+          "source": "git"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "nameEn",
+          "label": "Name En",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "role",
+          "label": "Role",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "roleEn",
+          "label": "Role En",
+          "type": "text",
+          "source": "git"
+        },
+        {
+          "key": "avatar",
+          "label": "Avatar",
+          "type": "image",
+          "source": "git"
+        }
+      ]
+    },
+    {
+      "key": "i18n",
+      "label": "UI text (MN / EN pairs)",
+      "fields": [
+        {
+          "key": "nav_platform",
+          "label": "Nav platform",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_modules",
+          "label": "Nav modules",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_pricing",
+          "label": "Nav pricing",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_industries",
+          "label": "Nav industries",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_faq",
+          "label": "Nav faq",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_login",
+          "label": "Nav login",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_cta",
+          "label": "Nav cta",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "hero_eyebrow",
+          "label": "Hero eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "hero_h1a",
+          "label": "Hero h1a",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "hero_h1b",
+          "label": "Hero h1b",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "hero_sub",
+          "label": "Hero sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "hero_sub_b",
+          "label": "Hero sub b",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cta_demo",
+          "label": "Cta demo",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cta_explore",
+          "label": "Cta explore",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cta_contact",
+          "label": "Cta contact",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "stat_modules",
+          "label": "Stat modules",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "scroll",
+          "label": "Scroll",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "trust_label",
+          "label": "Trust label",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cmp_eyebrow",
+          "label": "Cmp eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cmp_h2_html",
+          "label": "Cmp h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cmp_sub",
+          "label": "Cmp sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cmp_old",
+          "label": "Cmp old",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "cmp_new",
+          "label": "Cmp new",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "feat_eyebrow",
+          "label": "Feat eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "feat_h2_html",
+          "label": "Feat h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_eyebrow",
+          "label": "Mod eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_h2_html",
+          "label": "Mod h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_sub",
+          "label": "Mod sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_all",
+          "label": "Mod all",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_biz",
+          "label": "Mod biz",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "mod_ind",
+          "label": "Mod ind",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "plat_eyebrow",
+          "label": "Plat eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "plat_h2_html",
+          "label": "Plat h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "plat_sub",
+          "label": "Plat sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_overview",
+          "label": "Dn overview",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_inventory",
+          "label": "Dn inventory",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_sales",
+          "label": "Dn sales",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_hr",
+          "label": "Dn hr",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_finance",
+          "label": "Dn finance",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dn_agents",
+          "label": "Dn agents",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dash_title",
+          "label": "Dash title",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dash_sub",
+          "label": "Dash sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dash_live",
+          "label": "Dash live",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "kpi_rev",
+          "label": "Kpi rev",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "kpi_orders",
+          "label": "Kpi orders",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "kpi_auto",
+          "label": "Kpi auto",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "kpi_tasks",
+          "label": "Kpi tasks",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "chart_title",
+          "label": "Chart title",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "leg_rev",
+          "label": "Leg rev",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "leg_auto",
+          "label": "Leg auto",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "feed_title",
+          "label": "Feed title",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf_title",
+          "label": "Wf title",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf1",
+          "label": "Wf1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf2",
+          "label": "Wf2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf2s",
+          "label": "Wf2s",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf3",
+          "label": "Wf3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf4",
+          "label": "Wf4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "wf4s",
+          "label": "Wf4s",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf1_t",
+          "label": "Pf1 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf1_p",
+          "label": "Pf1 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf2_t",
+          "label": "Pf2 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf2_p",
+          "label": "Pf2 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf3_t",
+          "label": "Pf3 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pf3_p",
+          "label": "Pf3 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_eyebrow",
+          "label": "Res eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_h2_html",
+          "label": "Res h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_s1",
+          "label": "Res s1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_s2",
+          "label": "Res s2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_s3",
+          "label": "Res s3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "res_s4",
+          "label": "Res s4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "quote_text",
+          "label": "Quote text",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "quote_name",
+          "label": "Quote name",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "quote_role",
+          "label": "Quote role",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how_eyebrow",
+          "label": "How eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how_h2_html",
+          "label": "How h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how1_t",
+          "label": "How1 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how1_p",
+          "label": "How1 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how2_t",
+          "label": "How2 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how2_p",
+          "label": "How2 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how3_t",
+          "label": "How3 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "how3_p",
+          "label": "How3 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "svc_eyebrow",
+          "label": "Svc eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "svc_h2_html",
+          "label": "Svc h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "svc_sub",
+          "label": "Svc sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "stage_eyebrow",
+          "label": "Stage eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "stage_h2_html",
+          "label": "Stage h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "stage_lede",
+          "label": "Stage lede",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_eyebrow",
+          "label": "Ind eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_h2_html",
+          "label": "Ind h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_sub",
+          "label": "Ind sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_eyebrow",
+          "label": "Price eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_h2_html",
+          "label": "Price h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_sub",
+          "label": "Price sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "per_mo",
+          "label": "Per mo",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_popular",
+          "label": "Price popular",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_custom",
+          "label": "Price custom",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_try",
+          "label": "Price try",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_try2",
+          "label": "Price try2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "price_contact",
+          "label": "Price contact",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_t",
+          "label": "Pr1 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_d",
+          "label": "Pr1 d",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_n",
+          "label": "Pr1 n",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_f1",
+          "label": "Pr1 f1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_f2",
+          "label": "Pr1 f2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_f3",
+          "label": "Pr1 f3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr1_f4",
+          "label": "Pr1 f4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_t",
+          "label": "Pr2 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_d",
+          "label": "Pr2 d",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_n",
+          "label": "Pr2 n",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_f1",
+          "label": "Pr2 f1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_f2",
+          "label": "Pr2 f2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_f3",
+          "label": "Pr2 f3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr2_f4",
+          "label": "Pr2 f4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_t",
+          "label": "Pr3 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_d",
+          "label": "Pr3 d",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_n",
+          "label": "Pr3 n",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_f1",
+          "label": "Pr3 f1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_f2",
+          "label": "Pr3 f2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_f3",
+          "label": "Pr3 f3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "pr3_f4",
+          "label": "Pr3 f4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "demo_eyebrow",
+          "label": "Demo eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "demo_h2_html",
+          "label": "Demo h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "demo_sub",
+          "label": "Demo sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp1_t",
+          "label": "Dp1 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp1_p",
+          "label": "Dp1 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp2_t",
+          "label": "Dp2 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp2_p",
+          "label": "Dp2 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp3_t",
+          "label": "Dp3 t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "dp3_p",
+          "label": "Dp3 p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_name",
+          "label": "F name",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_name_ph",
+          "label": "F name ph",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_name_err",
+          "label": "F name err",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_company",
+          "label": "F company",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_company_ph",
+          "label": "F company ph",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_company_err",
+          "label": "F company err",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_email",
+          "label": "F email",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_email_err",
+          "label": "F email err",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_phone",
+          "label": "F phone",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_phone_err",
+          "label": "F phone err",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_industry",
+          "label": "F industry",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_industry_ph",
+          "label": "F industry ph",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_mining",
+          "label": "Ind mining",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_health",
+          "label": "Ind health",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_edu",
+          "label": "Ind edu",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_factory",
+          "label": "Ind factory",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_retail",
+          "label": "Ind retail",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ind_other",
+          "label": "Ind other",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_msg",
+          "label": "F msg",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_msg_ph",
+          "label": "F msg ph",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "f_submit",
+          "label": "F submit",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ok_t",
+          "label": "Ok t",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "ok_p",
+          "label": "Ok p",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_eyebrow",
+          "label": "Faq eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_h2",
+          "label": "Faq h2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_q1",
+          "label": "Faq q1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_a1",
+          "label": "Faq a1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_q2",
+          "label": "Faq q2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_a2",
+          "label": "Faq a2",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_q3",
+          "label": "Faq q3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_a3",
+          "label": "Faq a3",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_q4",
+          "label": "Faq q4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_a4",
+          "label": "Faq a4",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_q5",
+          "label": "Faq q5",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "faq_a5",
+          "label": "Faq a5",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "final_eyebrow",
+          "label": "Final eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "final_h2_html",
+          "label": "Final h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "final_sub",
+          "label": "Final sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_news",
+          "label": "Nav news",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_eyebrow",
+          "label": "News eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_h2_html",
+          "label": "News h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_sub",
+          "label": "News sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_read",
+          "label": "News read",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_more",
+          "label": "News more",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_back",
+          "label": "News back",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_empty",
+          "label": "News empty",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "news_page_h1",
+          "label": "News page h1",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "nav_team",
+          "label": "Nav team",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "team_eyebrow",
+          "label": "Team eyebrow",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "team_h2_html",
+          "label": "Team h2 html",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        },
+        {
+          "key": "team_sub",
+          "label": "Team sub",
+          "type": "list",
+          "source": "git",
+          "item_fields": []
+        }
+      ]
+    },
+    {
+      "key": "heroStats",
+      "label": "Hero stats",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "heroStats",
+          "label": "Hero stats",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "value",
+              "label": "Value",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "suffix",
+              "label": "Suffix",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "label",
+              "label": "Label",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "labelEn",
+              "label": "Label En",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "resultStats",
+      "label": "Result stats",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "resultStats",
+          "label": "Result stats",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "value",
+              "label": "Value",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "suffix",
+              "label": "Suffix",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "label",
+              "label": "Label",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "labelEn",
+              "label": "Label En",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "trust",
+      "label": "Trust logos",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "trust",
+          "label": "Trust logos",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "name",
+              "label": "Name",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "svg",
+              "label": "Svg",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "modules",
+      "label": "Modules grid",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "modules",
+          "label": "Modules grid",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "code",
+              "label": "Code",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "cat",
+              "label": "Cat",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "name",
+              "label": "Name",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "nameEn",
+              "label": "Name En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "desc",
+              "label": "Desc",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "descEn",
+              "label": "Desc En",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "features",
+      "label": "Features",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "features",
+          "label": "Features",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "icon",
+              "label": "Icon",
+              "type": "richtext",
+              "source": "git"
+            },
+            {
+              "key": "title",
+              "label": "Title",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "titleEn",
+              "label": "Title En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "desc",
+              "label": "Desc",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "descEn",
+              "label": "Desc En",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "services",
+      "label": "Services",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "services",
+          "label": "Services",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "pill",
+              "label": "Pill",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "pillEn",
+              "label": "Pill En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "title",
+              "label": "Title",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "titleEn",
+              "label": "Title En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "desc",
+              "label": "Desc",
+              "type": "richtext",
+              "source": "git"
+            },
+            {
+              "key": "descEn",
+              "label": "Desc En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "points",
+              "label": "Points",
+              "type": "list",
+              "source": "git",
+              "item_fields": []
+            },
+            {
+              "key": "pointsEn",
+              "label": "Points En",
+              "type": "list",
+              "source": "git",
+              "item_fields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "industries",
+      "label": "Industries",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "industries",
+          "label": "Industries",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "icon",
+              "label": "Icon",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "title",
+              "label": "Title",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "titleEn",
+              "label": "Title En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "desc",
+              "label": "Desc",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "descEn",
+              "label": "Desc En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "tags",
+              "label": "Tags",
+              "type": "list",
+              "source": "git",
+              "item_fields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pricing",
+      "label": "Pricing tiers",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "pricing",
+          "label": "Pricing tiers",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "name",
+              "label": "Name",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "nameEn",
+              "label": "Name En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "desc",
+              "label": "Desc",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "descEn",
+              "label": "Desc En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "price",
+              "label": "Price",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "custom",
+              "label": "Custom",
+              "type": "bool",
+              "source": "git"
+            },
+            {
+              "key": "note",
+              "label": "Note",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "noteEn",
+              "label": "Note En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "featured",
+              "label": "Featured",
+              "type": "bool",
+              "source": "git"
+            },
+            {
+              "key": "cta",
+              "label": "Cta",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "features",
+              "label": "Features",
+              "type": "list",
+              "source": "git",
+              "item_fields": []
+            },
+            {
+              "key": "featuresEn",
+              "label": "Features En",
+              "type": "list",
+              "source": "git",
+              "item_fields": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "faq",
+      "label": "FAQ",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "q",
+              "label": "Q",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "qEn",
+              "label": "Q En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "a",
+              "label": "A",
+              "type": "richtext",
+              "source": "git"
+            },
+            {
+              "key": "aEn",
+              "label": "A En",
+              "type": "richtext",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "teams",
+      "label": "Team",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "teams",
+          "label": "Team",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "name",
+              "label": "Name",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "nameEn",
+              "label": "Name En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "role",
+              "label": "Role",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "roleEn",
+              "label": "Role En",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "photo",
+              "label": "Photo",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "bio",
+              "label": "Bio",
+              "type": "text",
+              "source": "git"
+            },
+            {
+              "key": "bioEn",
+              "label": "Bio En",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pages": []
+}
