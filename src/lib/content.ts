@@ -14,6 +14,16 @@ export interface TeamMember {
 }
 export interface Content {
   meta: { title: string; description: string; descriptionEn: string; ogImage: string; favicon?: string };
+  /**
+   * The site's own language list, admin-managed (managed-sites schema
+   * editor's "Site languages" — github-vercel-tool ContentModel.Locales).
+   * Drives the Nav language-toggle buttons and is the locale set i18n.js
+   * cycles through. Falls back to ["mn","en"] when absent — every field
+   * migrated to the new locale-map convention (data-i18n-json) uses these
+   * codes; fields still on the legacy "<key>En" convention stay MN/EN-only
+   * regardless of what's listed here.
+   */
+  locales?: string[];
   contact: { email: string; phone: string; phoneHref: string };
   footer: any;
   quote: any;
@@ -63,4 +73,16 @@ export const isImgBlock = (b: NewsBlock): b is { img: string; cap?: string; capE
 export function mn(key: string, c: Content = content): string {
   const v = c.i18n[key];
   return v ? v[0] : key;
+}
+
+/**
+ * Server-side initial render for a `localized` field's value (a locale map,
+ * e.g. {mn: "...", en: "..."}) — renders the site's first configured
+ * language (content.locales[0], default "mn"); i18n.js swaps it client-side
+ * from the field's own data-i18n-json attribute once loaded.
+ */
+export function firstLocaleValue(v: Record<string, string> | undefined, c: Content = content): string {
+  if (!v) return "";
+  const first = c.locales && c.locales.length > 0 ? c.locales[0] : "mn";
+  return v[first] ?? Object.values(v)[0] ?? "";
 }

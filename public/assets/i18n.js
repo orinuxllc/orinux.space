@@ -193,32 +193,66 @@
   // The embedded DICT above is only a build-time fallback.
   if (window.__ORINUX_I18N__) DICT = Object.assign(DICT, window.__ORINUX_I18N__);
 
-  var lang = "mn";
-  try { lang = localStorage.getItem("orinux-lang") || "mn"; } catch (e) {}
+  // The site's own language list (managed-sites schema editor's "Site
+  // languages" — Nav.astro injects content.locales here at render time).
+  // Not hardcoded to mn/en: any admin-added code works. Falls back to
+  // ["mn","en"] to match every existing field's data shape.
+  var locales = (window.__ORINUX_LOCALES__ && window.__ORINUX_LOCALES__.length) ? window.__ORINUX_LOCALES__ : ["mn", "en"];
+
+  var lang = locales[0];
+  try { var stored = localStorage.getItem("orinux-lang"); if (stored && locales.indexOf(stored) !== -1) lang = stored; } catch (e) {}
   // A ?lang= URL param wins (used by the admin preview iframe + shareable links).
   try {
     var qlang = new URLSearchParams(location.search).get("lang");
-    if (qlang === "mn" || qlang === "en") lang = qlang;
+    if (qlang && locales.indexOf(qlang) !== -1) lang = qlang;
   } catch (e) {}
 
+  // Resolves one dict entry for locale `l`. Two value shapes are supported:
+  //   - legacy array tuple  [mn_text, en_text]            (fixed 2-language)
+  //   - locale map          {mn: "...", en: "...", ...}   (any number of languages)
+  // Falls back to the first available value if `l` isn't present, so a
+  // field that hasn't been translated into a newly-added language yet
+  // still renders something instead of going blank.
+  function dictValue(v, l) {
+    if (Array.isArray(v)) {
+      var i = locales.indexOf(l);
+      return v[i] != null ? v[i] : v[0];
+    }
+    if (v && typeof v === "object") {
+      if (v[l] != null) return v[l];
+      for (var k in v) { if (v[k] != null) return v[k]; }
+      return null;
+    }
+    return v;
+  }
+
   function apply(l) {
-    var idx = l === "en" ? 1 : 0;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n");
-      var v = DICT[key];
+      var v = DICT[el.getAttribute("data-i18n")];
       if (!v) return;
-      var s = v[idx];
+      var s = dictValue(v, l);
+      if (s == null) return;
       if (s.indexOf("<") !== -1) el.innerHTML = s;
       else el.textContent = s;
     });
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       var v = DICT[el.getAttribute("data-i18n-ph")];
-      if (v) el.setAttribute("placeholder", v[idx]);
+      if (v) { var s = dictValue(v, l); if (s != null) el.setAttribute("placeholder", s); }
     });
-    // Inline bilingual nodes (list items rendered server-side from content.json).
-    // Each carries data-mn (+ optional data-en); we swap text on toggle.
+    // Inline localized nodes (list items rendered server-side from content.json).
+    // New convention: data-i18n-json carries the full locale map as JSON —
+    // any number of languages. Legacy convention: data-mn (+ optional
+    // data-en) — exactly two languages, kept working as-is for every field
+    // not yet migrated to data-i18n-json.
     document.querySelectorAll("[data-bi]").forEach(function (el) {
-      var s = idx === 1 ? (el.getAttribute("data-en") || el.getAttribute("data-mn")) : el.getAttribute("data-mn");
+      var s = null;
+      var mapAttr = el.getAttribute("data-i18n-json");
+      if (mapAttr) {
+        try { s = dictValue(JSON.parse(mapAttr), l); } catch (e) { s = null; }
+      }
+      if (s == null) {
+        s = l === "en" ? (el.getAttribute("data-en") || el.getAttribute("data-mn")) : el.getAttribute("data-mn");
+      }
       if (s == null) return;
       if (s.indexOf("<") !== -1) el.innerHTML = s;
       else el.textContent = s;
@@ -236,6 +270,5 @@
     b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
   });
 
-  if (lang === "en") apply("en");
-  else apply("mn");
+  apply(lang);
 })();

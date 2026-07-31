@@ -150,37 +150,22 @@
           "key": "text",
           "label": "Text",
           "type": "richtext",
-          "source": "git"
-        },
-        {
-          "key": "textEn",
-          "label": "Text En",
-          "type": "richtext",
-          "source": "git"
+          "source": "git",
+          "localized": true
         },
         {
           "key": "name",
           "label": "Name",
           "type": "text",
-          "source": "git"
-        },
-        {
-          "key": "nameEn",
-          "label": "Name En",
-          "type": "text",
-          "source": "git"
+          "source": "git",
+          "localized": true
         },
         {
           "key": "role",
           "label": "Role",
           "type": "text",
-          "source": "git"
-        },
-        {
-          "key": "roleEn",
-          "label": "Role En",
-          "type": "text",
-          "source": "git"
+          "source": "git",
+          "localized": true
         },
         {
           "key": "avatar",
@@ -1960,5 +1945,10 @@
       ]
     }
   ],
-  "pages": []
+  "pages": [],
+  "locales": [
+    "mn",
+    "en",
+    "de"
+  ]
 }

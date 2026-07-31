@@ -69,13 +69,22 @@
     "tagline": "Built for Mongolia. Ready for the World."
   },
   "quote": {
-    "text": "Orinux-ийг нэвтрүүлснээр манай агуулах, борлуулалтын баг өдөрт хэдэн цаг хэмнэж эхэлсэн. AI Agent давтагдах ажлыг хийж, бид стратегид анхаарах боллоо.",
-    "textEn": "Since adopting Orinux, our warehouse and sales teams save hours every day. AI agents handle the repetitive work, so we can focus on strategy.",
-    "name": "Г. Энхбаяр",
-    "nameEn": "G. Enkhbayar",
-    "role": "Гүйцэтгэх захирал, Тэрэлж Групп",
-    "roleEn": "CEO, Terelj Group",
-    "avatar": "Г"
+    "avatar": "Г",
+    "text": {
+      "mn": "Orinux-ийг нэвтрүүлснээр манай агуулах, борлуулалтын баг өдөрт хэдэн цаг хэмнэж эхэлсэн. AI Agent давтагдах ажлыг хийж, бид стратегид анхаарах боллоо.",
+      "en": "Since adopting Orinux, our warehouse and sales teams save hours every day. AI agents handle the repetitive work, so we can focus on strategy.",
+      "de": "Seit der Einführung von Orinux sparen unsere Lager- und Vertriebsteams jeden Tag mehrere Stunden. KI-Agenten übernehmen die Wiederholungsarbeit, sodass wir uns auf die Strategie konzentrieren können."
+    },
+    "name": {
+      "mn": "Г. Энхбаяр",
+      "en": "G. Enkhbayar",
+      "de": "G. Enkhbayar"
+    },
+    "role": {
+      "mn": "Гүйцэтгэх захирал, Тэрэлж Групп",
+      "en": "CEO, Terelj Group",
+      "de": "CEO, Terelj Group"
+    }
   },
   "i18n": {
     "nav_platform": [
@@ -1472,5 +1481,10 @@
       "bio": "Хэрэглэгчийн туршлагыг хариуцдаг.",
       "bioEn": "Owns the user experience."
     }
+  ],
+  "locales": [
+    "mn",
+    "en",
+    "de"
   ]
 }

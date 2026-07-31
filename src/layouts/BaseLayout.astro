@@ -69,11 +69,12 @@ const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
       } catch (e) {}
     </script>
 
-    <!-- CMS content → client globals (i18n dictionary + trust logos) -->
-    <script is:inline define:vars={{ dict: content.i18n, trust: content.trust, preview }}>
+    <!-- CMS content → client globals (i18n dictionary + trust logos + site languages) -->
+    <script is:inline define:vars={{ dict: content.i18n, trust: content.trust, preview, locales: content.locales }}>
       window.__ORINUX_I18N__ = dict;
       window.__ORINUX_TRUST__ = trust;
       window.__ORINUX_PREVIEW__ = preview;
+      window.__ORINUX_LOCALES__ = locales;
     </script>
 
     <script type="application/ld+json" set:html={JSON.stringify({

@@ -3,6 +3,7 @@ import { mn, type Content } from "@/lib/content";
 interface Props { content: Content; preview?: boolean }
 const { content, preview = false } = Astro.props;
 const t = (k: string) => mn(k, content);
+const locales = content.locales && content.locales.length > 0 ? content.locales : ["mn", "en"];
 ---
 <nav class="nav">
   <div class="wrap nav-inner">
@@ -19,8 +20,9 @@ const t = (k: string) => mn(k, content);
     <div class="nav-actions">
       <div class="nav-util">
         <div class="lang-toggle" role="group" aria-label="Language">
-          <button data-lang="mn" aria-pressed="true">МН</button>
-          <button data-lang="en" aria-pressed="false">EN</button>
+          {locales.map((code, i) => (
+            <button data-lang={code} aria-pressed={i === 0 ? "true" : "false"}>{code.toUpperCase()}</button>
+          ))}
         </div>
         <button class="icon-btn theme-btn" aria-label="Theme" title="Theme">
           <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
