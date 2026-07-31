@@ -24,6 +24,10 @@ export interface Content {
    * regardless of what's listed here.
    */
   locales?: string[];
+  /** Admin-editable nav links (managed-sites "Navigation" section) — order,
+   *  label (localized map), and href, add/remove any of the three from the
+   *  schema editor. Nav.astro falls back to a hardcoded list when absent. */
+  nav?: { label: Record<string, string>; href: string }[];
   contact: { email: string; phone: string; phoneHref: string };
   footer: any;
   quote: any;

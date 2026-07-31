@@ -61,6 +61,34 @@
       ]
     },
     {
+      "key": "nav",
+      "label": "Navigation",
+      "top_level": true,
+      "fields": [
+        {
+          "key": "nav",
+          "label": "Navigation links",
+          "type": "list",
+          "source": "git",
+          "item_fields": [
+            {
+              "key": "label",
+              "label": "Label",
+              "type": "text",
+              "source": "git",
+              "localized": true
+            },
+            {
+              "key": "href",
+              "label": "Link",
+              "type": "text",
+              "source": "git"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "footer",
       "label": "Footer",
       "fields": [

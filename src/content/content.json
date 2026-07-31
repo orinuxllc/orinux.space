@@ -1486,5 +1486,63 @@
     "mn",
     "en",
     "de"
+  ],
+  "nav": [
+    {
+      "label": {
+        "mn": "Платформ",
+        "en": "Platform",
+        "de": "Plattform"
+      },
+      "href": "/#platform"
+    },
+    {
+      "label": {
+        "mn": "Модулиуд",
+        "en": "Modules",
+        "de": "Module"
+      },
+      "href": "/modules"
+    },
+    {
+      "label": {
+        "mn": "Үнэ",
+        "en": "Pricing",
+        "de": "Preise"
+      },
+      "href": "/#pricing"
+    },
+    {
+      "label": {
+        "mn": "Салбарууд",
+        "en": "Industries",
+        "de": "Branchen"
+      },
+      "href": "/#industries"
+    },
+    {
+      "label": {
+        "mn": "Баг",
+        "en": "Team",
+        "de": "Team"
+      },
+      "href": "/#team"
+    },
+    {
+      "label": {
+        "mn": "Мэдээ",
+        "en": "News",
+        "de": "Neuigkeiten"
+      },
+      "href": "/news"
+    },
+    {
+      "label": {
+        "mn": "Асуулт",
+        "en": "FAQ",
+        "de": "FAQ"
+      },
+      "href": "/#faq"
+    }
   ]
 }

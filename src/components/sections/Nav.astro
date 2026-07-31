@@ -1,21 +1,38 @@
 ---
-import { mn, type Content } from "@/lib/content";
+import { mn, firstLocaleValue, type Content } from "@/lib/content";
 interface Props { content: Content; preview?: boolean }
 const { content, preview = false } = Astro.props;
 const t = (k: string) => mn(k, content);
 const locales = content.locales && content.locales.length > 0 ? content.locales : ["mn", "en"];
+// Admin-editable (managed-sites schema editor's "Navigation" section) — an
+// ordered list of {label (localized), href} the admin can add/remove/
+// reorder. Legacy hardcoded links as a fallback for a content.json that
+// predates this (or any other site type without a nav section yet).
+const navItems = content.nav && content.nav.length > 0 ? content.nav : [
+  { label: { mn: "Платформ", en: "Platform" }, href: "/#platform" },
+  { label: { mn: "Модулиуд", en: "Modules" }, href: "/modules" },
+  { label: { mn: "Үнэ", en: "Pricing" }, href: "/#pricing" },
+  { label: { mn: "Салбарууд", en: "Industries" }, href: "/#industries" },
+  { label: { mn: "Баг", en: "Team" }, href: "/#team" },
+  { label: { mn: "Мэдээ", en: "News" }, href: "/news" },
+  { label: { mn: "Асуулт", en: "FAQ" }, href: "/#faq" },
+];
 ---
 <nav class="nav">
   <div class="wrap nav-inner">
     <a class="logo" href="/#top"><span class="mark">O</span>orinux</a>
     <div class="nav-links">
-      <a href="/#platform" data-i18n="nav_platform" set:html={t("nav_platform")}></a>
-      <a href="/modules" data-i18n="nav_modules" set:html={t("nav_modules")}></a>
-      <a href="/#pricing" data-i18n="nav_pricing" set:html={t("nav_pricing")}></a>
-      <a href="/#industries" data-i18n="nav_industries" set:html={t("nav_industries")}></a>
-      <a href="/#team" data-i18n="nav_team" set:html={t("nav_team")}></a>
-      <a href="/news" data-i18n="nav_news" set:html={t("nav_news")}></a>
-      <a href="/#faq" data-i18n="nav_faq" set:html={t("nav_faq")}></a>
+      {navItems.map((item) => (
+        // No data-field-path: nav is a TopLevel LIST field (field_path is
+        // the bare "nav" key for the whole array, not one per item/index),
+        // the same shape class as pricing/faq/team — list content has no
+        // live-preview-sync hook yet (see preview-sync.js's own doc
+        // comment), only a Save updates it. data-bi + data-i18n-json still
+        // give it the right initial render + correct language on toggle.
+        <a href={item.href} data-bi data-i18n-json={JSON.stringify(item.label)}>
+          {firstLocaleValue(item.label, content)}
+        </a>
+      ))}
     </div>
     <div class="nav-actions">
       <div class="nav-util">
