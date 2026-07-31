@@ -10,8 +10,12 @@
     var track = document.getElementById("trust-track");
     if (!track) return;
     // CMS: trust logos come from content.json via this global (fallback below).
+    // Each brand carries either a real uploaded logo image (b.logo, an
+    // /uploads/... path from the managed-sites admin) or, for the built-in
+    // placeholder brands, a hand-drawn SVG path string (b.svg) — logo wins
+    // when present.
     var brands = (window.__ORINUX_TRUST__ && window.__ORINUX_TRUST__.length)
-      ? window.__ORINUX_TRUST__.map(function (b) { return [b.name, b.svg]; })
+      ? window.__ORINUX_TRUST__.map(function (b) { return [b.name, b.svg, b.logo]; })
       : [
       ["M5", '<path d="M3 20h18M5 20V9l4-3 4 3M13 20V12l4-3 4 3v8"/>'],
       ["NOMAD", '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18"/>'],
@@ -24,7 +28,10 @@
     ];
     function mk() {
       return brands.map(function (b) {
-        return '<div class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">' + b[1] + "</svg>" + b[0] + "</div>";
+        var mark = b[2]
+          ? '<img src="' + b[2] + '" alt="" loading="lazy" />'
+          : '<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">' + b[1] + "</svg>";
+        return '<div class="brandmark">' + mark + b[0] + "</div>";
       }).join("");
     }
     track.innerHTML = mk() + mk(); // duplicate for seamless loop

@@ -30,7 +30,7 @@ export interface Content {
   i18n: Record<string, Bi>;
   heroStats: any[];
   resultStats: any[];
-  trust: { name: string; svg: string }[];
+  trust: { name: string; svg?: string; logo?: string }[];
   modules: { code: string; cat: string; name: string; nameEn: string; desc: string; descEn: string }[];
   features: any[];
   services: any[];

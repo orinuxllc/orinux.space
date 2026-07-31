@@ -57,6 +57,7 @@ html[data-theme="light"] .sun { display: block; }
 .brandmark { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: var(--text-dim); white-space: nowrap; opacity: 0.72; transition: opacity .3s, color .3s; }
 .brandmark:hover { opacity: 1; color: var(--text); }
 .brandmark svg { width: 26px; height: 26px; stroke: currentColor; fill: none; opacity: 0.8; }
+.brandmark img { width: 26px; height: 26px; object-fit: contain; opacity: 0.9; }
 
 /* ---------- dashboard / platform showcase ---------- */
 .platform { padding: 120px 0; position: relative; }

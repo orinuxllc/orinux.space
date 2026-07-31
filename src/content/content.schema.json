@@ -1541,6 +1541,12 @@
               "label": "Svg",
               "type": "text",
               "source": "git"
+            },
+            {
+              "key": "logo",
+              "label": "Logo",
+              "type": "image",
+              "source": "git"
             }
           ]
         }
