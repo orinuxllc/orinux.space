@@ -13,7 +13,7 @@ export interface TeamMember {
   bio?: string; bioEn?: string;
 }
 export interface Content {
-  meta: { title: string; description: string; descriptionEn: string; ogImage: string };
+  meta: { title: string; description: string; descriptionEn: string; ogImage: string; favicon?: string };
   contact: { email: string; phone: string; phoneHref: string };
   footer: any;
   quote: any;

@@ -27,6 +27,12 @@
           "label": "Og Image",
           "type": "image",
           "source": "git"
+        },
+        {
+          "key": "favicon",
+          "label": "Favicon",
+          "type": "image",
+          "source": "git"
         }
       ]
     },

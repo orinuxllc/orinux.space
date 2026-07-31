@@ -3,7 +3,8 @@
     "title": "orinux — Agentic Resource Planning",
     "description": "ARP (Agentic Resource Planning) — AI Agent-ууд бизнес процессыг автомат удирддаг дараа үеийн ERP платформ. 40+ модуль, 21 tool.",
     "descriptionEn": "ARP (Agentic Resource Planning) — the next-generation ERP platform where AI agents run business processes automatically. 40+ modules, 21 tools.",
-    "ogImage": "/og-image.svg"
+    "ogImage": "/og-image.svg",
+    "favicon": "/favicon.svg"
   },
   "contact": {
     "email": "info@orinux.space",

@@ -21,6 +21,8 @@ const {
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url.pathname;
 const ogImage = content.meta.ogImage;
+const favicon = content.meta.favicon || "/favicon.svg";
+const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
 ---
 
 <!doctype html>
@@ -33,8 +35,7 @@ const ogImage = content.meta.ogImage;
     <meta name="author" content="Orinux LLC" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={favicon} type={faviconType} />
 
     <!-- Fonts (design system) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
