@@ -21,20 +21,20 @@ import FinalCta from "@/components/sections/FinalCta.astro";
 interface Props { content: Content; news?: News }
 const { content, news = staticNews } = Astro.props;
 ---
-<Hero content={content} />
-<Trust content={content} />
+<div data-field-section="heroStats"><Hero content={content} /></div>
+<div data-field-section="trust"><Trust content={content} /></div>
 <Platform content={content} />
-<Results content={content} />
+<div data-field-section="quote"><Results content={content} /></div>
 <Comparison content={content} />
-<Features content={content} />
-<Modules content={content} />
-<Pricing content={content} />
+<div data-field-section="features"><Features content={content} /></div>
+<div data-field-section="modules"><Modules content={content} /></div>
+<div data-field-section="pricing"><Pricing content={content} /></div>
 <HowItWorks content={content} />
-<Services content={content} />
+<div data-field-section="services"><Services content={content} /></div>
 <IndustryStage content={content} />
-<Industries content={content} />
+<div data-field-section="industries"><Industries content={content} /></div>
 <Demo content={content} />
-<Faq content={content} />
-<Team content={content} />
+<div data-field-section="faq"><Faq content={content} /></div>
+<div data-field-section="teams"><Team content={content} /></div>
 <News content={content} news={news} limit={3} />
 <FinalCta content={content} />

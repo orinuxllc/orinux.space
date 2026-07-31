@@ -270,5 +270,13 @@
     b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
   });
 
+  // Admin-preview live sync (preview-sync.js, loaded only on the /preview
+  // route) needs to patch a DICT entry and re-render without a page reload —
+  // exposes just enough of this closure's state for that, nothing else.
+  window.__ORINUX_PREVIEW_SYNC__ = {
+    updateI18nKey: function (key, value) { DICT[key] = value; apply(lang); },
+    currentLang: function () { return lang; },
+  };
+
   apply(lang);
 })();

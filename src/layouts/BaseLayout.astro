@@ -97,7 +97,7 @@ const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
 
     <Nav content={content} preview={preview} />
     <slot />
-    <Footer content={content} />
+    <div data-field-section="footer"><Footer content={content} /></div>
 
     <!-- Ported design scripts (plain IIFEs in /public/assets) -->
     <script is:inline src="/assets/app.js"></script>
@@ -105,5 +105,6 @@ const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
     <script is:inline src="/assets/dashboard.js"></script>
     <script is:inline src="/assets/interactions.js"></script>
     <script is:inline src="/assets/i18n.js"></script>
+    {preview && <script is:inline src="/assets/preview-sync.js"></script>}
   </body>
 </html>

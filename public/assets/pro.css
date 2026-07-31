@@ -252,3 +252,18 @@ html[data-theme="light"] .fld input, html[data-theme="light"] .fld select, html[
 @media (max-width: 760px) {
   .nav-util .lang-toggle { display: none; }
 }
+
+/* ---------- admin live-preview focus flash (preview-sync.js) ---------- */
+.preview-focus-flash {
+  outline: 2px solid #6d5ef8;
+  outline-offset: 6px;
+  border-radius: 12px;
+  animation: previewFocusFlash 1.4s ease-out;
+}
+@keyframes previewFocusFlash {
+  0% { background-color: rgba(109, 94, 248, 0.16); }
+  100% { background-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preview-focus-flash { animation: none; }
+}

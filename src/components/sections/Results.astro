@@ -24,8 +24,8 @@ const q = content.quote;
       </div>
       <div class="quote reveal d1">
         <div class="qm">"</div>
-        <blockquote data-bi data-i18n-json={JSON.stringify(q.text)}>{firstLocaleValue(q.text, content)}</blockquote>
-        <div class="qby"><div class="qav">{q.avatar}</div><div><b data-bi data-i18n-json={JSON.stringify(q.name)}>{firstLocaleValue(q.name, content)}</b><span data-bi data-i18n-json={JSON.stringify(q.role)}>{firstLocaleValue(q.role, content)}</span></div></div>
+        <blockquote data-bi data-field-path="quote.text" data-i18n-json={JSON.stringify(q.text)}>{firstLocaleValue(q.text, content)}</blockquote>
+        <div class="qby"><div class="qav">{q.avatar}</div><div><b data-bi data-field-path="quote.name" data-i18n-json={JSON.stringify(q.name)}>{firstLocaleValue(q.name, content)}</b><span data-bi data-field-path="quote.role" data-i18n-json={JSON.stringify(q.role)}>{firstLocaleValue(q.role, content)}</span></div></div>
       </div>
     </div>
   </div>
