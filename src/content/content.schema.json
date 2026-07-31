@@ -1537,12 +1537,6 @@
               "source": "git"
             },
             {
-              "key": "svg",
-              "label": "Svg",
-              "type": "text",
-              "source": "git"
-            },
-            {
               "key": "logo",
               "label": "Logo",
               "type": "image",
@@ -1931,7 +1925,7 @@
             {
               "key": "photo",
               "label": "Photo",
-              "type": "text",
+              "type": "image",
               "source": "git"
             },
             {
