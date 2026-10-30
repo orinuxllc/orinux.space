@@ -20,7 +20,10 @@ const {
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url.pathname;
-const ogImage = content.meta.ogImage;
+// Facebook / LinkedIn / X / Telegram don't render SVG previews, so an SVG
+// og:image falls back to the PNG export. Crawlers also need an absolute URL.
+const rawOg = content.meta.ogImage && !content.meta.ogImage.endsWith(".svg") ? content.meta.ogImage : "/og-image.png";
+const ogImage = Astro.site ? new URL(rawOg, Astro.site).href : rawOg;
 const favicon = content.meta.favicon || "/favicon.svg";
 const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
 ---
@@ -53,6 +56,10 @@ const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Orinux" />
+    <meta property="og:locale" content="mn_MN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -61,6 +68,7 @@ const faviconType = favicon.endsWith(".svg") ? "image/svg+xml" : undefined;
 
     <!-- Avoid theme flash before interactions.js runs -->
     <script is:inline>
+      document.documentElement.classList.add("js");
       try {
         document.documentElement.setAttribute(
           "data-theme",

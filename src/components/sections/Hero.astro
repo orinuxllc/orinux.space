@@ -20,7 +20,7 @@ const t = (k: string) => mn(k, content);
       <div class="hero-stats reveal d4">
         {content.heroStats.map((s: any) => (
           <div class="stat">
-            <div class="num" {...(s.static ? {} : { "data-count": s.value, "data-suffix": s.suffix })}>{s.static ? s.value : "0"}</div>
+            <div class="num" {...(s.static ? {} : { "data-count": s.value, "data-suffix": s.suffix })}>{s.static ? s.value : `${s.value}${s.suffix ?? ""}`}</div>
             <div class="label" data-bi data-mn={s.label} data-en={s.labelEn}>{s.label}</div>
           </div>
         ))}

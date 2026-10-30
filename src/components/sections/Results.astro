@@ -16,7 +16,7 @@ const q = content.quote;
         <div class="res-stats">
           {content.resultStats.map((s: any) => (
             <div class="res-stat">
-              <div class="rv" data-count={s.value} data-suffix={s.suffix}>0</div>
+              <div class="rv" data-count={s.value} data-suffix={s.suffix}>{`${s.value}${s.suffix ?? ""}`}</div>
               <div class="rl" data-bi data-mn={s.label} data-en={s.labelEn}>{s.label}</div>
             </div>
           ))}

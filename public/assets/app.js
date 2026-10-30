@@ -28,7 +28,7 @@
 
   /* ---------- animated counters ---------- */
   function animateCount(el) {
-    if (reduced) { el.textContent = el.getAttribute("data-suffix-final") || el.getAttribute("data-count"); return; }
+    if (reduced) return; // final value is already server-rendered (prefix + value + suffix)
     var target = parseFloat(el.getAttribute("data-count"));
     var suffix = el.getAttribute("data-suffix") || "";
     var prefix = el.getAttribute("data-prefix") || "";
