@@ -1,0 +1,131 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/sections/PageHeader.astro";
+import { content } from "@/lib/content";
+
+// Privacy notice for the Orinux Meta (Facebook / Instagram) app. Its URL is
+// used as the "Privacy Policy URL" and "User data deletion" instructions URL
+// in the Meta App Dashboard, so keep the path stable.
+const email = content.contact.email;
+const updated = { mn: "2026 оны 10-р сарын 30", en: "October 30, 2026" };
+
+type Block = { mn: string; en: string };
+type Section = { id: string; title: Block; intro?: Block; items?: Block[]; outro?: Block };
+
+const mail = `<a href="mailto:${email}?subject=Facebook%20data%20deletion">${email}</a>`;
+
+const sections: Section[] = [
+  {
+    id: "collect",
+    title: { mn: "1. Facebook/Instagram-аас ямар мэдээлэл авдаг вэ", en: "1. What we receive from Facebook/Instagram" },
+    intro: {
+      mn: "Та Orinux ARP-д өөрийн Facebook хуудас эсвэл Instagram бизнес бүртгэлийг холбох үед зөвхөн таны зөвшөөрсөн эрхийн хүрээнд дараах мэдээллийг авна:",
+      en: "When you connect your Facebook Page or Instagram business account to Orinux ARP, we receive only what you grant permission for:",
+    },
+    items: [
+      { mn: "<strong>Үндсэн профайл</strong> — нэр, Facebook/Instagram хэрэглэгчийн ID, профайл зураг.", en: "<strong>Basic profile</strong> — name, Facebook/Instagram user ID, profile picture." },
+      { mn: "<strong>Хуудас ба бүртгэлийн мэдээлэл</strong> — таны удирддаг Facebook хуудас, холбоотой Instagram бизнес бүртгэлийн нэр, ID.", en: "<strong>Page and account details</strong> — the names and IDs of the Facebook Pages you manage and their linked Instagram business accounts." },
+      { mn: "<strong>Мессеж ба сэтгэгдэл</strong> — таны хуудас/бүртгэл рүү харилцагчдаас ирсэн мессеж, сэтгэгдэл, тэдний нийтэд харагдах нэр, ID.", en: "<strong>Messages and comments</strong> — messages and comments customers send to your Page/account, with their public name and ID." },
+      { mn: "<strong>Нийтлэлийн мэдээлэл</strong> — таны хуудасны нийтлэл, тэдгээрийн оролцооны (engagement) үзүүлэлт.", en: "<strong>Post data</strong> — your Page's posts and their engagement metrics." },
+      { mn: "<strong>Хандалтын token</strong> — Meta-аас олгосон, таны өмнөөс API дуудах эрх бүхий access token.", en: "<strong>Access tokens</strong> — tokens issued by Meta that let us call the API on your behalf." },
+    ],
+    outro: {
+      mn: "Бид таны Facebook нууц үг, хувийн мессеж (Page-ээс бусад), найзуудын жагсаалтыг авдаггүй.",
+      en: "We never receive your Facebook password, personal (non-Page) messages, or friends list.",
+    },
+  },
+  {
+    id: "use",
+    title: { mn: "2. Мэдээллийг юунд ашигладаг вэ", en: "2. How we use it" },
+    items: [
+      { mn: "Ирсэн мессеж, сэтгэгдлийг Orinux ARP-д нэг дор харуулж, AI Agent болон таны багийнхан хариулах боломж олгох.", en: "Showing incoming messages and comments in one inbox in Orinux ARP so AI agents and your team can reply." },
+      { mn: "Харилцагчийн хүсэлтийг захиалга, борлуулалт, CRM бүртгэлтэй холбох.", en: "Linking customer requests to orders, sales and CRM records." },
+      { mn: "Таны зөвшөөрлөөр хуудсанд нийтлэл байршуулах, хуваарь гаргах.", en: "Publishing and scheduling posts to your Page when you ask us to." },
+      { mn: "Нийтлэл, харилцааны тайлан, статистик гаргах.", en: "Producing post and engagement reports." },
+    ],
+    outro: {
+      mn: "Бид энэ мэдээллийг <strong>зар сурталчилгаанд ашигладаггүй, гуравдагч этгээдэд худалддаггүй</strong>, мөн Meta Platform Terms-д заасан зорилгоос өөр зүйлд ашигладаггүй.",
+      en: "We <strong>do not use this data for advertising or sell it to third parties</strong>, and we use it only for the purposes allowed by the Meta Platform Terms.",
+    },
+  },
+  {
+    id: "security",
+    title: { mn: "3. Token болон мэдээллийг хэрхэн хадгалж, хамгаалдаг вэ", en: "3. How tokens and data are stored and protected" },
+    items: [
+      { mn: "Access token-уудыг сервер талд <strong>шифрлэсэн (AES-256)</strong> хэлбэрээр хадгална; хөтөч (browser) рүү хэзээ ч илгээдэггүй.", en: "Access tokens are stored server-side <strong>encrypted (AES-256)</strong> and are never sent to the browser." },
+      { mn: "Бүх холболт <strong>HTTPS/TLS</strong>-ээр шифрлэгдэнэ.", en: "All traffic is encrypted in transit over <strong>HTTPS/TLS</strong>." },
+      { mn: "Мэдээлэлд зөвхөн таны байгууллагын эрх бүхий хэрэглэгчид болон шаардлагатай тохиолдолд Orinux-ийн эрх бүхий ажилтнууд хандана; хандалтыг бүртгэж хянадаг.", en: "Only authorised users in your organisation — and, when required, authorised Orinux staff — can access the data; access is logged." },
+      { mn: "Хугацаа нь дууссан эсвэл цуцлагдсан token-уудыг автоматаар устгана.", en: "Expired or revoked tokens are deleted automatically." },
+      { mn: "Мессеж, сэтгэгдлийн мэдээллийг таны бүртгэл идэвхтэй байх хугацаанд хадгалж, холболтыг салгасны дараа доорх журмаар устгана.", en: "Message and comment data is kept while your account is active and deleted as described below once you disconnect." },
+    ],
+  },
+  {
+    id: "delete",
+    title: { mn: "4. Холболтоо салгах, мэдээллээ устгуулах", en: "4. Disconnecting and deleting your data" },
+    intro: { mn: "Та хүссэн үедээ дараах аргуудын аль нэгээр холболтоо салгах боломжтой:", en: "You can disconnect at any time in any of these ways:" },
+    items: [
+      { mn: "<strong>Orinux ARP дотроос:</strong> Тохиргоо → Холболтууд → Facebook/Instagram → «Салгах».", en: "<strong>In Orinux ARP:</strong> Settings → Integrations → Facebook/Instagram → “Disconnect”." },
+      { mn: "<strong>Facebook дээрээс:</strong> Settings &amp; privacy → Settings → Business integrations (Apps and websites) → Orinux → «Remove».", en: "<strong>On Facebook:</strong> Settings &amp; privacy → Settings → Business integrations (Apps and websites) → Orinux → “Remove”." },
+      { mn: "<strong>Instagram дээрээс:</strong> Settings → Website permissions → Apps and websites → Orinux → «Remove».", en: "<strong>On Instagram:</strong> Settings → Website permissions → Apps and websites → Orinux → “Remove”." },
+    ],
+    outro: {
+      mn: `Холболтыг салгахад бид token-ыг шууд хүчингүй болгож устгана. Facebook/Instagram-аас авсан бусад мэдээллээ бүрэн устгуулахыг хүсвэл ${mail} хаяг руу «Facebook data deletion» гарчигтай, холбосон хуудасны нэр эсвэл бүртгэлийн имэйлээ бичиж илгээнэ үү. Бид хүсэлтийг баталгаажуулж, <strong>30 хоногийн дотор</strong> бүх мэдээллийг устгаад танд имэйлээр мэдэгдэнэ.`,
+      en: `Disconnecting immediately revokes and deletes the token. To have all other data received from Facebook/Instagram deleted, email ${mail} with the subject “Facebook data deletion” and the name of the connected Page or your account email. We will verify the request, delete all of the data <strong>within 30 days</strong> and confirm by email.`,
+    },
+  },
+  {
+    id: "contact",
+    title: { mn: "5. Холбоо барих", en: "5. Contact" },
+    intro: {
+      mn: `Энэ мэдэгдэлтэй холбоотой асуулт байвал ${mail} эсвэл <a href="tel:${content.contact.phoneHref}">${content.contact.phone}</a> дугаараар холбогдоно уу. Orinux LLC, Улаанбаатар, Монгол Улс.`,
+      en: `Questions about this notice? Contact ${mail} or <a href="tel:${content.contact.phoneHref}">${content.contact.phone}</a>. Orinux LLC, Ulaanbaatar, Mongolia.`,
+    },
+  },
+];
+---
+<BaseLayout
+  content={content}
+  title={`Facebook & Instagram нууцлал — ${content.meta.title}`}
+  description="Orinux ARP нь Facebook, Instagram-аас ямар мэдээлэл авч, хэрхэн ашиглаж, хамгаалдаг болон мэдээллээ устгуулах арга."
+>
+  <PageHeader
+    eyebrow="Нууцлал" eyebrowEn="Privacy"
+    title={'Facebook & Instagram <span class="grad-text">нууцлал</span>'} titleEn={'Facebook & Instagram <span class="grad-text">privacy</span>'}
+    sub="Orinux ARP таны Facebook, Instagram мэдээллийг хэрхэн авч, ашиглаж, хамгаалдаг тухай." subEn="How Orinux ARP receives, uses and protects your Facebook and Instagram data."
+  />
+  <section class="legal">
+    <div class="wrap">
+      <article class="legal-body">
+        <p class="legal-updated">
+          <span data-bi data-mn="Сүүлд шинэчилсэн:" data-en="Last updated:">Сүүлд шинэчилсэн:</span>
+          <span data-bi data-mn={updated.mn} data-en={updated.en}>{updated.mn}</span>
+        </p>
+        {sections.map((s) => (
+          <section id={s.id}>
+            <h2 data-bi data-mn={s.title.mn} data-en={s.title.en}>{s.title.mn}</h2>
+            {s.intro && <p data-bi data-mn={s.intro.mn} data-en={s.intro.en} set:html={s.intro.mn} />}
+            {s.items && (
+              <ul>
+                {s.items.map((it) => <li data-bi data-mn={it.mn} data-en={it.en} set:html={it.mn} />)}
+              </ul>
+            )}
+            {s.outro && <p data-bi data-mn={s.outro.mn} data-en={s.outro.en} set:html={s.outro.mn} />}
+          </section>
+        ))}
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal { padding: 10px 0 100px; }
+  .legal-body { max-width: 780px; color: var(--text-dim); font-size: 16px; line-height: 1.7; }
+  .legal-updated { font-size: 14px; margin-bottom: 8px; }
+  .legal-body section { padding-top: 36px; margin-top: 36px; border-top: 1px solid var(--border); }
+  .legal-body h2 { color: var(--text); font-family: var(--display, "Unbounded", sans-serif); font-size: clamp(19px, 2.4vw, 24px); line-height: 1.3; margin: 0 0 14px; }
+  .legal-body p { margin: 12px 0; }
+  .legal-body ul { margin: 12px 0; padding-left: 20px; display: grid; gap: 8px; }
+  .legal-body :global(strong) { color: var(--text); font-weight: 600; }
+  .legal-body :global(a) { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 640px) { .legal-body { font-size: 15px; } }
+</style>
